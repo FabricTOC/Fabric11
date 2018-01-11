@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Getting Started - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Getting Started";
+    var mkdocs_page_input_path = "getting_started.md";
+    var mkdocs_page_url = "/getting_started/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Getting Started</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#install-prerequisites">Install Prerequisites</a></li>
+        
+            <li><a class="toctree-l4" href="#install-binaries-and-docker-images">Install Binaries and Docker Images</a></li>
+        
+            <li><a class="toctree-l4" href="#hyperledger-fabric-samples">Hyperledger Fabric Samples</a></li>
+        
+            <li><a class="toctree-l4" href="#api-documentation">API Documentation</a></li>
+        
+            <li><a class="toctree-l4" href="#hyperledger-fabric-sdks">Hyperledger Fabric SDKs</a></li>
+        
+            <li><a class="toctree-l4" href="#hyperledger-fabric-ca">Hyperledger Fabric CA</a></li>
+        
+            <li><a class="toctree-l4" href="#tutorials">Tutorials</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tutorials and samples &raquo;</li>
+        
+      
+    
+    <li>Getting Started</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="getting-started">Getting Started</h1>
+<h2 id="install-prerequisites">Install Prerequisites</h2>
+<p>Before we begin, if you haven\'t already done so, you may wish to check
+that you have all the [prereqs]{role="doc"} installed on the platform(s)
+on which you\'ll be developing blockchain applications and/or operating
+Hyperledger Fabric.</p>
+<h2 id="install-binaries-and-docker-images">Install Binaries and Docker Images</h2>
+<p>While we work on developing real installers for the Hyperledger Fabric
+binaries, we provide a script that will [binaries]{role="ref"} to your
+system. The script also will download the Docker images to your local
+registry.</p>
+<h2 id="hyperledger-fabric-samples">Hyperledger Fabric Samples</h2>
+<p>We offer a set of sample applications that you may wish to install these
+[samples]{role="doc"} before starting with the tutorials as the
+tutorials leverage the sample code.</p>
+<h2 id="api-documentation">API Documentation</h2>
+<p>The API documentation for Hyperledger Fabric\'s Golang APIs can be found
+on the godoc site for
+<a href="http://godoc.org/github.com/hyperledger/fabric">Fabric</a>. If you plan on
+doing any development using these APIs, you may want to bookmark those
+links now.</p>
+<h2 id="hyperledger-fabric-sdks">Hyperledger Fabric SDKs</h2>
+<p>Hyperledger Fabric intends to offer a number of SDKs for a wide variety
+of programming languages. The first two delivered SDKs are the Node.js
+and Java SDKs. We hope to provide Python and Go SDKs soon after the
+1.0.0 release.</p>
+<blockquote>
+<ul>
+<li><a href="https://fabric-sdk-node.github.io/">Hyperledger Fabric Node SDK
+    documentation</a>.</li>
+<li><a href="https://github.com/hyperledger/fabric-sdk-java">Hyperledger Fabric Java SDK
+    documentation</a>.</li>
+</ul>
+</blockquote>
+<h2 id="hyperledger-fabric-ca">Hyperledger Fabric CA</h2>
+<p>Hyperledger Fabric provides an optional <a href="http://hyperledger-fabric-ca.readthedocs.io/en/latest">certificate authority
+service</a> that you
+may choose to use to generate the certificates and key material to
+configure and manage identity in your blockchain network. However, any
+CA that can generate ECDSA certificates may be used.</p>
+<h2 id="tutorials">Tutorials</h2>
+<p>We offer four initial tutorials to get you started with Hyperledger
+Fabric. The first is oriented to the Hyperledger Fabric <strong>application
+developer</strong>, [write_first_app]{role="doc"}. It takes you through the
+process of writing your first blockchain application for Hyperledger
+Fabric using the Hyperledger Fabric <a href="https://github.com/hyperledger/fabric-sdk-node">Node
+SDK</a>.</p>
+<p>The second tutorial is oriented towards the Hyperledger Fabric network
+operators, [build_network]{role="doc"}. This one walks you through the
+process of establishing a blockchain network using Hyperledger Fabric
+and provides a basic sample application to test it out.</p>
+<p>Finally, we offer two chaincode tutorials. One oriented to developers,
+[chaincode4ade]{role="doc"}, and the other oriented to operators,
+[chaincode4noah]{role="doc"}.</p>
+<p><strong>Note: If you have questions not addressed by this documentation, or run into
+issues with any of the tutorials, please visit the [questions]{role="doc"}
+page for some tips on where to find additional help.</strong></p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../build_network/" class="btn btn-neutral float-right" title="Build Your First Network">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tbd/" class="btn btn-neutral" title="Certificate Authority Tasks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../tbd/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../build_network/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

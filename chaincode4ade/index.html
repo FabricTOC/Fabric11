@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Chaincode for Developers - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Chaincode for Developers";
+    var mkdocs_page_input_path = "chaincode4ade.md";
+    var mkdocs_page_url = "/chaincode4ade/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Chaincode for Developers</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#chaincode-for-developers">Chaincode for Developers</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#what-is-chaincode">What is Chaincode?</a></li>
+        
+            <li><a class="toctree-l4" href="#chaincode-api">Chaincode API</a></li>
+        
+            <li><a class="toctree-l4" href="#download-docker-images">Download Docker images</a></li>
+        
+            <li><a class="toctree-l4" href="#terminal-2-build-start-the-chaincode">Terminal 2 - Build &amp; start the chaincode</a></li>
+        
+            <li><a class="toctree-l4" href="#terminal-3-use-the-chaincode">Terminal 3 - Use the chaincode</a></li>
+        
+            <li><a class="toctree-l4" href="#testing-new-chaincode">Testing new chaincode</a></li>
+        
+            <li><a class="toctree-l4" href="#chaincode-encryption">Chaincode encryption</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tutorials and samples &raquo;</li>
+        
+      
+    
+    <li>Chaincode for Developers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="chaincode-for-developers">Chaincode for Developers</h1>
+<h2 id="what-is-chaincode">What is Chaincode?</h2>
+<p>Chaincode is a program, written in <a href="https://golang.org">Go</a>,
+<a href="https://nodejs.org">node.js</a>, that implements a prescribed interface.
+Eventually, other programming languages such as Java, will be supported.
+Chaincode runs in a secured Docker container isolated from the endorsing
+peer process. Chaincode initializes and manages the ledger state through
+transactions submitted by applications.</p>
+<p>A chaincode typically handles business logic agreed to by members of the
+network, so it similar to a \"smart contract\". Ledger state created by
+a chaincode is scoped exclusively to that chaincode and can\'t be
+accessed directly by another chaincode. Given the appropriate
+permission, a chaincode may invoke another chaincode to access its state
+within the same network.</p>
+<p>In the following sections, we will explore chaincode through the eyes of
+an application developer. We\'ll present a simple chaincode sample
+application and walk through the purpose of each method in the Chaincode
+Shim API.</p>
+<h2 id="chaincode-api">Chaincode API</h2>
+<p>Every chaincode program must implement the <code>Chaincode interface</code>:</p>
+<blockquote>
+<ul>
+<li><a href="http://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Chaincode">Go</a></li>
+<li><a href="https://fabric-shim.github.io/ChaincodeInterface.html">node.js</a></li>
+</ul>
+</blockquote>
+<p>whose methods are called in response to received transactions. In
+particular the <code>Init</code> method is called when a chaincode receives an
+<code>instantiate</code> or <code>upgrade</code> transaction so that the chaincode may perform
+any necessary initialization, including initialization of application
+state. The <code>Invoke</code> method is called in response to receiving an
+<code>invoke</code> transaction to process transaction proposals.</p>
+<p>The other interface in the chaincode \"shim\" APIs is the
+<code>ChaincodeStubInterface</code>:</p>
+<blockquote>
+<ul>
+<li><a href="http://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub">Go</a></li>
+<li><a href="https://fabric-shim.github.io/ChaincodeStub.html">node.js</a></li>
+</ul>
+</blockquote>
+<p>which is used to access and modify the ledger, and to make invocations
+between chaincodes.</p>
+<p>In this tutorial, we will demonstrate the use of these APIs by
+implementing a simple chaincode application that manages simple
+\"assets\".</p>
+<p>::: {#Simple Asset Chaincode}
+Simple Asset Chaincode</p>
+<hr />
+<p>:::</p>
+<p>Our application is a basic sample chaincode to create assets (key-value
+pairs) on the ledger.</p>
+<h3 id="choosing-a-location-for-the-code">Choosing a Location for the Code</h3>
+<p>If you haven\'t been doing programming in Go, you may want to make sure
+that you have [Golang]{role="ref"} installed and your system properly
+configured.</p>
+<p>Now, you will want to create a directory for your chaincode application
+as a child directory of <code>$GOPATH/src/</code>.</p>
+<p>To keep things simple, let\'s use the following command:</p>
+<p>``` {.sourceCode .bash}
+mkdir -p $GOPATH/src/sacc &amp;&amp; cd $GOPATH/src/sacc</p>
+<pre><code>
+Now, let\'s create the source file that we\'ll fill in with code:
+
+``` {.sourceCode .bash}
+touch sacc.go
+</code></pre>
+
+<h3 id="housekeeping">Housekeeping</h3>
+<p>First, let\'s start with some housekeeping. As with every chaincode, it
+implements the <a href="http://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Chaincode">Chaincode
+interface</a>
+in particular, <code>Init</code> and <code>Invoke</code> functions. So, let\'s add the go
+import statements for the necessary dependencies for our chaincode.
+We\'ll import the chaincode shim package and the <a href="http://godoc.org/github.com/hyperledger/fabric/protos/peer">peer protobuf
+package</a>.
+Next, let\'s add a struct <code>SimpleAsset</code> as a receiver for Chaincode shim
+functions.</p>
+<p>``` {.sourceCode .go}
+package main</p>
+<p>import (
+    "fmt"</p>
+<pre><code>"github.com/hyperledger/fabric/core/chaincode/shim"
+"github.com/hyperledger/fabric/protos/peer"
+</code></pre>
+<p>)</p>
+<p>// SimpleAsset implements a simple chaincode to manage an asset
+type SimpleAsset struct {
+}</p>
+<pre><code>
+### Initializing the Chaincode
+
+Next, we\'ll implement the `Init` function.
+
+``` {.sourceCode .go}
+// Init is called during chaincode instantiation to initialize any data.
+func (t *SimpleAsset) Init(stub shim.ChaincodeStubInterface) peer.Response {
+
+}
+</code></pre>
+
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>Note that chaincode upgrade also calls this function. When writing a</p>
+<p>:   chaincode that will upgrade an existing one, make sure to modify the
+    <code>Init</code> function appropriately. In particular, provide an empty
+    \"Init\" method if there\'s no \"migration\" or nothing to be
+    initialized as part of the upgrade.
+:::</p>
+<p>Next, we\'ll retrieve the arguments to the <code>Init</code> call using the
+<a href="http://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.GetStringArgs">ChaincodeStubInterface.GetStringArgs</a>
+function and check for validity. In our case, we are expecting a
+key-value pair.</p>
+<blockquote>
+<p><code>{.sourceCode .go}
+// Init is called during chaincode instantiation to initialize any
+// data. Note that chaincode upgrade also calls this function to reset
+// or to migrate data, so be careful to avoid a scenario where you
+// inadvertently clobber your ledger's data!
+func (t *SimpleAsset) Init(stub shim.ChaincodeStubInterface) peer.Response {
+  // Get the args from the transaction proposal
+  args := stub.GetStringArgs()
+  if len(args) != 2 {
+    return shim.Error("Incorrect arguments. Expecting a key and a value")
+  }
+}</code></p>
+</blockquote>
+<p>Next, now that we have established that the call is valid, we\'ll store
+the initial state in the ledger. To do this, we will call
+<a href="http://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.PutState">ChaincodeStubInterface.PutState</a>
+with the key and value passed in as the arguments. Assuming all went
+well, return a peer.Response object that indicates the initialization
+was a success.</p>
+<p>``` {.sourceCode .go}
+// Init is called during chaincode instantiation to initialize any
+// data. Note that chaincode upgrade also calls this function to reset
+// or to migrate data, so be careful to avoid a scenario where you
+// inadvertently clobber your ledger's data!
+func (t *SimpleAsset) Init(stub shim.ChaincodeStubInterface) peer.Response {
+  // Get the args from the transaction proposal
+  args := stub.GetStringArgs()
+  if len(args) != 2 {
+    return shim.Error("Incorrect arguments. Expecting a key and a value")
+  }</p>
+<p>// Set up any variables or assets here by calling stub.PutState()</p>
+<p>// We store the key and the value on the ledger
+  err := stub.PutState(args[0], []byte(args[1]))
+  if err != nil {
+    return shim.Error(fmt.Sprintf("Failed to create asset: %s", args[0]))
+  }
+  return shim.Success(nil)
+}</p>
+<pre><code>
+### Invoking the Chaincode
+
+First, let\'s add the `Invoke` function\'s signature.
+
+``` {.sourceCode .go}
+// Invoke is called per transaction on the chaincode. Each transaction is
+// either a 'get' or a 'set' on the asset created by Init function. The 'set'
+// method may create a new asset by specifying a new key-value pair.
+func (t *SimpleAsset) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
+
+}
+</code></pre>
+
+<p>As with the <code>Init</code> function above, we need to extract the arguments from
+the <code>ChaincodeStubInterface</code>. The <code>Invoke</code> function\'s arguments will be
+the name of the chaincode application function to invoke. In our case,
+our application will simply have two functions: <code>set</code> and <code>get</code>, that
+allow the value of an asset to be set or its current state to be
+retrieved. We first call
+<a href="http://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.GetFunctionAndParameters">ChaincodeStubInterface.GetFunctionAndParameters</a>
+to extract the function name and the parameters to that chaincode
+application function.</p>
+<p>``` {.sourceCode .go}
+// Invoke is called per transaction on the chaincode. Each transaction is
+// either a 'get' or a 'set' on the asset created by Init function. The Set
+// method may create a new asset by specifying a new key-value pair.
+func (t *SimpleAsset) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
+    // Extract the function and args from the transaction proposal
+    fn, args := stub.GetFunctionAndParameters()</p>
+<p>}</p>
+<pre><code>
+Next, we\'ll validate the function name as being either `set` or `get`,
+and invoke those chaincode application functions, returning an
+appropriate response via the `shim.Success` or `shim.Error` functions
+that will serialize the response into a gRPC protobuf message.
+
+``` {.sourceCode .go}
+// Invoke is called per transaction on the chaincode. Each transaction is
+// either a 'get' or a 'set' on the asset created by Init function. The Set
+// method may create a new asset by specifying a new key-value pair.
+func (t *SimpleAsset) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
+    // Extract the function and args from the transaction proposal
+    fn, args := stub.GetFunctionAndParameters()
+
+    var result string
+    var err error
+    if fn == &quot;set&quot; {
+        result, err = set(stub, args)
+    } else {
+        result, err = get(stub, args)
+    }
+    if err != nil {
+        return shim.Error(err.Error())
+    }
+
+    // Return the result as success payload
+    return shim.Success([]byte(result))
+}
+</code></pre>
+
+<h3 id="implementing-the-chaincode-application">Implementing the Chaincode Application</h3>
+<p>As noted, our chaincode application implements two functions that can be
+invoked via the <code>Invoke</code> function. Let\'s implement those functions now.
+Note that as we mentioned above, to access the ledger\'s state, we will
+leverage the
+<a href="http://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.PutState">ChaincodeStubInterface.PutState</a>
+and
+<a href="http://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.GetState">ChaincodeStubInterface.GetState</a>
+functions of the chaincode shim API.</p>
+<p>``` {.sourceCode .go}
+// Set stores the asset (both key and value) on the ledger. If the key exists,
+// it will override the value with the new one
+func set(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+    if len(args) != 2 {
+        return "", fmt.Errorf("Incorrect arguments. Expecting a key and a value")
+    }</p>
+<pre><code>err := stub.PutState(args[0], []byte(args[1]))
+if err != nil {
+    return "", fmt.Errorf("Failed to set asset: %s", args[0])
+}
+return args[1], nil
+</code></pre>
+<p>}</p>
+<p>// Get returns the value of the specified asset key
+func get(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+    if len(args) != 1 {
+        return "", fmt.Errorf("Incorrect arguments. Expecting a key")
+    }</p>
+<pre><code>value, err := stub.GetState(args[0])
+if err != nil {
+    return "", fmt.Errorf("Failed to get asset: %s with error: %s", args[0], err)
+}
+if value == nil {
+    return "", fmt.Errorf("Asset not found: %s", args[0])
+}
+return string(value), nil
+</code></pre>
+<p>}</p>
+<pre><code>
+::: {#Chaincode Sample}
+### Pulling it All Together
+:::
+
+Finally, we need to add the `main` function, which will call the
+[shim.Start](http://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Start)
+function. Here\'s the whole chaincode program source.
+
+``` {.sourceCode .go}
+package main
+
+import (
+    &quot;fmt&quot;
+
+    &quot;github.com/hyperledger/fabric/core/chaincode/shim&quot;
+    &quot;github.com/hyperledger/fabric/protos/peer&quot;
+)
+
+// SimpleAsset implements a simple chaincode to manage an asset
+type SimpleAsset struct {
+}
+
+// Init is called during chaincode instantiation to initialize any
+// data. Note that chaincode upgrade also calls this function to reset
+// or to migrate data.
+func (t *SimpleAsset) Init(stub shim.ChaincodeStubInterface) peer.Response {
+    // Get the args from the transaction proposal
+    args := stub.GetStringArgs()
+    if len(args) != 2 {
+        return shim.Error(&quot;Incorrect arguments. Expecting a key and a value&quot;)
+    }
+
+    // Set up any variables or assets here by calling stub.PutState()
+
+    // We store the key and the value on the ledger
+    err := stub.PutState(args[0], []byte(args[1]))
+    if err != nil {
+        return shim.Error(fmt.Sprintf(&quot;Failed to create asset: %s&quot;, args[0]))
+    }
+    return shim.Success(nil)
+}
+
+// Invoke is called per transaction on the chaincode. Each transaction is
+// either a 'get' or a 'set' on the asset created by Init function. The Set
+// method may create a new asset by specifying a new key-value pair.
+func (t *SimpleAsset) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
+    // Extract the function and args from the transaction proposal
+    fn, args := stub.GetFunctionAndParameters()
+
+    var result string
+    var err error
+    if fn == &quot;set&quot; {
+        result, err = set(stub, args)
+    } else { // assume 'get' even if fn is nil
+        result, err = get(stub, args)
+    }
+    if err != nil {
+        return shim.Error(err.Error())
+    }
+
+    // Return the result as success payload
+    return shim.Success([]byte(result))
+}
+
+// Set stores the asset (both key and value) on the ledger. If the key exists,
+// it will override the value with the new one
+func set(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+    if len(args) != 2 {
+        return &quot;&quot;, fmt.Errorf(&quot;Incorrect arguments. Expecting a key and a value&quot;)
+    }
+
+    err := stub.PutState(args[0], []byte(args[1]))
+    if err != nil {
+        return &quot;&quot;, fmt.Errorf(&quot;Failed to set asset: %s&quot;, args[0])
+    }
+    return args[1], nil
+}
+
+// Get returns the value of the specified asset key
+func get(stub shim.ChaincodeStubInterface, args []string) (string, error) {
+    if len(args) != 1 {
+        return &quot;&quot;, fmt.Errorf(&quot;Incorrect arguments. Expecting a key&quot;)
+    }
+
+    value, err := stub.GetState(args[0])
+    if err != nil {
+        return &quot;&quot;, fmt.Errorf(&quot;Failed to get asset: %s with error: %s&quot;, args[0], err)
+    }
+    if value == nil {
+        return &quot;&quot;, fmt.Errorf(&quot;Asset not found: %s&quot;, args[0])
+    }
+    return string(value), nil
+}
+
+// main function starts up the chaincode in the container during instantiate
+func main() {
+    if err := shim.Start(new(SimpleAsset)); err != nil {
+        fmt.Printf(&quot;Error starting SimpleAsset chaincode: %s&quot;, err)
+    }
+}
+</code></pre>
+
+<h3 id="building-chaincode">Building Chaincode</h3>
+<p>Now let\'s compile your chaincode.</p>
+<p>``` {.sourceCode .bash}
+go get -u --tags nopkcs11 github.com/hyperledger/fabric/core/chaincode/shim
+go build --tags nopkcs11</p>
+<pre><code>
+Assuming there are no errors, now we can proceed to the next step,
+testing your chaincode.
+
+### Testing Using dev mode
+
+Normally chaincodes are started and maintained by peer. However in &quot;dev
+mode\&quot;, chaincode is built and started by the user. This mode is useful
+during chaincode development phase for rapid code/build/run/debug cycle
+turnaround.
+
+We start \&quot;dev mode\&quot; by leveraging pre-generated orderer and channel
+artifacts for a sample dev network. As such, the user can immediately
+jump into the process of compiling chaincode and driving calls.
+
+Install Hyperledger Fabric Samples
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+
+If you haven\'t already done so, please install the
+[samples]{role=&quot;doc&quot;}.
+
+Navigate to the `chaincode-docker-devmode` directory of the
+`fabric-samples` clone:
+
+``` {.sourceCode .bash}
+cd chaincode-docker-devmode
+</code></pre>
+
+<h2 id="download-docker-images">Download Docker images</h2>
+<p>We need four Docker images in order for \"dev mode\" to run against the
+supplied docker compose script. If you installed the <code>fabric-samples</code>
+repo clone and followed the instructions to [binaries]{role="ref"}, then
+you should have the necessary Docker images installed locally.</p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>If you choose to manually pull the images then you must retag them as</p>
+<p>:   <code>latest</code>.
+:::</p>
+<p>Issue a <code>docker images</code> command to reveal your local Docker Registry.
+You should see something similar to following:</p>
+<p>``` {.sourceCode .bash}
+docker images
+REPOSITORY                     TAG                                  IMAGE ID            CREATED             SIZE
+hyperledger/fabric-tools       latest                               e09f38f8928d        4 hours ago         1.32 GB
+hyperledger/fabric-tools       x86_64-1.0.0                         e09f38f8928d        4 hours ago         1.32 GB
+hyperledger/fabric-orderer     latest                               0df93ba35a25        4 hours ago         179 MB
+hyperledger/fabric-orderer     x86_64-1.0.0                         0df93ba35a25        4 hours ago         179 MB
+hyperledger/fabric-peer        latest                               533aec3f5a01        4 hours ago         182 MB
+hyperledger/fabric-peer        x86_64-1.0.0                         533aec3f5a01        4 hours ago         182 MB
+hyperledger/fabric-ccenv       latest                               4b70698a71d3        4 hours ago         1.29 GB
+hyperledger/fabric-ccenv       x86_64-1.0.0                         4b70698a71d3        4 hours ago         1.29 GB</p>
+<pre><code>
+::: {.note}
+::: {.admonition-title}
+Note
+:::
+
+If you retrieved the images through the [binaries]{role=&quot;ref&quot;},
+
+:   then you will see additional images listed. However, we are only
+    concerned with these four.
+:::
+
+Now open three terminals and navigate to your `chaincode-docker-devmode`
+directory in each.
+
+Terminal 1 - Start the network
+------------------------------
+
+``` {.sourceCode .bash}
+docker-compose -f docker-compose-simple.yaml up
+</code></pre>
+
+<p>The above starts the network with the <code>SingleSampleMSPSolo</code> orderer
+profile and launches the peer in \"dev mode\". It also launches two
+additional containers -one for the chaincode environment and a CLI to
+interact with the chaincode. The commands for create and join channel
+are embedded in the CLI container, so we can jump immediately to the
+chaincode calls.</p>
+<h2 id="terminal-2-build-start-the-chaincode">Terminal 2 - Build &amp; start the chaincode</h2>
+<p>``` {.sourceCode .bash}
+docker exec -it chaincode bash</p>
+<pre><code>
+You should see the following:
+
+``` {.sourceCode .bash}
+root@d2629980e76b:/opt/gopath/src/chaincode#
+</code></pre>
+
+<p>Now, compile your chaincode:</p>
+<p>``` {.sourceCode .bash}
+cd sacc
+go build</p>
+<pre><code>
+Now run the chaincode:
+
+``` {.sourceCode .bash}
+CORE_PEER_ADDRESS=peer:7052 CORE_CHAINCODE_ID_NAME=mycc:0 ./sacc
+</code></pre>
+
+<p>The chaincode is started with peer and chaincode logs indicating
+successful registration with the peer. Note that at this stage the
+chaincode is not associated with any channel. This is done in subsequent
+steps using the <code>instantiate</code> command.</p>
+<h2 id="terminal-3-use-the-chaincode">Terminal 3 - Use the chaincode</h2>
+<p>Even though you are in <code>--peer-chaincodedev</code> mode, you still have to
+install the chaincode so the life-cycle system chaincode can go through
+its checks normally. This requirement may be removed in future when in
+<code>--peer-chaincodedev</code> mode.</p>
+<p>We\'ll leverage the CLI container to drive these calls.</p>
+<p>``` {.sourceCode .bash}
+docker exec -it cli bash</p>
+<pre><code>
+``` {.sourceCode .bash}
+peer chaincode install -p chaincodedev/chaincode/sacc -n mycc -v 0
+peer chaincode instantiate -n mycc -v 0 -c '{&quot;Args&quot;:[&quot;a&quot;,&quot;10&quot;]}' -C myc
+</code></pre>
+
+<p>Now issue an invoke to change the value of \"a\" to \"20\".</p>
+<p>``` {.sourceCode .bash}
+peer chaincode invoke -n mycc -c '{"Args":["set", "a", "20"]}' -C myc</p>
+<pre><code>
+Finally, query `a`. We should see a value of `20`.
+
+``` {.sourceCode .bash}
+peer chaincode query -n mycc -c '{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}' -C myc
+</code></pre>
+
+<h2 id="testing-new-chaincode">Testing new chaincode</h2>
+<p>By default, we mount only <code>sacc</code>. However, you can easily test different
+chaincodes by adding them to the <code>chaincode</code> subdirectory and
+relaunching your network. At this point they will be accessible in your
+<code>chaincode</code> container.</p>
+<h2 id="chaincode-encryption">Chaincode encryption</h2>
+<p>In certain scenarios, it may be useful to encrypt values associated with
+a key in their entirety or simply in part. For example, if a person\'s
+social security number or address was being written to the ledger, then
+you likely would not want this data to appear in plaintext. Chaincode
+encryption is achieved by leveraging the <a href="https://github.com/hyperledger/fabric/tree/master/core/chaincode/shim/ext/entities">entities
+extension</a>
+which is a BCCSP wrapper with commodity factories and functions to
+perform cryptographic operations such as encryption and elliptic curve
+digital signatures. For example, to encrypt, the invoker of a chaincode
+passes in a cryptographic key via the transient field. The same key may
+then be used for subsequent query operations, allowing for proper
+decryption of the encrypted state values.</p>
+<p>For more information and samples, see the <a href="https://github.com/hyperledger/fabric/tree/master/examples/chaincode/go/enccc_example">Encc
+Example</a>
+within the <code>fabric/examples</code> directory. Pay specific attention to the
+<code>utils.go</code> helper program. This utility loads the chaincode shim APIs
+and Entities extension and builds a new class of functions (e.g.
+<code>encryptAndPutState</code> &amp; <code>getStateAndDecrypt</code>) that the sample encryption
+chaincode then leverages. As such, the chaincode can now marry the basic
+shim APIs of <code>Get</code> and <code>Put</code> with the added functionality of <code>Encrypt</code>
+and <code>Decrypt</code>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../chaincode4noah/" class="btn btn-neutral float-right" title="Chaincode for Operations">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../write_first_app/" class="btn btn-neutral" title="Writing Your First Application"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../write_first_app/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../chaincode4noah/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

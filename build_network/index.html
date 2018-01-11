@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Build Your First Network - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Build Your First Network";
+    var mkdocs_page_input_path = "build_network.md";
+    var mkdocs_page_url = "/build_network/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Build Your First Network</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#building-your-first-network">Building Your First Network</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#install-prerequisites">Install prerequisites</a></li>
+        
+            <li><a class="toctree-l4" href="#crypto-generator">Crypto Generator</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#-">---------------------------------------------------------</a></li>
+    
+
+    <li class="toctree-l3"><a href="#orderer">Orderer</a></li>
+    
+
+    <li class="toctree-l3"><a href="#-_1">--------------------------------------------------------</a></li>
+    
+
+    <li class="toctree-l3"><a href="#-_2">-----------------------------------------------------</a></li>
+    
+
+    <li class="toctree-l3"><a href="#-_3">-------------------------------------------------------</a></li>
+    
+
+    <li class="toctree-l3"><a href="#peerorgs-definition-of-organizations-managing-peer-nodes">"PeerOrgs" - Definition of organizations managing peer nodes</a></li>
+    
+
+    <li class="toctree-l3"><a href="#-_4">------------------------------------------------------</a></li>
+    
+
+    <li class="toctree-l3"><a href="#-_5">-----------------------------------------------------</a></li>
+    
+
+    <li class="toctree-l3"><a href="#org1">Org1</a></li>
+    
+
+    <li class="toctree-l3"><a href="#-_6">----------------------------------------------------</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#create-a-channel-configuration-transaction">Create a Channel Configuration Transaction</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#the-channeltx-artifact-contains-the-definitions-for-our-sample-channel">The channel.tx artifact contains the definitions for our sample channel</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#start-the-network">Start the network</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#command-binbash-c-scriptsscriptsh-channel_name-sleep-timeout">command: /bin/bash -c './scripts/script.sh ${CHANNEL_NAME}; sleep $TIMEOUT'</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#environment-variables">Environment variables</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#environment-variables-for-peer0">Environment variables for PEER0</a></li>
+    
+
+    <li class="toctree-l3"><a href="#by-default-this-joins-peer0org1examplecom-only">By default, this joins peer0.org1.example.com only</a></li>
+    
+
+    <li class="toctree-l3"><a href="#the-was-returned-by-the-previous-command">the  was returned by the previous command</a></li>
+    
+
+    <li class="toctree-l3"><a href="#if-you-have-not-modified-the-channel-name-you-will-join-with-mychannelblock">if you have not modified the channel name, you will join with mychannel.block</a></li>
+    
+
+    <li class="toctree-l3"><a href="#if-you-have-created-a-different-channel-name-then-pass-in-the-appropriately-named-block">if you have created a different channel name, then pass in the appropriately named block</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#update-the-anchor-peers">Update the anchor peers</a></li>
+        
+            <li><a class="toctree-l4" href="#install-instantiate-chaincode">Install &amp; Instantiate Chaincode</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#this-installs-the-go-chaincode">this installs the Go chaincode</a></li>
+    
+
+    <li class="toctree-l3"><a href="#be-sure-to-replace-the-channel_name-environment-variable-if-you-have-not-exported-it">be sure to replace the $CHANNEL_NAME environment variable if you have not exported it</a></li>
+    
+
+    <li class="toctree-l3"><a href="#if-you-did-not-install-your-chaincode-with-a-name-of-mycc-then-modify-that-argument-as-well">if you did not install your chaincode with a name of mycc, then modify that argument as well</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#query">Query</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#be-sure-to-set-the-c-and-n-flags-appropriately">be sure to set the -C and -n flags appropriately</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#query_1">Query</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#be-sure-to-set-the-c-and-n-flags-appropriately_1">be sure to set the -C and -n flags appropriately</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#whats-happening-behind-the-scenes">What\'s happening behind the scenes?</a></li>
+        
+            <li><a class="toctree-l4" href="#what-does-this-demonstrate">What does this demonstrate?</a></li>
+        
+            <li><a class="toctree-l4" href="#how-do-i-see-these-transactions">How do I see these transactions?</a></li>
+        
+            <li><a class="toctree-l4" href="#how-can-i-see-the-chaincode-logs">How can I see the chaincode logs?</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#be-sure-to-modify-the-channel_name-variable-accordingly-for-the-instantiate-command">be sure to modify the $CHANNEL_NAME variable accordingly for the instantiate command</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#why-couchdb">Why CouchDB</a></li>
+        
+            <li><a class="toctree-l4" href="#a-note-on-data-persistence">A Note on Data Persistence</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tutorials and samples &raquo;</li>
+        
+      
+    
+    <li>Build Your First Network</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="building-your-first-network">Building Your First Network</h1>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>These instructions have been verified to work against the</p>
+<p>:   latest stable Docker images and the pre-compiled setup utilities
+    within the supplied tar file. If you run these commands with images
+    or tools from the current master branch, it is possible that you
+    will see configuration and panic errors.
+:::</p>
+<p>The build your first network (BYFN) scenario provisions a sample
+Hyperledger Fabric network consisting of two organizations, each
+maintaining two peer nodes, and a \"solo\" ordering service.</p>
+<h2 id="install-prerequisites">Install prerequisites</h2>
+<p>Before we begin, if you haven\'t already done so, you may wish to check
+that you have all the [prereqs]{role="doc"} installed on the platform(s)
+on which you\'ll be developing blockchain applications and/or operating
+Hyperledger Fabric.</p>
+<p>You will also need to download and install the [samples]{role="doc"}.
+You will notice that there are a number of samples included in the
+<code>fabric-samples</code> repository. We will be using the <code>first-network</code>
+sample. Let\'s open that sub-directory now.</p>
+<p>``` {.sourceCode .bash}
+cd fabric-samples/first-network</p>
+<pre><code>
+::: {.note}
+::: {.admonition-title}
+Note
+:::
+
+The supplied commands in this documentation
+
+:   **MUST** be run from your `first-network` sub-directory of the
+    `fabric-samples` repository clone. If you elect to run the commands
+    from a different location, the various provided scripts will be
+    unable to find the binaries.
+:::
+
+Want to run it now?
+-------------------
+
+We provide a fully annotated script - `byfn.sh` - that leverages these
+Docker images to quickly bootstrap a Hyperledger Fabric network
+comprised of 4 peers representing two different organizations, and an
+orderer node. It will also launch a container to run a scripted
+execution that will join peers to a channel, deploy and instantiate
+chaincode and drive execution of transactions against the deployed
+chaincode.
+
+Here\'s the help text for the `byfn.sh` script:
+
+``` {.sourceCode .bash}
+./byfn.sh --help
+Usage:
+byfn.sh -m up|down|restart|generate [-c &lt;channel name&gt;] [-t &lt;timeout&gt;] [-d &lt;delay&gt;] [-f &lt;docker-compose-file&gt;] [-s &lt;dbtype&gt;]
+byfn.sh -h|--help (print this message)
+  -m &lt;mode&gt; - one of 'up', 'down', 'restart' or 'generate'
+    - 'up' - bring up the network with docker-compose up
+    - 'down' - clear the network with docker-compose down
+    - 'restart' - restart the network
+    - 'generate' - generate required certificates and genesis block
+  -c &lt;channel name&gt; - channel name to use (defaults to &quot;mychannel&quot;)
+  -t &lt;timeout&gt; - CLI timeout duration in seconds (defaults to 10000)
+  -d &lt;delay&gt; - delay duration in seconds (defaults to 3)
+  -f &lt;docker-compose-file&gt; - specify which docker-compose file use (defaults to docker-compose-cli.yaml)
+  -s &lt;dbtype&gt; - the database backend to use: goleveldb (default) or couchdb
+  -l &lt;language&gt; - the chaincode language: golang (default) or node
+
+  Typically, one would first generate the required certificates and
+  genesis block, then bring up the network. e.g.:
+
+  byfn.sh -m generate -c mychannel
+  byfn.sh -m up -c mychannel -s couchdb
+</code></pre>
+
+<p>If you choose not to supply a channel name, then the script will use a
+default name of <code>mychannel</code>. The CLI timeout parameter (specified with
+the -t flag) is an optional value; if you choose not to set it, then
+your CLI container will exit after the default setting of 10000 seconds.</p>
+<h3 id="generate-network-artifacts">Generate Network Artifacts</h3>
+<p>Ready to give it a go? Okay then! Execute the following command:</p>
+<p>``` {.sourceCode .bash}
+./byfn.sh -m generate</p>
+<pre><code>
+You will see a brief description as to what will occur, along with a
+yes/no command line prompt. Respond with a `y` to execute the described
+action.
+
+``` {.sourceCode .bash}
+Generating certs and genesis block for with channel 'mychannel' and CLI timeout of '10000'
+Continue (y/n)?y
+proceeding ...
+/Users/xxx/dev/fabric-samples/bin/cryptogen
+
+##########################################################
+##### Generate certificates using cryptogen tool #########
+##########################################################
+org1.example.com
+2017-06-12 21:01:37.334 EDT [bccsp] GetDefault -&gt; WARN 001 Before using BCCSP, please call InitFactories(). Falling back to bootBCCSP.
+...
+
+/Users/xxx/dev/fabric-samples/bin/configtxgen
+##########################################################
+#########  Generating Orderer Genesis block ##############
+##########################################################
+2017-06-12 21:01:37.558 EDT [common/configtx/tool] main -&gt; INFO 001 Loading configuration
+2017-06-12 21:01:37.562 EDT [msp] getMspConfig -&gt; INFO 002 intermediate certs folder not found at [/Users/xxx/dev/byfn/crypto-config/ordererOrganizations/example.com/msp/intermediatecerts]. Skipping.: [stat /Users/xxx/dev/byfn/crypto-config/ordererOrganizations/example.com/msp/intermediatecerts: no such file or directory]
+...
+2017-06-12 21:01:37.588 EDT [common/configtx/tool] doOutputBlock -&gt; INFO 00b Generating genesis block
+2017-06-12 21:01:37.590 EDT [common/configtx/tool] doOutputBlock -&gt; INFO 00c Writing genesis block
+
+#################################################################
+### Generating channel configuration transaction 'channel.tx' ###
+#################################################################
+2017-06-12 21:01:37.634 EDT [common/configtx/tool] main -&gt; INFO 001 Loading configuration
+2017-06-12 21:01:37.644 EDT [common/configtx/tool] doOutputChannelCreateTx -&gt; INFO 002 Generating new channel configtx
+2017-06-12 21:01:37.645 EDT [common/configtx/tool] doOutputChannelCreateTx -&gt; INFO 003 Writing new channel tx
+
+#################################################################
+#######    Generating anchor peer update for Org1MSP   ##########
+#################################################################
+2017-06-12 21:01:37.674 EDT [common/configtx/tool] main -&gt; INFO 001 Loading configuration
+2017-06-12 21:01:37.678 EDT [common/configtx/tool] doOutputAnchorPeersUpdate -&gt; INFO 002 Generating anchor peer update
+2017-06-12 21:01:37.679 EDT [common/configtx/tool] doOutputAnchorPeersUpdate -&gt; INFO 003 Writing anchor peer update
+
+#################################################################
+#######    Generating anchor peer update for Org2MSP   ##########
+#################################################################
+2017-06-12 21:01:37.700 EDT [common/configtx/tool] main -&gt; INFO 001 Loading configuration
+2017-06-12 21:01:37.704 EDT [common/configtx/tool] doOutputAnchorPeersUpdate -&gt; INFO 002 Generating anchor peer update
+2017-06-12 21:01:37.704 EDT [common/configtx/tool] doOutputAnchorPeersUpdate -&gt; INFO 003 Writing anchor peer update
+</code></pre>
+
+<p>This first step generates all of the certificates and keys for our
+various network entities, the <code>genesis block</code> used to bootstrap the
+ordering service, and a collection of configuration transactions
+required to configure a [Channel]{role="ref"}.</p>
+<h3 id="bring-up-the-network">Bring Up the Network</h3>
+<p>Next, you can bring the network up with one of the following commands:</p>
+<p>``` {.sourceCode .bash}
+./byfn.sh -m up</p>
+<pre><code>
+The above command will compile Golang chaincode images and spin up the
+corresponding containers. Go is the default chaincode language, however
+there is also support for Node.js chaincode. If you\'d like to run
+through this tutorial with node chaincode, pass the following command
+instead:
+
+``` {.sourceCode .bash}
+# we use the -l flag to specify the chaincode language
+# forgoing the -l flag will default to Golang
+
+./byfn.sh -m up -l node
+</code></pre>
+
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>View the <a href="https://fabric-shim.github.io/ChaincodeStub.html">Hyperledger Fabric Shim</a></p>
+<p>:   documentation for more info on the node.js chaincode shim APIs.
+:::</p>
+<p>Once again, you will be prompted as to whether you wish to continue or
+abort. Respond with a <code>y</code>:</p>
+<p>``` {.sourceCode .bash}
+Starting with channel 'mychannel' and CLI timeout of '10000'
+Continue (y/n)?y
+proceeding ...
+Creating network "net_byfn" with the default driver
+Creating peer0.org1.example.com
+Creating peer1.org1.example.com
+Creating peer0.org2.example.com
+Creating orderer.example.com
+Creating peer1.org2.example.com
+Creating cli</p>
+<p><strong><em>_    </em></strong><strong>      _      <strong><em>_    </em></strong></strong>
+/ <strong><em>|  |</em>   <em>|    / \    |  _ \  |</em>   _|
+_</strong> \    | |     / _ \   | |<em>) |   | |
+ <strong><em>) |   | |    / </em></strong> \  |  _ &lt;    | |
+|____/    |</em>|   /<em>/   _\ |</em>| _\   |_|</p>
+<p>Channel name : mychannel
+Creating channel...</p>
+<pre><code>
+The logs will continue from there. This will launch all of the
+containers, and then drive a complete end-to-end application scenario.
+Upon successful completion, it should report the following in your
+terminal window:
+
+``` {.sourceCode .bash}
+2017-05-16 17:08:01.366 UTC [msp] GetLocalMSP -&gt; DEBU 004 Returning existing local MSP
+2017-05-16 17:08:01.366 UTC [msp] GetDefaultSigningIdentity -&gt; DEBU 005 Obtaining default signing identity
+2017-05-16 17:08:01.366 UTC [msp/identity] Sign -&gt; DEBU 006 Sign: plaintext: 0AB1070A6708031A0C08F1E3ECC80510...6D7963631A0A0A0571756572790A0161
+2017-05-16 17:08:01.367 UTC [msp/identity] Sign -&gt; DEBU 007 Sign: digest: E61DB37F4E8B0D32C9FE10E3936BA9B8CD278FAA1F3320B08712164248285C54
+Query Result: 90
+2017-05-16 17:08:15.158 UTC [main] main -&gt; INFO 008 Exiting.....
+===================== Query on PEER3 on channel 'mychannel' is successful =====================
+
+===================== All GOOD, BYFN execution completed =====================
+
+
+ _____   _   _   ____
+| ____| | \ | | |  _ \
+|  _|   |  \| | | | | |
+| |___  | |\  | | |_| |
+|_____| |_| \_| |____/
+</code></pre>
+
+<p>You can scroll through these logs to see the various transactions. If
+you don\'t get this result, then jump down to the
+[Troubleshoot]{role="ref"} section and let\'s see whether we can help
+you discover what went wrong.</p>
+<h3 id="bring-down-the-network">Bring Down the Network</h3>
+<p>Finally, let\'s bring it all down so we can explore the network setup
+one step at a time. The following will kill your containers, remove the
+crypto material and four artifacts, and delete the chaincode images from
+your Docker Registry:</p>
+<p>``` {.sourceCode .bash}
+./byfn.sh -m down</p>
+<pre><code>
+Once again, you will be prompted to continue, respond with a `y`:
+
+``` {.sourceCode .bash}
+Stopping with channel 'mychannel' and CLI timeout of '10000'
+Continue (y/n)?y
+proceeding ...
+WARNING: The CHANNEL_NAME variable is not set. Defaulting to a blank string.
+WARNING: The TIMEOUT variable is not set. Defaulting to a blank string.
+Removing network net_byfn
+468aaa6201ed
+...
+Untagged: dev-peer1.org2.example.com-mycc-1.0:latest
+Deleted: sha256:ed3230614e64e1c83e510c0c282e982d2b06d148b1c498bbdcc429e2b2531e91
+...
+</code></pre>
+
+<p>If you\'d like to learn more about the underlying tooling and bootstrap
+mechanics, continue reading. In these next sections we\'ll walk through
+the various steps and requirements to build a fully-functional
+Hyperledger Fabric network.</p>
+<h2 id="crypto-generator">Crypto Generator</h2>
+<p>We will use the <code>cryptogen</code> tool to generate the cryptographic material
+(x509 certs and signing keys) for our various network entities. These
+certificates are representative of identities, and they allow for
+sign/verify authentication to take place as our entities communicate and
+transact.</p>
+<h3 id="how-does-it-work">How does it work?</h3>
+<p>Cryptogen consumes a file - <code>crypto-config.yaml</code> - that contains the
+network topology and allows us to generate a set of certificates and
+keys for both the Organizations and the components that belong to those
+Organizations. Each Organization is provisioned a unique root
+certificate (<code>ca-cert</code>) that binds specific components (peers and
+orderers) to that Org. By assigning each Organization a unique CA
+certificate, we are mimicking a typical network where a participating
+[Member]{role="ref"} would use its own Certificate Authority.
+Transactions and communications within Hyperledger Fabric are signed by
+an entity\'s private key (<code>keystore</code>), and then verified by means of a
+public key (<code>signcerts</code>).</p>
+<p>You will notice a <code>count</code> variable within this file. We use this to
+specify the number of peers per Organization; in our case there are two
+peers per Org. We won\'t delve into the minutiae of <a href="https://en.wikipedia.org/wiki/Public_key_infrastructure">x.509 certificates
+and public key
+infrastructure</a>
+right now. If you\'re interested, you can peruse these topics on your
+own time.</p>
+<p>Before running the tool, let\'s take a quick look at a snippet from the
+<code>crypto-config.yaml</code>. Pay specific attention to the \"Name\", \"Domain\"
+and \"Specs\" parameters under the <code>OrdererOrgs</code> header:</p>
+<p>``` {.sourceCode .bash}
+OrdererOrgs:</p>
+<h1 id="-">---------------------------------------------------------</h1>
+<h1 id="orderer">Orderer</h1>
+<h1 id="-_1">--------------------------------------------------------</h1>
+<ul>
+<li>Name: Orderer
+  Domain: example.com
+  CA:
+      Country: US
+      Province: California
+      Locality: San Francisco
+  #   OrganizationalUnit: Hyperledger Fabric
+  #   StreetAddress: address for org # default nil
+  #   PostalCode: postalCode for org # default nil
+  # ------------------------------------------------------
+  # "Specs" - See PeerOrgs below for complete description</li>
+</ul>
+<h1 id="-_2">-----------------------------------------------------</h1>
+<p>Specs:
+    - Hostname: orderer</p>
+<h1 id="-_3">-------------------------------------------------------</h1>
+<h1 id="peerorgs-definition-of-organizations-managing-peer-nodes">"PeerOrgs" - Definition of organizations managing peer nodes</h1>
+<h1 id="-_4">------------------------------------------------------</h1>
+<p>PeerOrgs:</p>
+<h1 id="-_5">-----------------------------------------------------</h1>
+<h1 id="org1">Org1</h1>
+<h1 id="-_6">----------------------------------------------------</h1>
+<ul>
+<li>Name: Org1
+  Domain: org1.example.com</li>
+</ul>
+<pre><code>
+The naming convention for a network entity is as follows
+-\&quot;{{.Hostname}}.{{.Domain}}\&quot;. So using our ordering node as a
+reference point, we are left with an ordering node named
+-`orderer.example.com` that is tied to an MSP ID of `Orderer`. This file
+contains extensive documentation on the definitions and syntax. You can
+also refer to the [msp]{role=&quot;doc&quot;} documentation for a deeper dive on
+MSP.
+
+After we run the `cryptogen` tool, the generated certificates and keys
+will be saved to a folder titled `crypto-config`.
+
+Configuration Transaction Generator
+-----------------------------------
+
+The `configtxgen tool` is used to create four configuration artifacts:
+
+&gt; -   orderer `genesis block`,
+&gt; -   channel `configuration transaction`,
+&gt; -   and two `anchor peer transactions` - one for each Peer Org.
+
+Please see [configtxgen]{role=&quot;doc&quot;} for a complete description of this
+tool\'s functionality.
+
+The orderer block is the [Genesis-Block]{role=&quot;ref&quot;} for the ordering
+service, and the channel configuration transaction file is broadcast to
+the orderer at [Channel]{role=&quot;ref&quot;} creation time. The anchor peer
+transactions, as the name might suggest, specify each Org\'s
+[Anchor-Peer]{role=&quot;ref&quot;} on this channel.
+
+### How does it work?
+
+Configtxgen consumes a file - `configtx.yaml` - that contains the
+definitions for the sample network. There are three members - one
+Orderer Org (`OrdererOrg`) and two Peer Orgs (`Org1` &amp; `Org2`) each
+managing and maintaining two peer nodes. This file also specifies a
+consortium - `SampleConsortium` - consisting of our two Peer Orgs. Pay
+specific attention to the \&quot;Profiles\&quot; section at the top of this file.
+You will notice that we have two unique headers. One for the orderer
+genesis block - `TwoOrgsOrdererGenesis` - and one for our channel -
+`TwoOrgsChannel`.
+
+These headers are important, as we will pass them in as arguments when
+we create our artifacts.
+
+::: {.note}
+::: {.admonition-title}
+Note
+:::
+
+Notice that our `SampleConsortium` is defined in
+
+:   the system-level profile and then referenced by our channel-level
+    profile. Channels exist within the purview of a consortium, and all
+    consortia must be defined in the scope of the network at large.
+:::
+
+This file also contains two additional specifications that are worth
+noting. Firstly, we specify the anchor peers for each Peer Org
+(`peer0.org1.example.com` &amp; `peer0.org2.example.com`). Secondly, we
+point to the location of the MSP directory for each member, in turn
+allowing us to store the root certificates for each Org in the orderer
+genesis block. This is a critical concept. Now any network entity
+communicating with the ordering service can have its digital signature
+verified.
+
+Run the tools
+-------------
+
+You can manually generate the certificates/keys and the various
+configuration artifacts using the `configtxgen` and `cryptogen`
+commands. Alternately, you could try to adapt the byfn.sh script to
+accomplish your objectives.
+
+### Manually generate the artifacts
+
+You can refer to the `generateCerts` function in the byfn.sh script for
+the commands necessary to generate the certificates that will be used
+for your network configuration as defined in the `crypto-config.yaml`
+file. However, for the sake of convenience, we will also provide a
+reference here.
+
+First let\'s run the `cryptogen` tool. Our binary is in the `bin`
+directory, so we need to provide the relative path to where the tool
+resides.
+
+``` {.sourceCode .bash}
+../bin/cryptogen generate --config=./crypto-config.yaml
+</code></pre>
+
+<p>You should see the following in your terminal:</p>
+<p>``` {.sourceCode .bash}
+org1.example.com
+org2.example.com</p>
+<pre><code>
+The certs and keys (i.e. the MSP material) will be output into a
+directory - `crypto-config` -at the root of the `first-network`
+directory.
+
+Next, we need to tell the `configtxgen` tool where to look for the
+`configtx.yaml` file that it needs to ingest. We will tell it look in
+our present working directory:
+
+``` {.sourceCode .bash}
+export FABRIC_CFG_PATH=$PWD
+</code></pre>
+
+<p>Then, we\'ll invoke the <code>configtxgen</code> tool to create the orderer genesis
+block:</p>
+<p>``` {.sourceCode .bash}
+../bin/configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./channel-artifacts/genesis.block</p>
+<pre><code>
+You should see an output similar to the following in your terminal:
+
+``` {.sourceCode .bash}
+2017-10-26 19:21:56.301 EDT [common/tools/configtxgen] main -&gt; INFO 001 Loading configuration
+2017-10-26 19:21:56.309 EDT [common/tools/configtxgen] doOutputBlock -&gt; INFO 002 Generating genesis block
+2017-10-26 19:21:56.309 EDT [common/tools/configtxgen] doOutputBlock -&gt; INFO 003 Writing genesis block
+</code></pre>
+
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>The orderer genesis block and the subsequent artifacts we are about to create</p>
+<p>:   will be output into the <code>channel-artifacts</code> directory at the root of
+    this project.
+:::</p>
+<p>::: {#createchanneltx}</p>
+<h3 id="create-a-channel-configuration-transaction">Create a Channel Configuration Transaction</h3>
+<p>:::</p>
+<p>Next, we need to create the channel transaction artifact. Be sure to
+replace <code>$CHANNEL_NAME</code> or set <code>CHANNEL_NAME</code> as an environment variable
+that can be used throughout these instructions:</p>
+<p>``` {.sourceCode .bash}</p>
+<h1 id="the-channeltx-artifact-contains-the-definitions-for-our-sample-channel">The channel.tx artifact contains the definitions for our sample channel</h1>
+<p>export CHANNEL_NAME=mychannel  &amp;&amp; ../bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID $CHANNEL_NAME</p>
+<pre><code>
+You should see an ouput similar to the following in your terminal:
+
+``` {.sourceCode .bash}
+2017-10-26 19:24:05.324 EDT [common/tools/configtxgen] main -&gt; INFO 001 Loading configuration
+2017-10-26 19:24:05.329 EDT [common/tools/configtxgen] doOutputChannelCreateTx -&gt; INFO 002 Generating new channel configtx
+2017-10-26 19:24:05.329 EDT [common/tools/configtxgen] doOutputChannelCreateTx -&gt; INFO 003 Writing new channel tx
+</code></pre>
+
+<p>Next, we will define the anchor peer for Org1 on the channel that we are
+constructing. Again, be sure to replace <code>$CHANNEL_NAME</code> or set the
+environment variable for the following commands. The terminal output
+will mimic that of the channel transaction artifact:</p>
+<p>``` {.sourceCode .bash}
+../bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP</p>
+<pre><code>
+Now, we will define the anchor peer for Org2 on the same channel:
+
+``` {.sourceCode .bash}
+../bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org2MSP
+</code></pre>
+
+<h2 id="start-the-network">Start the network</h2>
+<p>We will leverage a docker-compose script to spin up our network. The
+docker-compose file references the images that we have previously
+downloaded, and bootstraps the orderer with our previously generated
+<code>genesis.block</code>.</p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>Before launching the network, open the <code>docker-compose-cli.yaml</code> file</p>
+<p>:   and comment out the script.sh in the CLI container. Your
+    docker-compose should be modified to look like this:
+:::</p>
+<p>``` {.sourceCode .bash}
+working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer</p>
+<h1 id="command-binbash-c-scriptsscriptsh-channel_name-sleep-timeout">command: /bin/bash -c './scripts/script.sh ${CHANNEL_NAME}; sleep $TIMEOUT'</h1>
+<p>volumes</p>
+<pre><code>
+If left uncommented, that script will exercise all of the CLI commands
+when the network is started, as we describe in the
+[behind-scenes]{role=&quot;ref&quot;} section. However, we want to go through the
+commands manually in order to expose the syntax and functionality of
+each call.
+
+The CLI timeout defaults to 10000 seconds. If you need the container
+available for longer, you can overwrite this setting by passing in a
+value for the `TIMEOUT` environment variable.
+
+Start your network:
+
+``` {.sourceCode .bash}
+# if you need the CLI accessible beyond 10000 seconds, pass in TIMEOUT=&lt;your_desired_value&gt;
+# after the CHANNEL_NAME variable
+
+CHANNEL_NAME=$CHANNEL_NAME docker-compose -f docker-compose-cli.yaml up -d
+</code></pre>
+
+<p>If you want to see the realtime logs for your network, then do not
+supply the <code>-d</code> flag. If you let the logs stream, then you will need to
+open a second terminal to execute the CLI calls.</p>
+<p>::: {#peerenvvars}</p>
+<h3 id="environment-variables">Environment variables</h3>
+<p>:::</p>
+<p>For the following CLI commands against <code>peer0.org1.example.com</code> to work,
+we need to preface our commands with the four environment variables
+given below. These variables for <code>peer0.org1.example.com</code> are baked into
+the CLI container, therefore we can operate without passing them.
+<strong>HOWEVER</strong>, if you want to send calls to other peers or the orderer,
+then you will need to provide these values accordingly. Inspect the
+<code>docker-compose-base.yaml</code> for the specific paths:</p>
+<p>``` {.sourceCode .bash}</p>
+<h1 id="environment-variables-for-peer0">Environment variables for PEER0</h1>
+<p>CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+CORE_PEER_LOCALMSPID="Org1MSP"
+CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt</p>
+<pre><code>
+::: {#createandjoin}
+### Create &amp; Join Channel
+:::
+
+Recall that we created the channel configuration transaction using the
+`configtxgen` tool in the [createchanneltx]{role=&quot;ref&quot;} section, above.
+You can repeat that process to create additional channel configuration
+transactions, using the same or different profiles in the
+`configtx.yaml` that you pass to the `configtxgen` tool. Then you can
+repeat the process defined in this section to establish those other
+channels in your network.
+
+We will enter the CLI container using the `docker exec` command:
+
+``` {.sourceCode .bash}
+docker exec -it cli bash
+</code></pre>
+
+<p>If successful you should see the following:</p>
+<p>``` {.sourceCode .bash}
+root@0d78bb69300d:/opt/gopath/src/github.com/hyperledger/fabric/peer#</p>
+<pre><code>
+Next, we are going to pass in the generated channel configuration
+transaction artifact that we created in the
+[createchanneltx]{role=&quot;ref&quot;} section (we called it `channel.tx`) to the
+orderer as part of the create channel request.
+
+We specify our channel name with the `-c` flag and our channel
+configuration transaction with the `-f` flag. In this case it is
+`channel.tx`, however you can mount your own configuration transaction
+with a different name. Once again we will set the `CHANNEL_NAME`
+environment variable within our CLI container so that we don\'t have to
+explicitly pass this argument:
+
+``` {.sourceCode .bash}
+export CHANNEL_NAME=mychannel
+
+# the channel.tx file is mounted in the channel-artifacts directory within your CLI container
+# as a result, we pass the full path for the file
+# we also pass the path for the orderer ca-cert in order to verify the TLS handshake
+# be sure to export or replace the $CHANNEL_NAME variable appropriately
+
+peer channel create -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/channel.tx --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+</code></pre>
+
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>Notice the <code>-- cafile</code> that we pass as part of this command. It is</p>
+<p>:   the local path to the orderer\'s root cert, allowing us to verify
+    the TLS handshake.
+:::</p>
+<p>This command returns a genesis block - <code>&lt;channel-ID.block&gt;</code> - which we
+will use to join the channel. It contains the configuration information
+specified in <code>channel.tx</code> If you have not made any modifications to the
+default channel name, then the command will return you a proto titled
+<code>mychannel.block</code>.</p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>You will remain in the CLI container for the remainder of</p>
+<p>:   these manual commands. You must also remember to preface all
+    commands with the corresponding environment variables when targeting
+    a peer other than <code>peer0.org1.example.com</code>.
+:::</p>
+<p>Now let\'s join <code>peer0.org1.example.com</code> to the channel.</p>
+<p>``` {.sourceCode .bash}</p>
+<h1 id="by-default-this-joins-peer0org1examplecom-only">By default, this joins <code>peer0.org1.example.com</code> only</h1>
+<h1 id="the-was-returned-by-the-previous-command">the <channel-ID.block> was returned by the previous command</h1>
+<h1 id="if-you-have-not-modified-the-channel-name-you-will-join-with-mychannelblock">if you have not modified the channel name, you will join with mychannel.block</h1>
+<h1 id="if-you-have-created-a-different-channel-name-then-pass-in-the-appropriately-named-block">if you have created a different channel name, then pass in the appropriately named block</h1>
+<p>peer channel join -b mychannel.block</p>
+<pre><code>
+You can make other peers join the channel as necessary by making
+appropriate changes in the four environment variables we used in the
+[peerenvvars]{role=&quot;ref&quot;} section, above.
+
+Rather than join every peer, we will simply join
+`peer0.org2.example.com` so that we can properly update the anchor peer
+definitions in our channel. Since we are overriding the default
+environment variables baked into the CLI container, this full command
+will be the following:
+
+``` {.sourceCode .bash}
+CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp CORE_PEER_ADDRESS=peer0.org2.example.com:7051 CORE_PEER_LOCALMSPID=&quot;Org2MSP&quot; CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt peer channel join -b mychannel.block
+</code></pre>
+
+<p>Alternatively, you could choose to set these environment variables
+individually rather than passing in the entire string. Once they\'ve
+been set, you simply need to issue the <code>peer channel join</code> command again
+and the CLI container will act on behalf of <code>peer0.org2.example.com</code>.</p>
+<h3 id="update-the-anchor-peers">Update the anchor peers</h3>
+<p>The following commands are channel updates and they will propagate to
+the definition of the channel. In essence, we adding additional
+configuration information on top of the channel\'s genesis block. Note
+that we are not modifying the genesis block, but simply adding deltas
+into the chain that will define the anchor peers.</p>
+<p>Update the channel definition to define the anchor peer for Org1 as
+<code>peer0.org1.example.com</code>:</p>
+<p>``` {.sourceCode .bash}
+peer channel update -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/Org1MSPanchors.tx --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem</p>
+<pre><code>
+Now update the channel definition to define the anchor peer for Org2 as
+`peer0.org2.example.com`. Identically to the `peer channel join` command
+for the Org2 peer, we will need to preface this call with the
+appropriate environment variables.
+
+``` {.sourceCode .bash}
+CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp CORE_PEER_ADDRESS=peer0.org2.example.com:7051 CORE_PEER_LOCALMSPID=&quot;Org2MSP&quot; CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt peer channel update -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/Org2MSPanchors.tx --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+</code></pre>
+
+<h3 id="install-instantiate-chaincode">Install &amp; Instantiate Chaincode</h3>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>We will utilize a simple existing chaincode. To learn how to write</p>
+<p>:   your own chaincode, see the [chaincode4ade]{role="doc"} tutorial.
+:::</p>
+<p>Applications interact with the blockchain ledger through <code>chaincode</code>. As
+such we need to install the chaincode on every peer that will execute
+and endorse our transactions, and then instantiate the chaincode on the
+channel.</p>
+<p>First, install the sample Go or Node.js chaincode onto one of the four
+peer nodes. These commands place the specified source code flavor onto
+our peer\'s filesystem.</p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>You can only install one version of the source code per chaincode name</p>
+<p>:   and version. The source code exists on the peer\'s file system in
+    the context of chaincode name and version; it is language agnostic.
+    Similarly the instantiated chaincode container will be reflective of
+    whichever language has been installed on the peer.
+:::</p>
+<p><strong>Golang</strong></p>
+<p>``` {.sourceCode .bash}</p>
+<h1 id="this-installs-the-go-chaincode">this installs the Go chaincode</h1>
+<p>peer chaincode install -n mycc -v 1.0 -p github.com/chaincode/chaincode_example02/go/</p>
+<pre><code>
+**Node.js**
+
+``` {.sourceCode .bash}
+# this installs the Node.js chaincode
+# make note of the -l flag; we use this to specify the language
+peer chaincode install -n mycc -v 1.0 -l node -p /opt/gopath/src/github.com/chaincode/chaincode_example02/node/
+</code></pre>
+
+<p>Next, instantiate the chaincode on the channel. This will initialize the
+chaincode on the channel, set the endorsement policy for the chaincode,
+and launch a chaincode container for the targeted peer. Take note of the
+<code>-P</code> argument. This is our policy where we specify the required level of
+endorsement for a transaction against this chaincode to be validated.</p>
+<p>In the command below you'll notice that we specify our policy as
+<code>-P "OR ('Org0MSP.member','Org1MSP.member')"</code>. This means that we need
+"endorsement" from a peer belonging to Org1 <strong>OR</strong> Org2 (i.e. only one
+endorsement). If we changed the syntax to <code>AND</code> then we would need two
+endorsements.</p>
+<p><strong>Golang</strong></p>
+<p>``` {.sourceCode .bash}</p>
+<h1 id="be-sure-to-replace-the-channel_name-environment-variable-if-you-have-not-exported-it">be sure to replace the $CHANNEL_NAME environment variable if you have not exported it</h1>
+<h1 id="if-you-did-not-install-your-chaincode-with-a-name-of-mycc-then-modify-that-argument-as-well">if you did not install your chaincode with a name of mycc, then modify that argument as well</h1>
+<p>peer chaincode instantiate -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n mycc -v 1.0 -c '{"Args":["init","a", "100", "b","200"]}' -P "OR ('Org1MSP.member','Org2MSP.member')"</p>
+<pre><code>
+**Node.js**
+
+::: {.note}
+::: {.admonition-title}
+Note
+:::
+
+The instantiation of the Node.js chaincode will take roughly a minute.
+
+:   The command is not hanging; rather it is installing the fabric-shim
+    layer as the image is being compiled.
+:::
+
+``` {.sourceCode .bash}
+# be sure to replace the $CHANNEL_NAME environment variable if you have not exported it
+# if you did not install your chaincode with a name of mycc, then modify that argument as well
+# notice that we must pass the -l flag after the chaincode name to identify the language
+
+peer chaincode instantiate -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n mycc -l node -v 1.0 -c '{&quot;Args&quot;:[&quot;init&quot;,&quot;a&quot;, &quot;100&quot;, &quot;b&quot;,&quot;200&quot;]}' -P &quot;OR ('Org1MSP.member','Org2MSP.member')&quot;
+</code></pre>
+
+<p>See the <a href="http://hyperledger-fabric.readthedocs.io/en/latest/endorsement-policies.html">endorsement
+policies</a>
+documentation for more details on policy implementation.</p>
+<p>If you want additional peers to interact with ledger, then you will need
+to join them to the channel, and install the same name, version and
+language of the chaincode source onto the appropriate peer\'s
+filesystem. A chaincode container will be launched for each peer as soon
+as they try to interact with that specific chaincode. Again, be
+cognizant of the fact that the Node.js images will be slower to compile.</p>
+<p>Once the chaincode has been instantiated on the channel, we can forgo
+the <code>l</code> flag. We need only pass in the channel identifier and name of
+the chaincode.</p>
+<h3 id="query">Query</h3>
+<p>Let\'s query for the value of <code>a</code> to make sure the chaincode was
+properly instantiated and the state DB was populated. The syntax for
+query is as follows:</p>
+<p>``` {.sourceCode .bash}</p>
+<h1 id="be-sure-to-set-the-c-and-n-flags-appropriately">be sure to set the -C and -n flags appropriately</h1>
+<p>peer chaincode query -C $CHANNEL_NAME -n mycc -c '{"Args":["query","a"]}'</p>
+<pre><code>
+### Invoke
+
+Now let\'s move `10` from `a` to `b`. This transaction will cut a new
+block and update the state DB. The syntax for invoke is as follows:
+
+``` {.sourceCode .bash}
+# be sure to set the -C and -n flags appropriately
+
+peer chaincode invoke -o orderer.example.com:7050  --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem  -C $CHANNEL_NAME -n mycc -c '{&quot;Args&quot;:[&quot;invoke&quot;,&quot;a&quot;,&quot;b&quot;,&quot;10&quot;]}'
+</code></pre>
+
+<h3 id="query_1">Query</h3>
+<p>Let\'s confirm that our previous invocation executed properly. We
+initialized the key <code>a</code> with a value of <code>100</code> and just removed <code>10</code> with
+our previous invocation. Therefore, a query against <code>a</code> should reveal
+<code>90</code>. The syntax for query is as follows.</p>
+<p>``` {.sourceCode .bash}</p>
+<h1 id="be-sure-to-set-the-c-and-n-flags-appropriately_1">be sure to set the -C and -n flags appropriately</h1>
+<p>peer chaincode query -C $CHANNEL_NAME -n mycc -c '{"Args":["query","a"]}'</p>
+<pre><code>
+We should see the following:
+
+``` {.sourceCode .bash}
+Query Result: 90
+</code></pre>
+
+<p>Feel free to start over and manipulate the key value pairs and
+subsequent invocations.</p>
+<p>::: {#behind-scenes}</p>
+<h3 id="whats-happening-behind-the-scenes">What\'s happening behind the scenes?</h3>
+<p>:::</p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>These steps describe the scenario in which</p>
+<p>:   <code>script.sh</code> is not commented out in the docker-compose-cli.yaml
+    file. Clean your network with <code>./byfn.sh -m down</code> and ensure this
+    command is active. Then use the same docker-compose prompt to launch
+    your network again
+:::</p>
+<ul>
+<li>A script - <code>script.sh</code> - is baked inside the CLI container. The
+    script drives the <code>createChannel</code> command against the supplied
+    channel name and uses the channel.tx file for channel configuration.</li>
+<li>The output of <code>createChannel</code> is a genesis block
+    -<code>&lt;your_channel_name&gt;.block</code> - which gets stored on the peers\' file
+    systems and contains the channel configuration specified from
+    channel.tx.</li>
+<li>The <code>joinChannel</code> command is exercised for all four peers, which
+    takes as input the previously generated genesis block. This command
+    instructs the peers to join <code>&lt;your_channel_name&gt;</code> and create a chain
+    starting with <code>&lt;your_channel_name&gt;.block</code>.</li>
+<li>Now we have a channel consisting of four peers, and two
+    organizations. This is our <code>TwoOrgsChannel</code> profile.</li>
+<li><code>peer0.org1.example.com</code> and <code>peer1.org1.example.com</code> belong to
+    Org1; <code>peer0.org2.example.com</code> and <code>peer1.org2.example.com</code> belong
+    to Org2</li>
+<li>These relationships are defined through the <code>crypto-config.yaml</code> and
+    the MSP path is specified in our docker compose.</li>
+<li>The anchor peers for Org1MSP (<code>peer0.org1.example.com</code>) and Org2MSP
+    (<code>peer0.org2.example.com</code>) are then updated. We do this by passing
+    the <code>Org1MSPanchors.tx</code> and <code>Org2MSPanchors.tx</code> artifacts to the
+    ordering service along with the name of our channel.</li>
+<li>A chaincode - <strong>chaincode_example02</strong> - is installed on
+    <code>peer0.org1.example.com</code> and <code>peer0.org2.example.com</code></li>
+<li>The chaincode is then \"instantiated\" on <code>peer0.org2.example.com</code>.
+    Instantiation adds the chaincode to the channel, starts the
+    container for the target peer, and initializes the key value pairs
+    associated with the chaincode. The initial values for this example
+    are [\"a\",\"100\" \"b\",\"200\"]. This \"instantiation\" results
+    in a container by the name of <code>dev-peer0.org2.example.com-mycc-1.0</code>
+    starting.</li>
+<li>The instantiation also passes in an argument for the endorsement
+    policy. The policy is defined as
+    <code>-P "OR    ('Org1MSP.member','Org2MSP.member')"</code>, meaning that any
+    transaction must be endorsed by a peer tied to Org1 or Org2.</li>
+<li>A query against the value of \"a\" is issued to
+    <code>peer0.org1.example.com</code>. The chaincode was previously installed on
+    <code>peer0.org1.example.com</code>, so this will start a container for Org1
+    peer0 by the name of <code>dev-peer0.org1.example.com-mycc-1.0</code>. The
+    result of the query is also returned. No write operations have
+    occurred, so a query against \"a\" will still return a value of
+    \"100\".</li>
+<li>An invoke is sent to <code>peer0.org1.example.com</code> to move \"10\" from
+    \"a\" to \"b\"</li>
+<li>The chaincode is then installed on <code>peer1.org2.example.com</code></li>
+<li>A query is sent to <code>peer1.org2.example.com</code> for the value of \"a\".
+    This starts a third chaincode container by the name of
+    <code>dev-peer1.org2.example.com-mycc-1.0</code>. A value of 90 is returned,
+    correctly reflecting the previous transaction during which the value
+    for key \"a\" was modified by 10.</li>
+</ul>
+<h3 id="what-does-this-demonstrate">What does this demonstrate?</h3>
+<p>Chaincode <strong>MUST</strong> be installed on a peer in order for it to
+successfully perform read/write operations against the ledger.
+Furthermore, a chaincode container is not started for a peer until an
+<code>init</code> or traditional transaction - read/write - is performed against
+that chaincode (e.g. query for the value of \"a\"). The transaction
+causes the container to start. Also, all peers in a channel maintain an
+exact copy of the ledger which comprises the blockchain to store the
+immutable, sequenced record in blocks, as well as a state database to
+maintain a snapshot of the current state. This includes those peers that
+do not have chaincode installed on them (like <code>peer1.org1.example.com</code>
+in the above example) . Finally, the chaincode is accessible after it is
+installed (like <code>peer1.org2.example.com</code> in the above example) because
+it has already been instantiated.</p>
+<h3 id="how-do-i-see-these-transactions">How do I see these transactions?</h3>
+<p>Check the logs for the CLI Docker container.</p>
+<p>``` {.sourceCode .bash}
+docker logs -f cli</p>
+<pre><code>
+You should see the following output:
+
+``` {.sourceCode .bash}
+2017-05-16 17:08:01.366 UTC [msp] GetLocalMSP -&gt; DEBU 004 Returning existing local MSP
+2017-05-16 17:08:01.366 UTC [msp] GetDefaultSigningIdentity -&gt; DEBU 005 Obtaining default signing identity
+2017-05-16 17:08:01.366 UTC [msp/identity] Sign -&gt; DEBU 006 Sign: plaintext: 0AB1070A6708031A0C08F1E3ECC80510...6D7963631A0A0A0571756572790A0161
+2017-05-16 17:08:01.367 UTC [msp/identity] Sign -&gt; DEBU 007 Sign: digest: E61DB37F4E8B0D32C9FE10E3936BA9B8CD278FAA1F3320B08712164248285C54
+Query Result: 90
+2017-05-16 17:08:15.158 UTC [main] main -&gt; INFO 008 Exiting.....
+===================== Query on PEER3 on channel 'mychannel' is successful =====================
+
+===================== All GOOD, BYFN execution completed =====================
+
+
+ _____   _   _   ____
+| ____| | \ | | |  _ \
+|  _|   |  \| | | | | |
+| |___  | |\  | | |_| |
+|_____| |_| \_| |____/
+</code></pre>
+
+<p>You can scroll through these logs to see the various transactions.</p>
+<h3 id="how-can-i-see-the-chaincode-logs">How can I see the chaincode logs?</h3>
+<p>Inspect the individual chaincode containers to see the separate
+transactions executed against each container. Here is the combined
+output from each container:</p>
+<p>``` {.sourceCode .bash}
+$ docker logs dev-peer0.org2.example.com-mycc-1.0
+04:30:45.947 [BCCSP_FACTORY] DEBU : Initialize BCCSP [SW]
+ex02 Init
+Aval = 100, Bval = 200</p>
+<p>$ docker logs dev-peer0.org1.example.com-mycc-1.0
+04:31:10.569 [BCCSP_FACTORY] DEBU : Initialize BCCSP [SW]
+ex02 Invoke
+Query Response:{"Name":"a","Amount":"100"}
+ex02 Invoke
+Aval = 90, Bval = 210</p>
+<p>$ docker logs dev-peer1.org2.example.com-mycc-1.0
+04:31:30.420 [BCCSP_FACTORY] DEBU : Initialize BCCSP [SW]
+ex02 Invoke
+Query Response:{"Name":"a","Amount":"90"}</p>
+<pre><code>
+Understanding the Docker Compose topology
+-----------------------------------------
+
+The BYFN sample offers us two flavors of Docker Compose files, both of
+which are extended from the `docker-compose-base.yaml` (located in the
+`base` folder). Our first flavor, `docker-compose-cli.yaml`, provides us
+with a CLI container, along with an orderer, four peers. We use this
+file for the entirety of the instructions on this page.
+
+::: {.note}
+::: {.admonition-title}
+Note
+:::
+
+the remainder of this section covers a docker-compose file designed for the
+
+:   SDK. Refer to the [Node
+    SDK](https://github.com/hyperledger/fabric-sdk-node) repo for
+    details on running these tests.
+:::
+
+The second flavor, `docker-compose-e2e.yaml`, is constructed to run
+end-to-end tests using the Node.js SDK. Aside from functioning with the
+SDK, its primary differentiation is that there are containers for the
+fabric-ca servers. As a result, we are able to send REST calls to the
+organizational CAs for user registration and enrollment.
+
+If you want to use the `docker-compose-e2e.yaml` without first running
+the byfn.sh script, then we will need to make four slight modifications.
+We need to point to the private keys for our Organization\'s CA\'s. You
+can locate these values in your crypto-config folder. For example, to
+locate the private key for Org1 we would follow this path -
+`crypto-config/peerOrganizations/org1.example.com/ca/`. The private key
+is a long hash value followed by `_sk`. The path for Org2 would be -
+`crypto-config/peerOrganizations/org2.example.com/ca/`.
+
+In the `docker-compose-e2e.yaml` update the
+FABRIC\_CA\_SERVER\_TLS\_KEYFILE variable for ca0 and ca1. You also need
+to edit the path that is provided in the command to start the ca server.
+You are providing the same private key twice for each CA container.
+
+Using CouchDB
+-------------
+
+The state database can be switched from the default (goleveldb) to
+CouchDB. The same chaincode functions are available with CouchDB,
+however, there is the added ability to perform rich and complex queries
+against the state database data content contingent upon the chaincode
+data being modeled as JSON.
+
+To use CouchDB instead of the default database (goleveldb), follow the
+same procedures outlined earlier for generating the artifacts, except
+when starting the network pass `docker-compose-couch.yaml` as well:
+
+``` {.sourceCode .bash}
+CHANNEL_NAME=$CHANNEL_NAME TIMEOUT=&lt;pick_a_value&gt; docker-compose -f docker-compose-cli.yaml -f docker-compose-couch.yaml up -d
+</code></pre>
+
+<p><strong>chaincode_example02</strong> should now work using CouchDB underneath.</p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>If you choose to implement mapping of the fabric-couchdb container</p>
+<p>:   port to a host port, please make sure you are aware of the security
+    implications. Mapping of the port in a development environment makes
+    the CouchDB REST API available, and allows the visualization of the
+    database via the CouchDB web interface (Fauxton). Production
+    environments would likely refrain from implementing port mapping in
+    order to restrict outside access to the CouchDB containers.
+:::</p>
+<p>You can use <strong>chaincode_example02</strong> chaincode against the CouchDB state
+database using the steps outlined above, however in order to exercise
+the CouchDB query capabilities you will need to use a chaincode that has
+data modeled as JSON, (e.g. <strong>marbles02</strong>). You can locate the
+<strong>marbles02</strong> chaincode in the <code>fabric/examples/chaincode/go</code> directory.</p>
+<p>We will follow the same process to create and join the channel as
+outlined in the [createandjoin]{role="ref"} section above. Once you have
+joined your peer(s) to the channel, use the following steps to interact
+with the <strong>marbles02</strong> chaincode:</p>
+<ul>
+<li>Install and instantiate the chaincode on <code>peer0.org1.example.com</code>:</li>
+</ul>
+<p>``` {.sourceCode .bash}</p>
+<h1 id="be-sure-to-modify-the-channel_name-variable-accordingly-for-the-instantiate-command">be sure to modify the $CHANNEL_NAME variable accordingly for the instantiate command</h1>
+<p>peer chaincode install -n marbles -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/marbles02
+peer chaincode instantiate -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n marbles -v 1.0 -c '{"Args":["init"]}' -P "OR ('Org0MSP.member','Org1MSP.member')"</p>
+<pre><code>
+-   Create some marbles and move them around:
+
+``` {.sourceCode .bash}
+# be sure to modify the $CHANNEL_NAME variable accordingly
+
+peer chaincode invoke -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n marbles -c '{&quot;Args&quot;:[&quot;initMarble&quot;,&quot;marble1&quot;,&quot;blue&quot;,&quot;35&quot;,&quot;tom&quot;]}'
+peer chaincode invoke -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n marbles -c '{&quot;Args&quot;:[&quot;initMarble&quot;,&quot;marble2&quot;,&quot;red&quot;,&quot;50&quot;,&quot;tom&quot;]}'
+peer chaincode invoke -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n marbles -c '{&quot;Args&quot;:[&quot;initMarble&quot;,&quot;marble3&quot;,&quot;blue&quot;,&quot;70&quot;,&quot;tom&quot;]}'
+peer chaincode invoke -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n marbles -c '{&quot;Args&quot;:[&quot;transferMarble&quot;,&quot;marble2&quot;,&quot;jerry&quot;]}'
+peer chaincode invoke -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n marbles -c '{&quot;Args&quot;:[&quot;transferMarblesBasedOnColor&quot;,&quot;blue&quot;,&quot;jerry&quot;]}'
+peer chaincode invoke -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n marbles -c '{&quot;Args&quot;:[&quot;delete&quot;,&quot;marble1&quot;]}'
+</code></pre>
+
+<ul>
+<li>
+<p>If you chose to map the CouchDB ports in docker-compose, you can now
+    view the state database through the CouchDB web interface (Fauxton)
+    by opening a browser and navigating to the following URL:</p>
+<p><code>http://localhost:5984/_utils</code></p>
+</li>
+</ul>
+<p>You should see a database named <code>mychannel</code> (or your unique channel
+name) and the documents inside it.</p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>For the below commands, be sure to update the \$CHANNEL_NAME variable
+appropriately.
+:::</p>
+<p>You can run regular queries from the CLI (e.g. reading <code>marble2</code>):</p>
+<p>``` {.sourceCode .bash}
+peer chaincode query -C $CHANNEL_NAME -n marbles -c '{"Args":["readMarble","marble2"]}'</p>
+<pre><code>
+The output should display the details of `marble2`:
+
+``` {.sourceCode .bash}
+Query Result: {&quot;color&quot;:&quot;red&quot;,&quot;docType&quot;:&quot;marble&quot;,&quot;name&quot;:&quot;marble2&quot;,&quot;owner&quot;:&quot;jerry&quot;,&quot;size&quot;:50}
+</code></pre>
+
+<p>You can retrieve the history of a specific marble - e.g. <code>marble1</code>:</p>
+<p>``` {.sourceCode .bash}
+peer chaincode query -C $CHANNEL_NAME -n marbles -c '{"Args":["getHistoryForMarble","marble1"]}'</p>
+<pre><code>
+The output should display the transactions on `marble1`:
+
+``` {.sourceCode .bash}
+Query Result: [{&quot;TxId&quot;:&quot;1c3d3caf124c89f91a4c0f353723ac736c58155325f02890adebaa15e16e6464&quot;, &quot;Value&quot;:{&quot;docType&quot;:&quot;marble&quot;,&quot;name&quot;:&quot;marble1&quot;,&quot;color&quot;:&quot;blue&quot;,&quot;size&quot;:35,&quot;owner&quot;:&quot;tom&quot;}},{&quot;TxId&quot;:&quot;755d55c281889eaeebf405586f9e25d71d36eb3d35420af833a20a2f53a3eefd&quot;, &quot;Value&quot;:{&quot;docType&quot;:&quot;marble&quot;,&quot;name&quot;:&quot;marble1&quot;,&quot;color&quot;:&quot;blue&quot;,&quot;size&quot;:35,&quot;owner&quot;:&quot;jerry&quot;}},{&quot;TxId&quot;:&quot;819451032d813dde6247f85e56a89262555e04f14788ee33e28b232eef36d98f&quot;, &quot;Value&quot;:}]
+</code></pre>
+
+<p>You can also perform rich queries on the data content, such as querying
+marble fields by owner <code>jerry</code>:</p>
+<p>``` {.sourceCode .bash}
+peer chaincode query -C $CHANNEL_NAME -n marbles -c '{"Args":["queryMarblesByOwner","jerry"]}'</p>
+<pre><code>
+The output should display the two marbles owned by `jerry`:
+
+``` {.sourceCode .bash}
+Query Result: [{&quot;Key&quot;:&quot;marble2&quot;, &quot;Record&quot;:{&quot;color&quot;:&quot;red&quot;,&quot;docType&quot;:&quot;marble&quot;,&quot;name&quot;:&quot;marble2&quot;,&quot;owner&quot;:&quot;jerry&quot;,&quot;size&quot;:50}},{&quot;Key&quot;:&quot;marble3&quot;, &quot;Record&quot;:{&quot;color&quot;:&quot;blue&quot;,&quot;docType&quot;:&quot;marble&quot;,&quot;name&quot;:&quot;marble3&quot;,&quot;owner&quot;:&quot;jerry&quot;,&quot;size&quot;:70}}]
+</code></pre>
+
+<h2 id="why-couchdb">Why CouchDB</h2>
+<p>CouchDB is a kind of NoSQL solution. It is a document oriented database
+where document fields are stored as key-value mpas. Fields can be either
+a simple key/value pair, list, or map. In addition to
+keyed/composite-key/key-range queries which are supported by LevelDB,
+CouchDB also supports full data rich queries capability, such as non-key
+queries against the whole blockchain data, since its data content is
+stored in JSON format and fully queryable. Therefore, CouchDB can meet
+chaincode, auditing, reporting requirements for many use cases that not
+supported by LevelDB.</p>
+<p>CouchDB can also enhance the security for compliance and data protection
+in the blockchain. As it is able to implement field-level security
+through the filtering and masking of individual attributes within a
+transaction, and only authorizing the read-only permission if needed.</p>
+<p>In addition, CouchDB falls into the AP-type (Availability and Partition
+Tolerance) of the CAP theorem. It uses a master-master replication model
+with <code>Eventual Consistency</code>. More information can be found on the
+<a href="http://docs.couchdb.org/en/latest/intro/consistency.html">Eventual Consistency page of the CouchDB
+documentation</a>.
+However, under each fabric peer, there is no database replicas, writes
+to database are guaranteed consistent and durable (not
+<code>Eventual Consistency</code>).</p>
+<p>CouchDB is the first external pluggable state database for Fabric, and
+there could and should be other external database options. For example,
+IBM enables the relational database for its blockchain. And the CP-type
+(Consistency and Partition Tolerance) databases may also in need, so as
+to enable data consistency without application level guarantee.</p>
+<h2 id="a-note-on-data-persistence">A Note on Data Persistence</h2>
+<p>If data persistence is desired on the peer container or the CouchDB
+container, one option is to mount a directory in the docker-host into a
+relevant directory in the container. For example, you may add the
+following two lines in the peer container specification in the
+<code>docker-compose-base.yaml</code> file:</p>
+<p>``` {.sourceCode .bash}
+volumes:
+ - /var/hyperledger/peer0:/var/hyperledger/production</p>
+<pre><code>
+For the CouchDB container, you may add the following two lines in the
+CouchDB container specification:
+
+``` {.sourceCode .bash}
+volumes:
+ - /var/hyperledger/couchdb0:/opt/couchdb/data
+</code></pre>
+
+<p>::: {#Troubleshoot}
+Troubleshooting</p>
+<hr />
+<p>:::</p>
+<ul>
+<li>
+<p>Always start your network fresh. Use the following command to remove
+    artifacts, crypto, containers and chaincode images:</p>
+<p><code>{.sourceCode .bash}
+./byfn.sh -m down</code></p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>You <strong>will</strong> see errors if you do not remove old containers</p>
+<p>:   and images.
+:::</p>
+</li>
+<li>
+<p>If you see Docker errors, first check your docker version
+    ([prereqs]{role="doc"}), and then try restarting your Docker
+    process. Problems with Docker are oftentimes not immediately
+    recognizable. For example, you may see errors resulting from an
+    inability to access crypto material mounted within a container.</p>
+<p>If they persist remove your images and start from scratch:</p>
+<p><code>{.sourceCode .bash}
+docker rm -f $(docker ps -aq)
+docker rmi -f $(docker images -q)</code></p>
+</li>
+<li>
+<p>If you see errors on your create, instantiate, invoke or query
+    commands, make sure you have properly updated the channel name and
+    chaincode name. There are placeholder values in the supplied sample
+    commands.</p>
+</li>
+<li>
+<p>If you see the below error:</p>
+<p><code>{.sourceCode .bash}
+Error: Error endorsing chaincode: rpc error: code = 2 desc = Error installing chaincode code mycc:1.0(chaincode /var/hyperledger/production/chaincodes/mycc.1.0 exits)</code></p>
+<p>You likely have chaincode images (e.g.
+<code>dev-peer1.org2.example.com-mycc-1.0</code> or
+<code>dev-peer0.org1.example.com-mycc-1.0</code>) from prior runs. Remove them
+and try again.</p>
+<p><code>{.sourceCode .bash}
+docker rmi -f $(docker images | grep peer[0-9]-peer[0-9] | awk '{print $3}')</code></p>
+</li>
+<li>
+<p>If you see something similar to the following:</p>
+<p><code>{.sourceCode .bash}
+Error connecting: rpc error: code = 14 desc = grpc: RPC failed fast due to transport failure
+Error: rpc error: code = 14 desc = grpc: RPC failed fast due to transport failure</code></p>
+<p>Make sure you are running your network against the \"1.0.0\" images
+that have been retagged as \"latest\".</p>
+</li>
+<li>
+<p>If you see the below error:</p>
+<p><code>{.sourceCode .bash}
+[configtx/tool/localconfig] Load -&gt; CRIT 002 Error reading configuration: Unsupported Config Type ""
+panic: Error reading configuration: Unsupported Config Type ""</code></p>
+<p>Then you did not set the <code>FABRIC_CFG_PATH</code> environment variable
+properly. The configtxgen tool needs this variable in order to
+locate the configtx.yaml. Go back and execute an
+<code>export FABRIC_CFG_PATH=$PWD</code>, then recreate your channel artifacts.</p>
+</li>
+<li>
+<p>To cleanup the network, use the <code>down</code> option:</p>
+<p><code>{.sourceCode .bash}
+./byfn.sh -m down</code></p>
+</li>
+<li>
+<p>If you see an error stating that you still have \"active
+    endpoints\", then prune your Docker networks. This will wipe your
+    previous networks and start you with a fresh environment:</p>
+<p><code>{.sourceCode .bash}
+docker network prune</code></p>
+<p>You will see the following message:</p>
+<p><code>{.sourceCode .bash}
+WARNING! This will remove all networks not used by at least one container.
+Are you sure you want to continue? [y/N]</code></p>
+<p>Select <code>y</code>.</p>
+</li>
+</ul>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>If you continue to see errors, share your logs on the</p>
+<p>:   <strong>fabric-questions</strong> channel on <a href="https://chat.hyperledger.org/home">Hyperledger Rocket
+    Chat</a> or on
+    <a href="https://stackoverflow.com/questions/tagged/hyperledger-fabric">StackOverflow</a>.
+:::</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../write_first_app/" class="btn btn-neutral float-right" title="Writing Your First Application">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../getting_started/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../getting_started/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../write_first_app/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

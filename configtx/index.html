@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Channel Configuration - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Channel Configuration";
+    var mkdocs_page_input_path = "configtx.md";
+    var mkdocs_page_url = "/configtx/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Channel Configuration</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#channel-configuration-configtx">Channel Configuration (configtx)</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#anatomy-of-a-configuration">Anatomy of a configuration</a></li>
+        
+            <li><a class="toctree-l5" href="#configuration-updates">Configuration updates</a></li>
+        
+            <li><a class="toctree-l5" href="#permitted-configuration-groups-and-values">Permitted configuration groups and values</a></li>
+        
+            <li><a class="toctree-l5" href="#orderer-system-channel-configuration">Orderer system channel configuration</a></li>
+        
+            <li><a class="toctree-l5" href="#application-channel-configuration">Application channel configuration</a></li>
+        
+            <li><a class="toctree-l5" href="#channel-creation">Channel creation</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Administering a blockchain network &raquo;</li>
+        
+      
+        
+          <li>Channel Tasks &raquo;</li>
+        
+      
+    
+    <li>Channel Configuration</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="channel-configuration-configtx">Channel Configuration (configtx)</h1>
+<p>Shared configuration for a Hyperledger Fabric blockchain network is
+stored in a collection configuration transactions, one per channel. Each
+configuration transaction is usually referred to by the shorter name
+<em>configtx</em>.</p>
+<p>Channel configuration has the following important properties:</p>
+<ol>
+<li><strong>Versioned</strong>: All elements of the configuration have an associated
+    version which is advanced with every modification. Further, every
+    committed configuration receives a sequence number.</li>
+<li><strong>Permissioned</strong>: Each element of the configuration has an
+    associated policy which governs whether or not modification to that
+    element is permitted. Anyone with a copy of the previous configtx
+    (and no additional info) may verify the validity of a new config
+    based on these policies.</li>
+<li><strong>Hierarchical</strong>: A root configuration group contains sub-groups,
+    and each group of the hierarchy has associated values and policies.
+    These policies can take advantage of the hierarchy to derive
+    policies at one level from policies of lower levels.</li>
+</ol>
+<h2 id="anatomy-of-a-configuration">Anatomy of a configuration</h2>
+<p>Configuration is stored as a transaction of type <code>HeaderType_CONFIG</code> in
+a block with no other transactions. These blocks are referred to as
+<em>Configuration Blocks</em>, the first of which is referred to as the
+<em>Genesis Block</em>.</p>
+<p>The proto structures for configuration are stored in
+<code>fabric/protos/common/configtx.proto</code>. The Envelope of type
+<code>HeaderType_CONFIG</code> encodes a <code>ConfigEnvelope</code> message as the <code>Payload</code>
+<code>data</code> field. The proto for <code>ConfigEnvelope</code> is defined as follows:</p>
+<pre><code>message ConfigEnvelope {
+    Config config = 1;
+    Envelope last_update = 2;
+}
+</code></pre>
+<p>The <code>last_update</code> field is defined below in the <strong>Updates to
+configuration</strong> section, but is only necessary when validating the
+configuration, not reading it. Instead, the currently committed
+configuration is stored in the <code>config</code> field, containing a <code>Config</code>
+message.</p>
+<pre><code>message Config {
+    uint64 sequence = 1;
+    ConfigGroup channel_group = 2;
+}
+</code></pre>
+<p>The <code>sequence</code> number is incremented by one for each committed
+configuration. The <code>channel_group</code> field is the root group which
+contains the configuration. The <code>ConfigGroup</code> structure is recursively
+defined, and builds a tree of groups, each of which contains values and
+policies. It is defined as follows:</p>
+<pre><code>message ConfigGroup {
+    uint64 version = 1;
+    map&lt;string,ConfigGroup&gt; groups = 2;
+    map&lt;string,ConfigValue&gt; values = 3;
+    map&lt;string,ConfigPolicy&gt; policies = 4;
+    string mod_policy = 5;
+}
+</code></pre>
+<p>Because <code>ConfigGroup</code> is a recursive structure, it has hierarchical
+arrangement. The following example is expressed for clarity in golang
+notation.</p>
+<pre><code>// Assume the following groups are defined
+var root, child1, child2, grandChild1, grandChild2, grandChild3 *ConfigGroup
+
+// Set the following values
+root.Groups["child1"] = child1
+root.Groups["child2"] = child2
+child1.Groups["grandChild1"] = grandChild1
+child2.Groups["grandChild2"] = grandChild2
+child2.Groups["grandChild3"] = grandChild3
+
+// The resulting config structure of groups looks like:
+// root:
+//     child1:
+//         grandChild1
+//     child2:
+//         grandChild2
+//         grandChild3
+</code></pre>
+<p>Each group defines a level in the config hierarchy, and each group has
+an associated set of values (indexed by string key) and policies (also
+indexed by string key).</p>
+<p>Values are defined by:</p>
+<pre><code>message ConfigValue {
+    uint64 version = 1;
+    bytes value = 2;
+    string mod_policy = 3;
+}
+</code></pre>
+<p>Policies are defined by:</p>
+<pre><code>message ConfigPolicy {
+    uint64 version = 1;
+    Policy policy = 2;
+    string mod_policy = 3;
+}
+</code></pre>
+<p>Note that Values, Policies, and Groups all have a <code>version</code> and a
+<code>mod_policy</code>. The <code>version</code> of an element is incremented each time that
+element is modified. The <code>mod_policy</code> is used to govern the required
+signatures to modify that element. For Groups, modification is adding or
+removing elements to the Values, Policies, or Groups maps (or changing
+the <code>mod_policy</code>). For Values and Policies, modification is changing the
+Value and Policy fields respectively (or changing the <code>mod_policy</code>).
+Each element\'s <code>mod_policy</code> is evaluated in the context of the current
+level of the config. Consider the following example mod policies defined
+at <code>Channel.Groups["Application"]</code> (Here, we use the golang map
+reference syntax, so <code>Channel.Groups["Application"].Policies["policy1"]</code>
+refers to the base <code>Channel</code> group\'s <code>Application</code> group\'s <code>Policies</code>
+map\'s <code>policy1</code> policy.)</p>
+<ul>
+<li><code>policy1</code> maps to
+    <code>Channel.Groups["Application"].Policies["policy1"]</code></li>
+<li><code>Org1/policy2</code> maps to
+    <code>Channel.Groups["Application"].Groups["Org1"].Policies["policy2"]</code></li>
+<li><code>/Channel/policy3</code> maps to <code>Channel.Policies["policy3"]</code></li>
+</ul>
+<p>Note that if a <code>mod_policy</code> references a policy which does not exist,
+the item cannot be modified.</p>
+<h2 id="configuration-updates">Configuration updates</h2>
+<p>Configuration updates are submitted as an <code>Envelope</code> message of type
+<code>HeaderType_CONFIG_UPDATE</code>. The <code>Payload</code> <code>data</code> of the transaction is a
+marshaled <code>ConfigUpdateEnvelope</code>. The <code>ConfigUpdateEnvelope</code> is defined
+as follows:</p>
+<pre><code>message ConfigUpdateEnvelope {
+    bytes config_update = 1;
+    repeated ConfigSignature signatures = 2;
+}
+</code></pre>
+<p>The <code>signatures</code> field contains the set of signatures which authorizes
+the config update. Its message definition is:</p>
+<pre><code>message ConfigSignature {
+    bytes signature_header = 1;
+    bytes signature = 2;
+}
+</code></pre>
+<p>The <code>signature_header</code> is as defined for standard transactions, while
+the signature is over the concatenation of the <code>signature_header</code> bytes
+and the <code>config_update</code> bytes from the <code>ConfigUpdateEnvelope</code> message.</p>
+<p>The <code>ConfigUpdateEnvelope</code> <code>config_update</code> bytes are a marshaled
+<code>ConfigUpdate</code> message which is defined as follows:</p>
+<pre><code>message ConfigUpdate {
+    string channel_id = 1;
+    ConfigGroup read_set = 2;
+    ConfigGroup write_set = 3;
+}
+</code></pre>
+<p>The <code>channel_id</code> is the channel ID the update is bound for, this is
+necessary to scope the signatures which support this reconfiguration.</p>
+<p>The <code>read_set</code> specifies a subset of the existing configuration,
+specified sparsely where only the <code>version</code> field is set and no other
+fields must be populated. The particular <code>ConfigValue</code> <code>value</code> or
+<code>ConfigPolicy</code> <code>policy</code> fields should never be set in the <code>read_set</code>.
+The <code>ConfigGroup</code> may have a subset of its map fields populated, so as
+to reference an element deeper in the config tree. For instance, to
+include the <code>Application</code> group in the <code>read_set</code>, its parent (the
+<code>Channel</code> group) must also be included in the read set, but, the
+<code>Channel</code> group does not need to populate all of the keys, such as the
+<code>Orderer</code> <code>group</code> key, or any of the <code>values</code> or <code>policies</code> keys.</p>
+<p>The <code>write_set</code> specifies the pieces of configuration which are
+modified. Because of the hierarchical nature of the configuration, a
+write to an element deep in the hierarchy must contain the higher level
+elements in its <code>write_set</code> as well. However, for any element in the
+<code>write_set</code> which is also specified in the <code>read_set</code> at the same
+version, the element should be specified sparsely, just as in the
+<code>read_set</code>.</p>
+<p>For example, given the configuration:</p>
+<pre><code>Channel: (version 0)
+    Orderer (version 0)
+    Appplication (version 3)
+       Org1 (version 2)
+</code></pre>
+<p>To submit a configuration update which modifies <code>Org1</code>, the <code>read_set</code>
+would be:</p>
+<pre><code>Channel: (version 0)
+    Application: (version 3)
+</code></pre>
+<p>and the <code>write_set</code> would be</p>
+<pre><code>Channel: (version 0)
+    Application: (version 3)
+        Org1 (version 3)
+</code></pre>
+<p>When the <code>CONFIG_UPDATE</code> is received, the orderer computes the resulting
+<code>CONFIG</code> by doing the following:</p>
+<ol>
+<li>Verifies the <code>channel_id</code> and <code>read_set</code>. All elements in the
+    <code>read_set</code> must exist at the given versions.</li>
+<li>Computes the update set by collecting all elements in the
+    <code>write_set</code> which do not appear at the same version in the
+    <code>read_set</code>.</li>
+<li>Verifies that each element in the update set increments the version
+    number of the element update by exactly 1.</li>
+<li>Verifies that the signature set attached to the
+    <code>ConfigUpdateEnvelope</code> satisfies the <code>mod_policy</code> for each element
+    in the update set.</li>
+<li>Computes a new complete version of the config by applying the update
+    set to the current config.</li>
+<li>Writes the new config into a <code>ConfigEnvelope</code> which includes the
+    <code>CONFIG_UPDATE</code> as the <code>last_update</code> field and the new config
+    encoded in the <code>config</code> field, along with the incremented <code>sequence</code>
+    value.</li>
+<li>Writes the new <code>ConfigEnvelope</code> into a <code>Envelope</code> of type <code>CONFIG</code>,
+    and ultimately writes this as the sole transaction in a new
+    configuration block.</li>
+</ol>
+<p>When the peer (or any other receiver for <code>Deliver</code>) receives this
+configuration block, it should verify that the config was appropriately
+validated by applying the <code>last_update</code> message to the current config
+and verifying that the orderer-computed <code>config</code> field contains the
+correct new configuration.</p>
+<h2 id="permitted-configuration-groups-and-values">Permitted configuration groups and values</h2>
+<p>Any valid configuration is a subset of the following configuration. Here
+we use the notation <code>peer.&lt;MSG&gt;</code> to define a <code>ConfigValue</code> whose <code>value</code>
+field is a marshaled proto message of name <code>&lt;MSG&gt;</code> defined in
+<code>fabric/protos/peer/configuration.proto</code>. The notations <code>common.&lt;MSG&gt;</code>,
+<code>msp.&lt;MSG&gt;</code>, and <code>orderer.&lt;MSG&gt;</code> correspond similarly, but with their
+messages defined in <code>fabric/protos/common/configuration.proto</code>,
+<code>fabric/protos/msp/mspconfig.proto</code>, and
+<code>fabric/protos/orderer/configuration.proto</code> respectively.</p>
+<p>Note, that the keys <code>{{org_name}}</code> and <code>{{consortium_name}}</code> represent
+arbitrary names, and indicate an element which may be repeated with
+different names.</p>
+<pre><code>&amp;ConfigGroup{
+    Groups: map&lt;string, *ConfigGroup&gt; {
+        "Application":&amp;ConfigGroup{
+            Groups:map&lt;String, *ConfigGroup&gt; {
+                {{org_name}}:&amp;ConfigGroup{
+                    Values:map&lt;string, *ConfigValue&gt;{
+                        "MSP":msp.MSPConfig,
+                        "AnchorPeers":peer.AnchorPeers,
+                    },
+                },
+            },
+        },
+        "Orderer":&amp;ConfigGroup{
+            Groups:map&lt;String, *ConfigGroup&gt; {
+                {{org_name}}:&amp;ConfigGroup{
+                    Values:map&lt;string, *ConfigValue&gt;{
+                        "MSP":msp.MSPConfig,
+                    },
+                },
+            },
+
+            Values:map&lt;string, *ConfigValue&gt; {
+                "ConsensusType":orderer.ConsensusType,
+                "BatchSize":orderer.BatchSize,
+                "BatchTimeout":orderer.BatchTimeout,
+                "KafkaBrokers":orderer.KafkaBrokers,
+            },
+        },
+        "Consortiums":&amp;ConfigGroup{
+            Groups:map&lt;String, *ConfigGroup&gt; {
+                {{consortium_name}}:&amp;ConfigGroup{
+                    Groups:map&lt;string, *ConfigGroup&gt; {
+                        {{org_name}}:&amp;ConfigGroup{
+                            Values:map&lt;string, *ConfigValue&gt;{
+                                "MSP":msp.MSPConfig,
+                            },
+                        },
+                    },
+                    Values:map&lt;string, *ConfigValue&gt; {
+                        "ChannelCreationPolicy":common.Policy,
+                    }
+                },
+            },
+        },
+    },
+
+    Values: map&lt;string, *ConfigValue&gt; {
+        "HashingAlgorithm":common.HashingAlgorithm,
+        "BlockHashingDataStructure":common.BlockDataHashingStructure,
+        "Consortium":common.Consortium,
+        "OrdererAddresses":common.OrdererAddresses,
+    },
+}
+</code></pre>
+<h2 id="orderer-system-channel-configuration">Orderer system channel configuration</h2>
+<p>The ordering system channel needs to define ordering parameters, and
+consortiums for creating channels. There must be exactly one ordering
+system channel for an ordering service, and it is the first channel to
+be created (or more accurately bootstrapped). It is recommended never to
+define an Application section inside of the ordering system channel
+genesis configuration, but may be done for testing. Note that any member
+with read access to the ordering system channel may see all channel
+creations, so this channel\'s access should be restricted.</p>
+<p>The ordering parameters are defined as the following subset of config:</p>
+<pre><code>&amp;ConfigGroup{
+    Groups: map&lt;string, *ConfigGroup&gt; {
+        "Orderer":&amp;ConfigGroup{
+            Groups:map&lt;String, *ConfigGroup&gt; {
+                {{org_name}}:&amp;ConfigGroup{
+                    Values:map&lt;string, *ConfigValue&gt;{
+                        "MSP":msp.MSPConfig,
+                    },
+                },
+            },
+
+            Values:map&lt;string, *ConfigValue&gt; {
+                "ConsensusType":orderer.ConsensusType,
+                "BatchSize":orderer.BatchSize,
+                "BatchTimeout":orderer.BatchTimeout,
+                "KafkaBrokers":orderer.KafkaBrokers,
+            },
+        },
+    },
+</code></pre>
+<p>Each organization participating in ordering has a group element under
+the <code>Orderer</code> group. This group defines a single parameter <code>MSP</code> which
+contains the cryptographic identity information for that organization.
+The <code>Values</code> of the <code>Orderer</code> group determine how the ordering nodes
+function. They exist per channel, so <code>orderer.BatchTimeout</code> for instance
+may be specified differently on one channel than another.</p>
+<p>At startup, the orderer is faced with a filesystem which contains
+information for many channels. The orderer identifies the system channel
+by identifying the channel with the consortiums group defined. The
+consortiums group has the following structure.</p>
+<pre><code>&amp;ConfigGroup{
+    Groups: map&lt;string, *ConfigGroup&gt; {
+        "Consortiums":&amp;ConfigGroup{
+            Groups:map&lt;String, *ConfigGroup&gt; {
+                {{consortium_name}}:&amp;ConfigGroup{
+                    Groups:map&lt;string, *ConfigGroup&gt; {
+                        {{org_name}}:&amp;ConfigGroup{
+                            Values:map&lt;string, *ConfigValue&gt;{
+                                "MSP":msp.MSPConfig,
+                            },
+                        },
+                    },
+                    Values:map&lt;string, *ConfigValue&gt; {
+                        "ChannelCreationPolicy":common.Policy,
+                    }
+                },
+            },
+        },
+    },
+},
+</code></pre>
+<p>Note that each consortium defines a set of members, just like the
+organizational members for the ordering orgs. Each consortium also
+defines a <code>ChannelCreationPolicy</code>. This is a policy which is applied to
+authorize channel creation requests. Typically, this value will be set
+to an <code>ImplicitMetaPolicy</code> requiring that the new members of the channel
+sign to authorize the channel creation. More details about channel
+creation follow later in this document.</p>
+<h2 id="application-channel-configuration">Application channel configuration</h2>
+<p>Application configuration is for channels which are designed for
+application type transactions. It is defined as follows:</p>
+<pre><code>&amp;ConfigGroup{
+    Groups: map&lt;string, *ConfigGroup&gt; {
+        "Application":&amp;ConfigGroup{
+            Groups:map&lt;String, *ConfigGroup&gt; {
+                {{org_name}}:&amp;ConfigGroup{
+                    Values:map&lt;string, *ConfigValue&gt;{
+                        "MSP":msp.MSPConfig,
+                        "AnchorPeers":peer.AnchorPeers,
+                    },
+                },
+            },
+        },
+    },
+}
+</code></pre>
+<p>Just like with the <code>Orderer</code> section, each organization is encoded as a
+group. However, instead of only encoding the <code>MSP</code> identity information,
+each org additionally encodes a list of <code>AnchorPeers</code>. This list allows
+the peers of different organizations to contact each other for peer
+gossip networking.</p>
+<p>The application channel encodes a copy of the orderer orgs and consensus
+options to allow for deterministic updating of these parameters, so the
+same <code>Orderer</code> section from the orderer system channel configuration is
+included. However from an application perspective this may be largely
+ignored.</p>
+<h2 id="channel-creation">Channel creation</h2>
+<p>When the orderer receives a <code>CONFIG_UPDATE</code> for a channel which does not
+exist, the orderer assumes that this must be a channel creation request
+and performs the following.</p>
+<ol>
+<li>The orderer identifies the consortium which the channel creation
+    request is to be performed for. It does this by looking at the
+    <code>Consortium</code> value of the top level group.</li>
+<li>The orderer verifies that the organizations included in the
+    <code>Application</code> group are a subset of the organizations included in
+    the corresponding consortium and that the <code>ApplicationGroup</code> is set
+    to <code>version</code> <code>1</code>.</li>
+<li>The orderer verifies that if the consortium has members, that the
+    new channel also has application members (creation consortiums and
+    channels with no members is useful for testing only).</li>
+<li>The orderer creates a template configuration by taking the <code>Orderer</code>
+    group from the ordering system channel, and creating an
+    <code>Application</code> group with the newly specified members and specifying
+    its <code>mod_policy</code> to be the <code>ChannelCreationPolicy</code> as specified in
+    the consortium config. Note that the policy is evaluated in the
+    context of the new configuration, so a policy requiring <code>ALL</code>
+    members, would require signatures from all the new channel members,
+    not all the members of the consortium.</li>
+<li>The orderer then applies the <code>CONFIG_UPDATE</code> as an update to this
+    template configuration. Because the <code>CONFIG_UPDATE</code> applies
+    modifications to the <code>Application</code> group (its <code>version</code> is <code>1</code>), the
+    config code validates these updates against the
+    <code>ChannelCreationPolicy</code>. If the channel creation contains any other
+    modifications, such as to an individual org\'s anchor peers, the
+    corresponding mod policy for the element will be invoked.</li>
+<li>The new <code>CONFIG</code> transaction with the new channel config is wrapped
+    and sent for ordering on the ordering system channel. After
+    ordering, the channel is created.</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../configtxgen/" class="btn btn-neutral float-right" title="Generating Channel Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../msp/" class="btn btn-neutral" title="Managing Identity"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../msp/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../configtxgen/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

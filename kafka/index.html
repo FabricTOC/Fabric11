@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Kafka - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Kafka";
+    var mkdocs_page_input_path = "kafka.md";
+    var mkdocs_page_url = "/kafka/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Kafka</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#bringing-up-a-kafka-based-ordering-service">Bringing up a Kafka-based Ordering Service</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#caveat-emptor">Caveat emptor</a></li>
+        
+            <li><a class="toctree-l4" href="#big-picture">Big picture</a></li>
+        
+            <li><a class="toctree-l4" href="#steps">Steps</a></li>
+        
+            <li><a class="toctree-l4" href="#additional-considerations">Additional considerations</a></li>
+        
+            <li><a class="toctree-l4" href="#supported-kafka-versions-and-upgrading">Supported Kafka versions and upgrading</a></li>
+        
+            <li><a class="toctree-l4" href="#debugging">Debugging</a></li>
+        
+            <li><a class="toctree-l4" href="#example">Example</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Reference material &raquo;</li>
+        
+      
+    
+    <li>Kafka</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="bringing-up-a-kafka-based-ordering-service">Bringing up a Kafka-based Ordering Service</h1>
+<h2 id="caveat-emptor">Caveat emptor</h2>
+<p>This document assumes that the reader generally knows how to set up a
+Kafka cluster and a ZooKeeper ensemble. The purpose of this guide is to
+identify the steps you need to take so as to have a set of Hyperledger
+Fabric ordering service nodes (OSNs) use your Kafka cluster and provide
+an ordering service to your blockchain network.</p>
+<h2 id="big-picture">Big picture</h2>
+<p>Each channel maps to a separate single-partition topic in Kafka. When an
+OSN receives transactions via the <code>Broadcast</code> RPC, it checks to make
+sure that the broadcasting client has permissions to write on the
+channel, then relays (i.e. produces) those transactions to the
+appropriate partition in Kafka. This partition is also consumed by the
+OSN which groups the received transactions into blocks locally, persists
+them in its local ledger, and serves them to receiving clients via the
+<code>Deliver</code> RPC. For low-level details, refer to <a href="https://docs.google.com/document/d/1vNMaM7XhOlu9tB_10dKnlrhy5d7b1u8lSY8a-kVjCO4/edit">the document that
+describes how we came to this
+design</a>
+--- Figure 8 is a schematic representation of the process described
+above.</p>
+<h2 id="steps">Steps</h2>
+<p>Let <code>K</code> and <code>Z</code> be the number of nodes in the Kafka cluster and the
+ZooKeeper ensemble respectively:</p>
+<ol>
+<li>At a minimum, <code>K</code> should be set to 4. (As we will explain in Step 4
+    below, this is the minimum number of nodes necessary in order to
+    exhibit crash fault tolerance, i.e. with 4 brokers, you can have 1
+    broker go down, all channels will continue to be writeable and
+    readable, and new channels can be created.)</li>
+<li><code>Z</code> will either be 3, 5, or 7. It has to be an odd number to avoid
+    split-brain scenarios, and larger than 1 in order to avoid single
+    point of failures. Anything beyond 7 ZooKeeper servers is considered
+    an overkill.</li>
+</ol>
+<p>Then proceed as follows:</p>
+<ol>
+<li>Orderers: <strong>Encode the Kafka-related information in the network\'s
+    genesis block.</strong> If you are using <code>configtxgen</code>, edit
+    <code>configtx.yaml</code> ---or pick a preset profile for the system
+    channel\'s genesis block--- so that:<ol>
+<li><code>Orderer.OrdererType</code> is set to <code>kafka</code>.</li>
+<li><code>Orderer.Kafka.Brokers</code> contains the address of <em>at least two</em>
+    of the Kafka brokers in your cluster in <code>IP:port</code> notation. The
+    list does not need to be exhaustive. (These are your bootstrap
+    brokers.)</li>
+</ol>
+</li>
+<li>Orderers: <strong>Set the maximum block size.</strong> Each block will have at
+    most Orderer.AbsoluteMaxBytes bytes (not including headers), a value
+    that you can set in <code>configtx.yaml</code>. Let the value you pick here be
+    <code>A</code> and make note of it --- it will affect how you configure your
+    Kafka brokers in Step 6.</li>
+<li>Orderers: <strong>Create the genesis block.</strong> Use <code>configtxgen</code>. The
+    settings you picked in Steps 3 and 4 above are system-wide settings,
+    i.e. they apply across the network for all the OSNs. Make note of
+    the genesis block\'s location.</li>
+<li>
+<p>Kafka cluster: <strong>Configure your Kafka brokers appropriately.</strong>
+    Ensure that every Kafka broker has these keys configured:</p>
+<ol>
+<li><code>unclean.leader.election.enable = false</code> --- Data consistency is
+    key in a blockchain environment. We cannot have a channel leader
+    chosen outside of the in-sync replica set, or we run the risk of
+    overwriting the offsets that the previous leader produced, and
+    ---as a result--- rewrite the blockchain that the orderers
+    produce.</li>
+<li><code>min.insync.replicas = M</code> --- Where you pick a value <code>M</code> such
+    that <code>1 &lt; M &lt; N</code> (see <code>default.replication.factor</code> below). Data
+    is considered committed when it is written to at least <code>M</code>
+    replicas (which are then considered in-sync and belong to the
+    in-sync replica set, or ISR). In any other case, the write
+    operation returns an error. Then:<ol>
+<li>If up to <code>N-M</code> replicas ---out of the <code>N</code> that the channel
+    data is written to--- become unavailable, operations proceed
+    normally.</li>
+<li>If more replicas become unavailable, Kafka cannot maintain
+    an ISR set of <code>M,</code> so it stops accepting writes. Reads work
+    without issues. The channel becomes writeable again when <code>M</code>
+    replicas get in-sync.</li>
+</ol>
+</li>
+<li>
+<p><code>default.replication.factor = N</code> --- Where you pick a value <code>N</code>
+    such that <code>N &lt; K</code>. A replication factor of <code>N</code> means that each
+    channel will have its data replicated to <code>N</code> brokers. These are
+    the candidates for the ISR set of a channel. As we noted in the
+    <code>min.insync.replicas section</code> above, not all of these brokers
+    have to be available all the time. <code>N</code> should be set <em>strictly
+    smaller</em> to <code>K</code> because channel creations cannot go forward if
+    less than <code>N</code> brokers are up. So if you set <code>N = K</code>, a single
+    broker going down means that no new channels can be created on
+    the blockchain network --- the crash fault tolerance of the
+    ordering service is non-existent.</p>
+<p>Based on what we\'ve described above, the minimum allowed values
+for <code>M</code> and <code>N</code> are 2 and 3 respectively. This configuration
+allows for the creation of new channels to go forward, and for
+all channels to continue to be writeable.</p>
+</li>
+<li>
+<p><code>message.max.bytes</code> and <code>replica.fetch.max.bytes</code> should be set
+    to a value larger than <code>A</code>, the value you picked in
+    <code>Orderer.AbsoluteMaxBytes</code> in Step 4 above. Add some buffer to
+    account for headers --- 1 MiB is more than enough. The following
+    condition applies:</p>
+<pre><code>Orderer.AbsoluteMaxBytes &lt; replica.fetch.max.bytes &lt;= message.max.bytes
+</code></pre>
+<p>(For completeness, we note that <code>message.max.bytes</code> should be
+strictly smaller to <code>socket.request.max.bytes</code> which is set by
+default to 100 MiB. If you wish to have blocks larger than 100
+MiB you will need to edit the hard-coded value in
+<code>brokerConfig.Producer.MaxMessageBytes</code> in
+<code>fabric/orderer/kafka/config.go</code> and rebuild the binary from
+source. This is not advisable.)</p>
+</li>
+<li>
+<p><code>log.retention.ms = -1</code>. Until the ordering service adds support
+    for pruning of the Kafka logs, you should disable time-based
+    retention and prevent segments from expiring. (Size-based
+    retention ---see <code>log.retention.bytes</code>--- is disabled by default
+    in Kafka at the time of this writing, so there\'s no need to set
+    it explicitly.)</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Orderers: <strong>Point each OSN to the genesis block.</strong> Edit
+    <code>General.GenesisFile</code> in <code>orderer.yaml</code> so that it points to the
+    genesis block created in Step 5 above. (While at it, ensure all
+    other keys in that YAML file are set appropriately.)</p>
+</li>
+<li>
+<p>Orderers: <strong>Adjust polling intervals and timeouts.</strong> (Optional
+    step.)</p>
+<ol>
+<li>The <code>Kafka.Retry</code> section in the <code>orderer.yaml</code> file allows you
+    to adjust the frequency of the metadata/producer/consumer
+    requests, as well as the socket timeouts. (These are all
+    settings you would expect to see in a Kafka producer or
+    consumer.)</li>
+<li>
+<p>Additionally, when a new channel is created, or when an existing
+    channel is reloaded (in case of a just-restarted orderer), the
+    orderer interacts with the Kafka cluster in the following ways:</p>
+<ol>
+<li>It creates a Kafka producer (writer) for the Kafka partition
+    that corresponds to the channel.</li>
+<li>It uses that producer to post a no-op <code>CONNECT</code> message to
+    that partition.</li>
+<li>It creates a Kafka consumer (reader) for that partition.</li>
+</ol>
+<p>If any of these steps fail, you can adjust the frequency with
+which they are repeated. Specifically they will be re-attempted
+every <code>Kafka.Retry.ShortInterval</code> for a total of
+<code>Kafka.Retry.ShortTotal</code>, and then every
+<code>Kafka.Retry.LongInterval</code> for a total of
+<code>Kafka.Retry.LongTotal</code> until they succeed. Note that the
+orderer will be unable to write to or read from a channel until
+all of the steps above have been completed successfully.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Set up the OSNs and Kafka cluster so that they communicate over
+    SSL.</strong> (Optional step, but highly recommended.) Refer to <a href="http://docs.confluent.io/2.0.0/kafka/ssl.html">the
+    Confluent guide</a> for
+    the Kafka cluster side of the equation, and set the keys under
+    <code>Kafka.TLS</code> in <code>orderer.yaml</code> on every OSN accordingly.</p>
+</li>
+<li><strong>Bring up the nodes in the following order: ZooKeeper ensemble,
+    Kafka cluster, ordering service nodes.</strong></li>
+</ol>
+<h2 id="additional-considerations">Additional considerations</h2>
+<ol>
+<li><strong>Preferred message size.</strong> In Step 4 above (see <a href="#steps">Steps</a>
+    section) you can also set the preferred size of blocks by setting
+    the <code>Orderer.Batchsize.PreferredMaxBytes</code> key. Kafka offers higher
+    throughput when dealing with relatively small messages; aim for a
+    value no bigger than 1 MiB.</li>
+<li><strong>Using environment variables to override settings.</strong> When using the
+    sample Kafka and Zookeeper Docker images provided with Fabric (see
+    <code>images/kafka</code> and <code>images/zookeeper</code> respectively), you can
+    override a Kafka broker or a ZooKeeper server\'s settings by using
+    environment variables. Replace the dots of the configuration key
+    with underscores --- e.g.
+    <code>KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false</code> will allow you to
+    override the default value of <code>unclean.leader.election.enable</code>. The
+    same applies to the OSNs for their <em>local</em> configuration, i.e. what
+    can be set in <code>orderer.yaml</code>. For example
+    <code>ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s</code> allows you to override the
+    default value for <code>Orderer.Kafka.Retry.ShortInterval</code>.</li>
+</ol>
+<h2 id="supported-kafka-versions-and-upgrading">Supported Kafka versions and upgrading</h2>
+<p>Fabric uses the <a href="https://github.com/Shopify/sarama">sarama client
+library</a> and vendors a version of it
+that supports the following Kafka client versions:</p>
+<ul>
+<li><code>Version: 0.9.0</code></li>
+<li><code>Version: 0.10.0</code></li>
+<li><code>Version: 0.10.1</code></li>
+<li><code>Version: 0.10.2</code></li>
+</ul>
+<p>The sample Kafka server image provided by Fabric contains Kafka server
+version <code>0.10.2</code>. Out of the box, Fabric\'s ordering service nodes
+default to configuring their embedded Kafka client to match this
+version. If you are not using the sample Kafka server image provided by
+Fabric, ensure that you configure a Kafka client version that is
+compatible with your Kafka server using the <code>Kafka.Version</code> key in
+<code>orderer.yaml</code>.</p>
+<h2 id="debugging">Debugging</h2>
+<p>Set <code>General.LogLevel</code> to <code>DEBUG</code> and <code>Kafka.Verbose</code> in <code>orderer.yaml</code>
+to <code>true</code>.</p>
+<h2 id="example">Example</h2>
+<p>Sample Docker Compose configuration files inline with the recommended
+settings above can be found under the <code>fabric/bddtests</code> directory. Look
+for <code>dc-orderer-kafka-base.yml</code> and <code>dc-orderer-kafka.yml</code>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ledger/" class="btn btn-neutral float-right" title="Ledger">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../glossary/" class="btn btn-neutral" title="Glossary"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../glossary/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ledger/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

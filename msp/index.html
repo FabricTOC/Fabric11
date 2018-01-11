@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Managing Identity - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Managing Identity";
+    var mkdocs_page_input_path = "msp.md";
+    var mkdocs_page_url = "/msp/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Managing Identity</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#membership-service-providers-msp">Membership Service Providers (MSP)</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#msp-configuration">MSP Configuration</a></li>
+        
+            <li><a class="toctree-l4" href="#how-to-generate-msp-certificates-and-their-signing-keys">How to generate MSP certificates and their signing keys?</a></li>
+        
+            <li><a class="toctree-l4" href="#msp-setup-on-the-peer-orderer-side">MSP setup on the peer &amp; orderer side</a></li>
+        
+            <li><a class="toctree-l4" href="#channel-msp-setup">Channel MSP setup</a></li>
+        
+            <li><a class="toctree-l4" href="#best-practices">Best Practices</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Administering a blockchain network &raquo;</li>
+        
+      
+    
+    <li>Managing Identity</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="membership-service-providers-msp">Membership Service Providers (MSP)</h1>
+<p>The document serves to provide details on the setup and best practices
+for MSPs.</p>
+<p>Membership Service Provider (MSP) is a component that aims to offer an
+abstraction of a membership operation architecture.</p>
+<p>In particular, MSP abstracts away all cryptographic mechanisms and
+protocols behind issuing and validating certificates, and user
+authentication. An MSP may define their own notion of identity, and the
+rules by which those identities are governed (identity validation) and
+authenticated (signature generation and verification).</p>
+<p>A Hyperledger Fabric blockchain network can be governed by one or more
+MSPs. This provides modularity of membership operations, and
+interoperability across different membership standards and
+architectures.</p>
+<p>In the rest of this document we elaborate on the setup of the MSP
+implementation supported by Hyperledger Fabric, and discuss best
+practices concerning its use.</p>
+<h2 id="msp-configuration">MSP Configuration</h2>
+<p>To setup an instance of the MSP, its configuration needs to be specified
+locally at each peer and orderer (to enable peer, and orderer signing),
+and on the channels to enable peer, orderer, client identity validation,
+and respective signature verification (authentication) by and for all
+channel members.</p>
+<p>Firstly, for each MSP a name needs to be specified in order to reference
+that MSP in the network (e.g. <code>msp1</code>, <code>org2</code>, and <code>org3.divA</code>). This is
+the name under which membership rules of an MSP representing a
+consortium, organization or organization division is to be referenced in
+a channel. This is also referred to as the <em>MSP Identifier</em> or <em>MSP ID</em>.
+MSP Identifiers are required to be unique per MSP instance. For example,
+shall two MSP instances with the same identifier be detected at the
+system channel genesis, orderer setup will fail.</p>
+<p>In the case of default implementation of MSP, a set of parameters need
+to be specified to allow for identity (certificate) validation and
+signature verification. These parameters are deduced by
+<a href="http://www.ietf.org/rfc/rfc5280.txt">RFC5280</a>, and include:</p>
+<ul>
+<li>A list of self-signed (X.509) certificates to constitute the <em>root
+    of trust</em></li>
+<li>A list of X.509 certificates to represent intermediate CAs this
+    provider considers for certificate validation; these certificates
+    ought to be certified by exactly one of the certificates in the root
+    of trust; intermediate CAs are optional parameters</li>
+<li>A list of X.509 certificates with a verifiable certificate path to
+    exactly one of the certificates of the root of trust to represent
+    the administrators of this MSP; owners of these certificates are
+    authorized to request changes to this MSP configuration (e.g. root
+    CAs, intermediate CAs)</li>
+<li>A list of Organizational Units that valid members of this MSP should
+    include in their X.509 certificate; this is an optional
+    configuration parameter, used when, e.g., multiple organisations
+    leverage the same root of trust, and intermediate CAs, and have
+    reserved an OU field for their members</li>
+<li>A list of certificate revocation lists (CRLs) each corresponding to
+    exactly one of the listed (intermediate or root) MSP Certificate
+    Authorities; this is an optional parameter</li>
+<li>A list of self-signed (X.509) certificates to constitute the <em>TLS
+    root of trust</em> for TLS certificate.</li>
+<li>A list of X.509 certificates to represent intermediate TLS CAs this
+    provider considers; these certificates ought to be certified by
+    exactly one of the certificates in the TLS root of trust;
+    intermediate CAs are optional parameters.</li>
+</ul>
+<p><em>Valid</em> identities for this MSP instance are required to satisfy the
+following conditions:</p>
+<ul>
+<li>They are in the form of X.509 certificates with a verifiable
+    certificate path to exactly one of the root of trust certificates;</li>
+<li>They are not included in any CRL;</li>
+<li>And they <em>list</em> one or more of the Organizational Units of the MSP
+    configuration in the <code>OU</code> field of their X.509 certificate
+    structure.</li>
+</ul>
+<p>For more information on the validity of identities in the current MSP
+implementation, we refer the reader to
+[msp-identity-validity-rules]{role="doc"}.</p>
+<p>In addition to verification related parameters, for the MSP to enable
+the node on which it is instantiated to sign or authenticate, one needs
+to specify:</p>
+<ul>
+<li>The signing key used for signing by the node (currently only ECDSA
+    keys are supported), and</li>
+<li>The node\'s X.509 certificate, that is a valid identity under the
+    verification parameters of this MSP.</li>
+</ul>
+<p>It is important to note that MSP identities never expire; they can only
+be revoked by adding them to the appropriate CRLs. Additionally, there
+is currently no support for enforcing revocation of TLS certificates.</p>
+<h2 id="how-to-generate-msp-certificates-and-their-signing-keys">How to generate MSP certificates and their signing keys?</h2>
+<p>To generate X.509 certificates to feed its MSP configuration, the
+application can use <a href="https://www.openssl.org/">Openssl</a>. We emphasise
+that in Hyperledger Fabric there is no support for certificates
+including RSA keys.</p>
+<p>Alternatively one can use <code>cryptogen</code> tool, whose operation is explained
+in [getting_started]{role="doc"}.</p>
+<p><a href="http://hyperledger-fabric-ca.readthedocs.io/en/latest/">Hyperledger Fabric
+CA</a> can also be
+used to generate the keys and certificates needed to configure an MSP.</p>
+<h2 id="msp-setup-on-the-peer-orderer-side">MSP setup on the peer &amp; orderer side</h2>
+<p>To set up a local MSP (for either a peer or an orderer), the
+administrator should create a folder (e.g. <code>$MY_PATH/mspconfig</code>) that
+contains six subfolders and a file:</p>
+<ol>
+<li>a folder <code>admincerts</code> to include PEM files each corresponding to an
+    administrator certificate</li>
+<li>a folder <code>cacerts</code> to include PEM files each corresponding to a root
+    CA\'s certificate</li>
+<li>(optional) a folder <code>intermediatecerts</code> to include PEM files each
+    corresponding to an intermediate CA\'s certificate</li>
+<li>(optional) a file <code>config.yaml</code> to include information on the
+    considered OUs; the latter are defined as pairs of
+    <code>&lt;Certificate, OrganizationalUnitIdentifier&gt;</code> entries of a yaml
+    array called <code>OrganizationalUnitIdentifiers</code>, where <code>Certificate</code>
+    represents the relative path to the certificate of the certificate
+    authority (root or intermediate) that should be considered for
+    certifying members of this organizational unit (e.g.
+    ./cacerts/cacert.pem), and <code>OrganizationalUnitIdentifier</code> represents
+    the actual string as expected to appear in X.509 certificate
+    OU-field (e.g. \"COP\")</li>
+<li>(optional) a folder <code>crls</code> to include the considered CRLs</li>
+<li>a folder <code>keystore</code> to include a PEM file with the node\'s signing
+    key; we emphasise that currently RSA keys are not supported</li>
+<li>a folder <code>signcerts</code> to include a PEM file with the node\'s X.509
+    certificate</li>
+<li>(optional) a folder <code>tlscacerts</code> to include PEM files each
+    corresponding to a TLS root CA\'s certificate</li>
+<li>(optional) a folder <code>tlsintermediatecerts</code> to include PEM files each
+    corresponding to an intermediate TLS CA\'s certificate</li>
+</ol>
+<p>In the configuration file of the node (core.yaml file for the peer, and
+orderer.yaml for the orderer), one needs to specify the path to the
+mspconfig folder, and the MSP Identifier of the node\'s MSP. The path to
+the mspconfig folder is expected to be relative to FABRIC_CFG_PATH and
+is provided as the value of parameter <code>mspConfigPath</code> for the peer, and
+<code>LocalMSPDir</code> for the orderer. The identifier of the node\'s MSP is
+provided as a value of parameter <code>localMspId</code> for the peer and
+<code>LocalMSPID</code> for the orderer. These variables can be overridden via the
+environment using the CORE prefix for peer (e.g. CORE_PEER_LOCALMSPID)
+and the ORDERER prefix for the orderer (e.g.
+ORDERER_GENERAL_LOCALMSPID). Notice that for the orderer setup, one
+needs to generate, and provide to the orderer the genesis block of the
+system channel. The MSP configuration needs of this block are detailed
+in the next section.</p>
+<p><em>Reconfiguration</em> of a \"local\" MSP is only possible manually, and
+requires that the peer or orderer process is restarted. In subsequent
+releases we aim to offer online/dynamic reconfiguration (i.e. without
+requiring to stop the node by using a node managed system chaincode).</p>
+<h2 id="channel-msp-setup">Channel MSP setup</h2>
+<p>At the genesis of the system, verification parameters of all the MSPs
+that appear in the network need to be specified, and included in the
+system channel\'s genesis block. Recall that MSP verification parameters
+consist of the MSP identifier, the root of trust certificates,
+intermediate CA and admin certificates, as well as OU specifications and
+CRLs. The system genesis block is provided to the orderers at their
+setup phase, and allows them to authenticate channel creation requests.
+Orderers would reject the system genesis block, if the latter includes
+two MSPs with the same identifier, and consequently the bootstrapping of
+the network would fail.</p>
+<p>For application channels, the verification components of only the MSPs
+that govern a channel need to reside in the channel\'s genesis block. We
+emphasise that it is <strong>the responsibility of the application</strong> to ensure
+that correct MSP configuration information is included in the genesis
+blocks (or the most recent configuration block) of a channel prior to
+instructing one or more of their peers to join the channel.</p>
+<p>When bootstrapping a channel with the help of the configtxgen tool, one
+can configure the channel MSPs by including the verification parameters
+of MSP in the mspconfig folder, and setting that path in the relevant
+section in <code>configtx.yaml</code>.</p>
+<p><em>Reconfiguration</em> of an MSP on the channel, including announcements of
+the certificate revocation lists associated to the CAs of that MSP is
+achieved through the creation of a <code>config_update</code> object by the owner
+of one of the administrator certificates of the MSP. The client
+application managed by the admin would then announce this update to the
+channels in which this MSP appears.</p>
+<h2 id="best-practices">Best Practices</h2>
+<p>In this section we elaborate on best practices for MSP configuration in
+commonly met scenarios.</p>
+<p><strong>1) Mapping between organizations/corporations and MSPs</strong></p>
+<p>We recommend that there is a one-to-one mapping between organizations
+and MSPs. If a different mapping type of mapping is chosen, the
+following needs to be to considered:</p>
+<ul>
+<li><strong>One organization employing various MSPs.</strong> This corresponds to the
+    case of an organization including a variety of divisions each
+    represented by its MSP, either for management independence reasons,
+    or for privacy reasons. In this case a peer can only be owned by a
+    single MSP, and will not recognize peers with identities from other
+    MSPs as peers of the same organization. The implication of this is
+    that peers may share through gossip organization-scoped data with a
+    set of peers that are members of the same subdivision, and NOT with
+    the full set of providers constituting the actual organization.</li>
+<li><strong>Multiple organizations using a single MSP.</strong> This corresponds to a
+    case of a consortium of organisations that are governed by similar
+    membership architecture. One needs to know here that peers would
+    propagate organization-scoped messages to the peers that have an
+    identity under the same MSP regardless of whether they belong to the
+    same actual organization. This is a limitation of the granularity of
+    MSP definition, and/or of the peer's configuration.</li>
+</ul>
+<p><strong>2) One organization has different divisions (say organizational
+units), to</strong> <strong>which it wants to grant access to different channels.</strong></p>
+<p>Two ways to handle this:</p>
+<ul>
+<li><strong>Define one MSP to accommodate membership for all organization's
+    members</strong>. Configuration of that MSP would consist of a list of root
+    CAs, intermediate CAs and admin certificates; and membership
+    identities would include the organizational unit (<code>OU</code>) a member
+    belongs to. Policies can then be defined to capture members of a
+    specific <code>OU</code>, and these policies may constitute the read/write
+    policies of a channel or endorsement policies of a chaincode. A
+    limitation of this approach is that gossip peers would consider
+    peers with membership identities under their local MSP as members of
+    the same organization, and would consequently gossip with them
+    organisation-scoped data (e.g. their status).</li>
+<li><strong>Defining one MSP to represent each division</strong>. This would involve
+    specifying for each division, a set of certificates for root CAs,
+    intermediate CAs, and admin Certs, such that there is no overlapping
+    certification path across MSPs. This would mean that, for example, a
+    different intermediate CA per subdivision is employed. Here the
+    disadvantage is the management of more than one MSPs instead of one,
+    but this circumvents the issue present in the previous approach. One
+    could also define one MSP for each division by leveraging an OU
+    extension of the MSP configuration.</li>
+</ul>
+<p><strong>3) Separating clients from peers of the same organization.</strong></p>
+<p>In many cases it is required that the "type" of an identity is
+retrievable from the identity itself (e.g. it may be needed that
+endorsements are guaranteed to have derived by peers, and not clients or
+nodes acting solely as orderers).</p>
+<p>There is limited support for such requirements.</p>
+<p>One way to allow for this separation is to to create a separate
+intermediate CA for each node type - one for clients and one for
+peers/orderers; and configure two different MSPs - one for clients and
+one for peers/orderers. Channels this organization should be accessing
+would need to include both MSPs, while endorsement policies will
+leverage only the MSP that refers to the peers. This would ultimately
+result in the organization being mapped to two MSP instances, and would
+have certain consequences on the way peers and clients interact.</p>
+<p>Gossip would not be drastically impacted as all peers of the same
+organization would still belong to one MSP. Peers can restrict the
+execution of certain system chaincodes to local MSP based policies. For
+example, peers would only execute "joinChannel" request if the request
+is signed by the admin of their local MSP who can only be a client
+(end-user should be sitting at the origin of that request). We can go
+around this inconsistency if we accept that the only clients to be
+members of a peer/orderer MSP would be the administrators of that MSP.</p>
+<p>Another point to be considered with this approach is that peers
+authorize event registration requests based on membership of request
+originator within their local MSP. Clearly, since the originator of the
+request is a client, the request originator is always doomed to belong
+to a different MSP than the requested peer and the peer would reject the
+request.</p>
+<p><strong>4) Admin and CA certificates.</strong></p>
+<p>It is important to set MSP admin certificates to be different than any
+of the certificates considered by the MSP for <code>root of trust</code>, or
+intermediate CAs. This is a common (security) practice to separate the
+duties of management of membership components from the issuing of new
+certificates, and/or validation of existing ones.</p>
+<p><strong>5) Blacklisting an intermediate CA.</strong></p>
+<p>As mentioned in previous sections, reconfiguration of an MSP is achieved
+by reconfiguration mechanisms (manual reconfiguration for the local MSP
+instances, and via properly constructed <code>config_update</code> messages for MSP
+instances of a channel). Clearly, there are two ways to ensure an
+intermediate CA considered in an MSP is no longer considered for that
+MSP\'s identity validation:</p>
+<ol>
+<li>Reconfigure the MSP to no longer include the certificate of that
+    intermediate CA in the list of trusted intermediate CA certs. For
+    the locally configured MSP, this would mean that the certificate of
+    this CA is removed from the <code>intermediatecerts</code> folder.</li>
+<li>Reconfigure the MSP to include a CRL produced by the root of trust
+    which denounces the mentioned intermediate CA\'s certificate.</li>
+</ol>
+<p>In the current MSP implementation we only support method (1) as it is
+simpler and does not require blacklisting the no longer considered
+intermediate CA.</p>
+<p><strong>6) CAs and TLS CAs</strong></p>
+<p>MSP identities\' root CAs and MSP TLS certificates\' root CAs (and
+relative intermediate CAs) need to be declared in different folders.
+This is to avoid confusion between different classes of certificates. It
+is not forbidden to reuse the same CAs for both MSP identities and TLS
+certificates but best practices suggest to avoid this in production.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../configtx/" class="btn btn-neutral float-right" title="Channel Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tbd/" class="btn btn-neutral" title="Orderer Tasks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../tbd/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../configtx/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

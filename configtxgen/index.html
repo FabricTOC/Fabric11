@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Generating Channel Configuration - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Generating Channel Configuration";
+    var mkdocs_page_input_path = "configtxgen.md";
+    var mkdocs_page_url = "/configtxgen/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Generating Channel Configuration</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#channel-configuration-configtxgen">Channel Configuration (configtxgen)</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#configuration-profiles">Configuration Profiles</a></li>
+        
+            <li><a class="toctree-l5" href="#bootstrapping-the-orderer">Bootstrapping the orderer</a></li>
+        
+            <li><a class="toctree-l5" href="#creating-a-channel">Creating a channel</a></li>
+        
+            <li><a class="toctree-l5" href="#reviewing-a-configuration">Reviewing a configuration</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Administering a blockchain network &raquo;</li>
+        
+      
+        
+          <li>Channel Tasks &raquo;</li>
+        
+      
+    
+    <li>Generating Channel Configuration</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="channel-configuration-configtxgen">Channel Configuration (configtxgen)</h1>
+<p>This document describe the usage for the <code>configtxgen</code> utility for
+manipulating Hyperledger Fabric channel configuration.</p>
+<p>For now, the tool is primarily focused on generating the genesis block
+for bootstrapping the orderer, but it is intended to be enhanced in the
+future for generating new channel configurations as well as
+reconfiguring existing channels.</p>
+<h2 id="configuration-profiles">Configuration Profiles</h2>
+<p>The configuration parameters supplied to the <code>configtxgen</code> tool are
+primarily provided by the <code>configtx.yaml</code> file. This file is located at
+<code>fabric/sampleconfig/configtx.yaml</code> in the fabric.git repository.</p>
+<p>This configuration file is split primarily into three pieces.</p>
+<ol>
+<li>The <code>Profiles</code> section. By default, this section includes some
+    sample configurations which can be used for development or testing
+    scenarios, and refer to crypto material present in the fabric.git
+    tree. These profiles can make a good starting point for construction
+    a real deployment profile. The <code>configtxgen</code> tool allows you to
+    specify the profile it is operating under by passing the <code>-profile</code>
+    flag. Profiles may explicitly declare all configuration, but usually
+    inherit configuration from the defaults in (3) below.</li>
+<li>The <code>Organizations</code> section. By default, this section includes a
+    single reference to the sampleconfig MSP definition. For production
+    deployments, the sample organization should be removed, and the MSP
+    definitions of the network members should be referenced and defined
+    instead. Each element in the <code>Organizations</code> section should be
+    tagged with an anchor label such as <code>&amp;orgName</code> which will allow the
+    definition to be referenced in the <code>Profiles</code> sections.</li>
+<li>The default sections. There are default sections for <code>Orderer</code> and
+    <code>Application</code> configuration, these include attributes like
+    <code>BatchTimeout</code> and are generally used as the base inherited values
+    for the profiles.</li>
+</ol>
+<p>This configuration file may be edited, or, individual properties may be
+overridden by setting environment variables, such as
+<code>CONFIGTX_ORDERER_ORDERERTYPE=kafka</code>. Note that the <code>Profiles</code> element
+and profile name do not need to be specified.</p>
+<h2 id="bootstrapping-the-orderer">Bootstrapping the orderer</h2>
+<p>After creating a configuration profile as desired, simply invoke</p>
+<pre><code>configtxgen -profile &lt;profile_name&gt; -outputBlock orderer_genesisblock.pb
+</code></pre>
+<p>This will produce an <code>orderer_genesisblock.pb</code> file in the current
+directory. This genesis block is used to bootstrap the ordering system
+channel, which the orderers use to authorize and orchestrate creation of
+other channels. By default, the channel ID encoded into the genesis
+block by <code>configtxgen</code> will be <code>testchainid</code>. It is recommended that you
+modify this identifier to something which will be globally unique.</p>
+<p>Then, to utilize this genesis block, before starting the orderer, simply
+specify <code>ORDERER_GENERAL_GENESISMETHOD=file</code> and
+<code>ORDERER_GENERAL_GENESISFILE=$PWD/orderer_genesisblock.pb</code> or modify the
+<code>orderer.yaml</code> file to encode these values.</p>
+<h2 id="creating-a-channel">Creating a channel</h2>
+<p>The tool can also output a channel creation tx by executing</p>
+<pre><code>configtxgen -profile &lt;profile_name&gt; -channelID &lt;channel_name&gt; -outputCreateChannelTx &lt;tx_filename&gt;
+</code></pre>
+<p>This will output a marshaled <code>Envelope</code> message which may be sent to
+broadcast to create a channel.</p>
+<h2 id="reviewing-a-configuration">Reviewing a configuration</h2>
+<p>In addition to creating configuration, the <code>configtxgen</code> tool is also
+capable of inspecting configuration.</p>
+<p>It supports inspecting both configuration blocks, and configuration
+transactions. You may use the inspect flags <code>-inspectBlock</code> and
+<code>-inspectChannelCreateTx</code> respectively with the path to a file to
+inspect to output a human readable (JSON) representation of the
+configuration.</p>
+<p>You may even wish to combine the inspection with generation. For
+example:</p>
+<pre><code>$ build/bin/configtxgen -channelID foo -outputBlock foo_genesisblock.pb -inspectBlock foo_genesisblock.pb
+2017-11-02 17:56:04.489 EDT [common/tools/configtxgen] main -&gt; INFO 001 Loading configuration
+2017-11-02 17:56:04.564 EDT [common/tools/configtxgen] doOutputBlock -&gt; INFO 002 Generating genesis block
+2017-11-02 17:56:04.564 EDT [common/tools/configtxgen] doOutputBlock -&gt; INFO 003 Writing genesis block
+2017-11-02 17:56:04.564 EDT [common/tools/configtxgen] doInspectBlock -&gt; INFO 004 Inspecting block
+2017-11-02 17:56:04.564 EDT [common/tools/configtxgen] doInspectBlock -&gt; INFO 005 Parsing genesis block
+{
+  "data": {
+    "data": [
+      {
+        "payload": {
+          "data": {
+            "config": {
+              "channel_group": {
+                "groups": {
+                  "Consortiums": {
+                    "groups": {
+                      "SampleConsortium": {
+                        "mod_policy": "/Channel/Orderer/Admins",
+                        "values": {
+                          "ChannelCreationPolicy": {
+                            "mod_policy": "/Channel/Orderer/Admins",
+                            "value": {
+                              "type": 3,
+                              "value": {
+                                "rule": "ANY",
+                                "sub_policy": "Admins"
+                              }
+                            },
+                            "version": "0"
+                          }
+                        },
+                        "version": "0"
+                      }
+                    },
+                    "mod_policy": "/Channel/Orderer/Admins",
+                    "policies": {
+                      "Admins": {
+                        "mod_policy": "/Channel/Orderer/Admins",
+                        "policy": {
+                          "type": 1,
+                          "value": {
+                            "rule": {
+                              "n_out_of": {
+                                "n": 0
+                              }
+                            },
+                            "version": 0
+                          }
+                        },
+                        "version": "0"
+                      }
+                    },
+                    "version": "0"
+                  },
+                  "Orderer": {
+                    "mod_policy": "Admins",
+                    "policies": {
+                      "Admins": {
+                        "mod_policy": "Admins",
+                        "policy": {
+                          "type": 3,
+                          "value": {
+                            "rule": "MAJORITY",
+                            "sub_policy": "Admins"
+                          }
+                        },
+                        "version": "0"
+                      },
+                      "BlockValidation": {
+                        "mod_policy": "Admins",
+                        "policy": {
+                          "type": 3,
+                          "value": {
+                            "rule": "ANY",
+                            "sub_policy": "Writers"
+                          }
+                        },
+                        "version": "0"
+                      },
+                      "Readers": {
+                        "mod_policy": "Admins",
+                        "policy": {
+                          "type": 3,
+                          "value": {
+                            "rule": "ANY",
+                            "sub_policy": "Readers"
+                          }
+                        },
+                        "version": "0"
+                      },
+                      "Writers": {
+                        "mod_policy": "Admins",
+                        "policy": {
+                          "type": 3,
+                          "value": {
+                            "rule": "ANY",
+                            "sub_policy": "Writers"
+                          }
+                        },
+                        "version": "0"
+                      }
+                    },
+                    "values": {
+                      "BatchSize": {
+                        "mod_policy": "Admins",
+                        "value": {
+                          "absolute_max_bytes": 10485760,
+                          "max_message_count": 10,
+                          "preferred_max_bytes": 524288
+                        },
+                        "version": "0"
+                      },
+                      "BatchTimeout": {
+                        "mod_policy": "Admins",
+                        "value": {
+                          "timeout": "2s"
+                        },
+                        "version": "0"
+                      },
+                      "ChannelRestrictions": {
+                        "mod_policy": "Admins",
+                        "version": "0"
+                      },
+                      "ConsensusType": {
+                        "mod_policy": "Admins",
+                        "value": {
+                          "type": "solo"
+                        },
+                        "version": "0"
+                      }
+                    },
+                    "version": "0"
+                  }
+                },
+                "mod_policy": "Admins",
+                "policies": {
+                  "Admins": {
+                    "mod_policy": "Admins",
+                    "policy": {
+                      "type": 3,
+                      "value": {
+                        "rule": "MAJORITY",
+                        "sub_policy": "Admins"
+                      }
+                    },
+                    "version": "0"
+                  },
+                  "Readers": {
+                    "mod_policy": "Admins",
+                    "policy": {
+                      "type": 3,
+                      "value": {
+                        "rule": "ANY",
+                        "sub_policy": "Readers"
+                      }
+                    },
+                    "version": "0"
+                  },
+                  "Writers": {
+                    "mod_policy": "Admins",
+                    "policy": {
+                      "type": 3,
+                      "value": {
+                        "rule": "ANY",
+                        "sub_policy": "Writers"
+                      }
+                    },
+                    "version": "0"
+                  }
+                },
+                "values": {
+                  "BlockDataHashingStructure": {
+                    "mod_policy": "Admins",
+                    "value": {
+                      "width": 4294967295
+                    },
+                    "version": "0"
+                  },
+                  "HashingAlgorithm": {
+                    "mod_policy": "Admins",
+                    "value": {
+                      "name": "SHA256"
+                    },
+                    "version": "0"
+                  },
+                  "OrdererAddresses": {
+                    "mod_policy": "/Channel/Orderer/Admins",
+                    "value": {
+                      "addresses": [
+                        "127.0.0.1:7050"
+                      ]
+                    },
+                    "version": "0"
+                  }
+                },
+                "version": "0"
+              },
+              "sequence": "0",
+              "type": 0
+            }
+          },
+          "header": {
+            "channel_header": {
+              "channel_id": "foo",
+              "epoch": "0",
+              "timestamp": "2017-11-02T21:56:04.000Z",
+              "tx_id": "6acfe1257c23a4f844cc299cbf53acc7bf8fa8bcf8aae8d049193098fe982eab",
+              "type": 1,
+              "version": 1
+            },
+            "signature_header": {
+              "nonce": "eZOKru6jmeiWykBtSDwnkGjyQt69GwuS"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "header": {
+    "data_hash": "/86I/7NScbH/bHcDcYG0/9qTmVPWVoVVfSN8NKMARKI=",
+    "number": "0"
+  },
+  "metadata": {
+    "metadata": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  }
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../configtxlator/" class="btn btn-neutral float-right" title="Channel Reconfiguration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../configtx/" class="btn btn-neutral" title="Channel Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../configtx/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../configtxlator/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

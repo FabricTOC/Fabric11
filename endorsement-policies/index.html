@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Endorsement Policy Tasks - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Endorsement Policy Tasks";
+    var mkdocs_page_input_path = "endorsement-policies.md";
+    var mkdocs_page_url = "/endorsement-policies/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Endorsement Policy Tasks</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#endorsement-policies">Endorsement policies</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#endorsement-policy-syntax-in-the-cli">Endorsement policy syntax in the CLI</a></li>
+        
+            <li><a class="toctree-l5" href="#specifying-endorsement-policies-for-a-chaincode">Specifying endorsement policies for a chaincode</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Administering a blockchain network &raquo;</li>
+        
+      
+        
+          <li>Peer Tasks &raquo;</li>
+        
+      
+    
+    <li>Endorsement Policy Tasks</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="endorsement-policies">Endorsement policies</h1>
+<p>Endorsement policies are used to instruct a peer on how to decide
+whether a transaction is properly endorsed. When a peer receives a
+transaction, it invokes the VSCC (Validation System Chaincode)
+associated with the transaction\'s Chaincode as part of the transaction
+validation flow to determine the validity of the transaction. Recall
+that a transaction contains one or more endorsement from as many
+endorsing peers. VSCC is tasked to make the following determinations:</p>
+<blockquote>
+<ul>
+<li>all endorsements are valid (i.e. they are valid signatures from
+    valid certificates over the expected message)</li>
+<li>there is an appropriate number of endorsements</li>
+<li>endorsements come from the expected source(s)</li>
+</ul>
+</blockquote>
+<p>Endorsement policies are a way of specifying the second and third
+points.</p>
+<h2 id="endorsement-policy-syntax-in-the-cli">Endorsement policy syntax in the CLI</h2>
+<p>In the CLI, a simple language is used to express policies in terms of
+boolean expressions over principals.</p>
+<p>A principal is described in terms of the MSP that is tasked to validate
+the identity of the signer and of the role that the signer has within
+that MSP. Currently, two roles are supported: <strong>member</strong> and <strong>admin</strong>.
+Principals are described as <code>MSP</code>.<code>ROLE</code>, where <code>MSP</code> is the MSP ID that
+is required, and <code>ROLE</code> is either one of the two strings <code>member</code> and
+<code>admin</code>. Examples of valid principals are <code>'Org0.admin'</code> (any
+administrator of the <code>Org0</code> MSP) or <code>'Org1.member'</code> (any member of the
+<code>Org1</code> MSP).</p>
+<p>The syntax of the language is:</p>
+<p><code>EXPR(E[, E...])</code></p>
+<p>where <code>EXPR</code> is either <code>AND</code> or <code>OR</code>, representing the two boolean
+expressions and <code>E</code> is either a principal (with the syntax described
+above) or another nested call to <code>EXPR</code>.</p>
+<p>For example:</p>
+<p>:   -   <code>AND('Org1.member', 'Org2.member', 'Org3.member')</code> requests 1
+        signature from each of the three principals
+    -   <code>OR('Org1.member', 'Org2.member')</code> requests 1 signature from
+        either one of the two principals
+    -   <code>OR('Org1.member', AND('Org2.member', 'Org3.member'))</code> requests
+        either one signature from a member of the <code>Org1</code> MSP or 1
+        signature from a member of the <code>Org2</code> MSP and 1 signature from a
+        member of the <code>Org3</code> MSP.</p>
+<h2 id="specifying-endorsement-policies-for-a-chaincode">Specifying endorsement policies for a chaincode</h2>
+<p>Using this language, a chaincode deployer can request that the
+endorsements for a chaincode be validated against the specified policy.
+NOTE - the default policy requires one signature from a member of the
+<code>DEFAULT</code> MSP). This is used if a policy is not specified in the CLI
+when instantiating chaincode.</p>
+<p>The policy can be specified at instantiate time using the <code>-P</code> switch,
+followed by the policy.</p>
+<p>For example:</p>
+<pre><code>peer chaincode instantiate -C &lt;channelid&gt; -n mycc -P "AND('Org1.member', 'Org2.member')"
+</code></pre>
+<p>This command deploys chaincode <code>mycc</code> with the policy
+<code>AND('Org1.member', 'Org2.member')</code> which would require that a member of
+both Org1 and Org2 sign the transaction.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tbd/" class="btn btn-neutral float-right" title="Orderer Tasks">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tbd/" class="btn btn-neutral" title="Organization Tasks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../tbd/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tbd/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

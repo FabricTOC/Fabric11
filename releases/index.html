@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Release Notes - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Release Notes";
+    var mkdocs_page_input_path = "releases.md";
+    var mkdocs_page_url = "/releases/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Release Notes</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#release-notes">Release Notes</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#release-notes_1">Release Notes</a></li>
+        
+            <li><a class="toctree-l4" href="#known-vulnerabilities">Known Vulnerabilities</a></li>
+        
+            <li><a class="toctree-l4" href="#resolved-vulnerabilities">Resolved Vulnerabilities</a></li>
+        
+            <li><a class="toctree-l4" href="#known-issues-workarounds">Known Issues &amp; Workarounds</a></li>
+        
+            <li><a class="toctree-l4" href="#known-vulnerabilities_1">Known Vulnerabilities</a></li>
+        
+            <li><a class="toctree-l4" href="#resolved-vulnerabilities_1">Resolved Vulnerabilities</a></li>
+        
+            <li><a class="toctree-l4" href="#known-issues-workarounds_1">Known Issues &amp; Workarounds</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Reference material &raquo;</li>
+        
+      
+    
+    <li>Release Notes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="release-notes">Release Notes</h1>
+<p><a href="https://github.com/hyperledger/fabric/releases/tag/v1.1.0-preview">v1.1.0-preview</a>
+November 1, 2017</p>
+<h2 id="release-notes_1">Release Notes</h2>
+<p>This is a <em>preview</em> release of the up-coming 1.1 release. We are not
+feature complete for 1.1 just yet, but we wanted to get the following
+functionality published to gain some early community feedback on the
+following features:</p>
+<blockquote>
+<ul>
+<li><a href="https://jira.hyperledger.org/browse/FAB-2331">FAB-2331</a> - Node.js
+    Chaincode</li>
+<li><a href="https://jira.hyperledger.org/browse/FAB-5363">FAB-5363</a> - Node.js
+    SDK Connection Profile</li>
+<li><a href="https://jira.hyperledger.org/browse/FAB-830">FAB-830</a> -
+    Encryption library for chaincode</li>
+<li><a href="https://jira.hyperledger.org/browse/FAB-5346">FAB-5346</a> -
+    Attribute-based Access Control</li>
+<li><a href="https://jira.hyperledger.org/browse/FAB-6089">FAB-6089</a> -
+    Chaincode APIs to retrieve creator cert info</li>
+<li><a href="https://jira.hyperledger.org/browse/FAB-6421">FAB-6421</a> -
+    Performance improvements</li>
+</ul>
+</blockquote>
+<p>Additionally, there are the usual bug fixes, documentation and test
+coverage improvements, UX improvements based on user feedback and
+changes to address a variety of static scan findings (unused code,
+static security scanning, spelling, linting and more).</p>
+<h2 id="known-vulnerabilities">Known Vulnerabilities</h2>
+<p>none</p>
+<h2 id="resolved-vulnerabilities">Resolved Vulnerabilities</h2>
+<p>none</p>
+<h2 id="known-issues-workarounds">Known Issues &amp; Workarounds</h2>
+<p>The fabric-ccenv image which is used to build chaincode, currently
+includes the github.com/hyperledger/fabric/core/chaincode/shim
+(\"shim\") package. This is convenient, as it provides the ability to
+package chaincode without the need to include the \"shim\". However,
+this may cause issues in future releases (and/or when trying to use
+packages which are included by the \"shim\").</p>
+<p>In order to avoid any issues, users are advised to manually vendor the
+\"shim\" package with their chaincode prior to using the peer CLI for
+packaging and/or for installing chaincode.</p>
+<p>Please refer to <a href="https://jira.hyperledger.org/browse/FAB-5177">FAB-5177</a>
+for more details, and kindly be aware that given the above, we may end
+up changing the fabric-ccenv in the future.</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/master/CHANGELOG.md#v110-preview">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger/fabric/releases/tag/v1.0.4">v1.0.4</a>
+October 31, 2017</p>
+<p>Bug fixes, documentation and test coverage improvements, UX improvements
+based on user feedback and changes to address a variety of static scan
+findings (unused code, static security scanning, spelling, linting and
+more).</p>
+<h2 id="known-vulnerabilities_1">Known Vulnerabilities</h2>
+<p>none</p>
+<h2 id="resolved-vulnerabilities_1">Resolved Vulnerabilities</h2>
+<p>none</p>
+<h2 id="known-issues-workarounds_1">Known Issues &amp; Workarounds</h2>
+<p>The fabric-ccenv image which is used to build chaincode, currently
+includes the github.com/hyperledger/fabric/core/chaincode/shim
+(\"shim\") package. This is convenient, as it provides the ability to
+package chaincode without the need to include the \"shim\". However,
+this may cause issues in future releases (and/or when trying to use
+packages which are included by the \"shim\").</p>
+<p>In order to avoid any issues, users are advised to manually vendor the
+\"shim\" package with their chaincode prior to using the peer CLI for
+packaging and/or for installing chaincode.</p>
+<p>Please refer to <a href="https://jira.hyperledger.org/browse/FAB-5177">https://jira.hyperledger.org/browse/FAB-5177</a> for more
+details, and kindly be aware that given the above, we may end up
+changing the fabric-ccenv in the future.</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/v1.0.4/CHANGELOG.md#v104">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger/fabric/releases/tag/v1.0.3">v1.0.3</a>
+October 3, 2017</p>
+<p>Bug fixes, documentation and test coverage improvements, UX improvements
+based on user feedback and changes to address a variety of static scan
+findings (unused code, static security scanning, spelling, linting and
+more).</p>
+<p>Known Vulnerabilities none</p>
+<p>Resolved Vulnerabilities none</p>
+<p>Known Issues &amp; Workarounds The fabric-ccenv image which is used to build
+chaincode, currently includes the
+github.com/hyperledger/fabric/core/chaincode/shim (\"shim\") package.
+This is convenient, as it provides the ability to package chaincode
+without the need to include the \"shim\". However, this may cause issues
+in future releases (and/or when trying to use packages which are
+included by the \"shim\").</p>
+<p>In order to avoid any issues, users are advised to manually vendor the
+\"shim\" package with their chaincode prior to using the peer CLI for
+packaging and/or for installing chaincode.</p>
+<p>Please refer to <a href="https://jira.hyperledger.org/browse/FAB-5177">https://jira.hyperledger.org/browse/FAB-5177</a> for more
+details, and kindly be aware that given the above, we may end up
+changing the fabric-ccenv in the future.</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/master/CHANGELOG.md#v103">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger/fabric/releases/tag/v1.0.2">v1.0.2</a>
+August 31, 2017</p>
+<p>Bug fixes, documentation and test coverage improvements, UX improvements
+based on user feedback and changes to address a variety of static scan
+findings (unused code, static security scanning, spelling, linting and
+more).</p>
+<p>Known Vulnerabilities none</p>
+<p>Resolved Vulnerabilities <a href="https://jira.hyperledger.org/browse/FAB-5753">https://jira.hyperledger.org/browse/FAB-5753</a>
+<a href="https://jira.hyperledger.org/browse/FAB-5899">https://jira.hyperledger.org/browse/FAB-5899</a></p>
+<p>Known Issues &amp; Workarounds The fabric-ccenv image which is used to build
+chaincode, currently includes the
+github.com/hyperledger/fabric/core/chaincode/shim (\"shim\") package.
+This is convenient, as it provides the ability to package chaincode
+without the need to include the \"shim\". However, this may cause issues
+in future releases (and/or when trying to use packages which are
+included by the \"shim\").</p>
+<p>In order to avoid any issues, users are advised to manually vendor the
+\"shim\" package with their chaincode prior to using the peer CLI for
+packaging and/or for installing chaincode.</p>
+<p>Please refer to <a href="https://jira.hyperledger.org/browse/FAB-5177">https://jira.hyperledger.org/browse/FAB-5177</a> for more
+details, and kindly be aware that given the above, we may end up
+changing the fabric-ccenv in the future.</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/master/CHANGELOG.md#v102">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger/fabric/releases/tag/v1.0.1">v1.0.1</a>
+August 5, 2017</p>
+<p>Bug fixes, documentation and test coverage improvements, UX improvements
+based on user feedback and changes to address a variety of static scan
+findings (unused code, static security scanning, spelling, linting and
+more).</p>
+<p>Known Vulnerabilities none</p>
+<p>Resolved Vulnerabilities <a href="https://jira.hyperledger.org/browse/FAB-5329">https://jira.hyperledger.org/browse/FAB-5329</a>
+<a href="https://jira.hyperledger.org/browse/FAB-5330">https://jira.hyperledger.org/browse/FAB-5330</a>
+<a href="https://jira.hyperledger.org/browse/FAB-5353">https://jira.hyperledger.org/browse/FAB-5353</a>
+<a href="https://jira.hyperledger.org/browse/FAB-5529">https://jira.hyperledger.org/browse/FAB-5529</a>
+<a href="https://jira.hyperledger.org/browse/FAB-5606">https://jira.hyperledger.org/browse/FAB-5606</a>
+<a href="https://jira.hyperledger.org/browse/FAB-5627">https://jira.hyperledger.org/browse/FAB-5627</a></p>
+<p>Known Issues &amp; Workarounds The fabric-ccenv image which is used to build
+chaincode, currently includes the
+github.com/hyperledger/fabric/core/chaincode/shim (\"shim\") package.
+This is convenient, as it provides the ability to package chaincode
+without the need to include the \"shim\". However, this may cause issues
+in future releases (and/or when trying to use packages which are
+included by the \"shim\").</p>
+<p>In order to avoid any issues, users are advised to manually vendor the
+\"shim\" package with their chaincode prior to using the peer CLI for
+packaging and/or for installing chaincode.</p>
+<p>Please refer to <a href="https://jira.hyperledger.org/browse/FAB-5177">https://jira.hyperledger.org/browse/FAB-5177</a> for more
+details, and kindly be aware that given the above, we may end up
+changing the fabric-ccenv in the future.</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/master/CHANGELOG.md#v101">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger/fabric/releases/tag/v1.0.0">v1.0.0</a> July
+11, 2017</p>
+<p>Bug fixes, documentation and test coverage improvements, UX improvements
+based on user feedback and changes to address a variety of static scan
+findings (removal of unused code, static security scanning, spelling,
+linting and more).</p>
+<p>Known Vulnerabilities none</p>
+<p>Resolved Vulnerabilities <a href="https://jira.hyperledger.org/browse/FAB-5207">https://jira.hyperledger.org/browse/FAB-5207</a></p>
+<p>Known Issues &amp; Workarounds The fabric-ccenv image which is used to build
+chaincode, currently includes the
+github.com/hyperledger/fabric/core/chaincode/shim (\"shim\") package.
+This is convenient, as it provides the ability to package chaincode
+without the need to include the \"shim\". However, this may cause issues
+in future releases (and/or when trying to use packages which are
+included by the \"shim\").</p>
+<p>In order to avoid any issues, users are advised to manually vendor the
+\"shim\" package with their chaincode prior to using the peer CLI for
+packaging and/or for installing chaincode.</p>
+<p>Please refer to <a href="https://jira.hyperledger.org/browse/FAB-5177">https://jira.hyperledger.org/browse/FAB-5177</a> for more
+details, and kindly be aware that given the above, we may end up
+changing the fabric-ccenv in the future.</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/master/CHANGELOG.md#v100">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger/fabric/releases/tag/v1.0.0-rc1">v1.0.0-rc1</a>
+June 23, 2017</p>
+<p>Bug fixes, documentation and test coverage improvements, UX improvements
+based on user feedback and changes to address a variety of static scan
+findings (unused code, static security scanning, spelling, linting and
+more).</p>
+<p>Known Vulnerabilities none</p>
+<p>Resolved Vulnerabilities <a href="https://jira.hyperledger.org/browse/FAB-4856">https://jira.hyperledger.org/browse/FAB-4856</a>
+<a href="https://jira.hyperledger.org/browse/FAB-4848">https://jira.hyperledger.org/browse/FAB-4848</a>
+<a href="https://jira.hyperledger.org/browse/FAB-4751">https://jira.hyperledger.org/browse/FAB-4751</a>
+<a href="https://jira.hyperledger.org/browse/FAB-4626">https://jira.hyperledger.org/browse/FAB-4626</a>
+<a href="https://jira.hyperledger.org/browse/FAB-4567">https://jira.hyperledger.org/browse/FAB-4567</a>
+<a href="https://jira.hyperledger.org/browse/FAB-3715">https://jira.hyperledger.org/browse/FAB-3715</a></p>
+<p>Known Issues &amp; Workarounds none</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/master/CHANGELOG.md#v100-rc1">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger/fabric/releases/tag/v1.0.0-beta">v1.0.0-beta</a>
+June 8, 2017</p>
+<p>Bug fixes, documentation and test coverage improvements, UX improvements
+based on user feedback and changes to address a variety of static scan
+findings (unused code, static security scanning, spelling, linting and
+more).</p>
+<p>Upgraded to <a href="https://github.com/grpc/grpc-go/releases/">latest version</a>
+(a precursor to 1.4.0) of gRPC-go and implemented keep-alive feature for
+improved resiliency.</p>
+<p>Added a <a href="https://github.com/hyperledger/fabric/tree/master/examples/configtxupdate">new
+tool</a>
+configtxlator to enable users to translate the contents of a channel
+configuration transaction into a human readable form.</p>
+<p>Known Vulnerabilities</p>
+<p>none</p>
+<p>Resolved Vulnerabilities</p>
+<p>none</p>
+<p>Known Issues &amp; Workarounds</p>
+<p>BCCSP content in the configtx.yaml has been
+<a href="https://github.com/hyperledger/fabric/commit/a997c30">removed</a>. This
+change will cause a panic when running configtxgen tool with a
+configtx.yaml file that includes the removed BCCSP content.</p>
+<p>Java Chaincode support has been disabled until post 1.0.0 as it is not
+yet fully mature. It may be re-enabled for experimentation by cloning
+the hyperledger/fabric repository, reversing <a href="https://github.com/hyperledger/fabric/commit/29e0c40">this
+commit</a> and
+building your own fork.</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/master/CHANGELOG.md#v100-beta">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger/fabric/releases/tag/v1.0.0-alpha2">v1.0.0-alpha2</a></p>
+<p>The second alpha release of the v1.0.0 Hyperledger Fabric. The code is
+now feature complete. From now until the v1.0.0 release, the community
+is focused on documentation improvements, testing, hardening, bug fixing
+and tooling. We will be releasing successive release candidates
+periodically as the release firms up.</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/master/CHANGELOG.md#v100-alpha2-may-15-2017">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger/fabric/releases/tag/v1.0.0-alpha">v1.0.0-alpha</a>
+March 16, 2017</p>
+<p>The first alpha release of the v1.0.0 Hyperledger Fabric. The code is
+being made available to developers to begin exploring the v1.0
+architecture.</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/master/CHANGELOG.md#v100-alpha-march-16-2017">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger/fabric/tree/v0.6">v0.6-preview</a>
+September 16, 2016</p>
+<p>A developer preview release of the Hyperledger Fabric intended to
+exercise the release logistics and stabilize a set of capabilities for
+developers to try out. This will be the last release under the original
+architecture. All subsequent releases will deliver on the v1.0
+architecture.</p>
+<p><a href="https://github.com/hyperledger/fabric/blob/master/CHANGELOG.md#v06-preview-september-16-2016">Change
+Log</a></p>
+<p><a href="https://github.com/hyperledger-archives/fabric/tree/v0.5-developer-preview">v0.5-developer-preview</a>
+June 17, 2016</p>
+<p>A developer preview release of the Hyperledger Fabric intended to
+exercise the release logistics and stabilize a set of capabilities for
+developers to try out.</p>
+<p>Key features:</p>
+<p>Permissioned blockchain with immediate finality Chaincode (aka smart
+contract) execution environments Docker container (user chaincode)
+In-process with peer (system chaincode) Pluggable consensus with PBFT,
+NOOPS (development mode), SIEVE (prototype) Event framework supports
+pre-defined and custom events Client SDK (Node.js), basic REST APIs and
+CLIs Known Key Bugs and work in progress</p>
+<ul>
+<li>1895 - Client SDK interfaces may crash if wrong parameter specified</li>
+<li>1901 - Slow response after a few hours of stress testing</li>
+<li>1911 - Missing peer event listener on the client SDK</li>
+<li>889 - The attributes in the TCert are not encrypted. This work is
+    still on-going</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../questions/" class="btn btn-neutral float-right" title="General Help">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../fabric-FAQ/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../fabric-FAQ/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../questions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

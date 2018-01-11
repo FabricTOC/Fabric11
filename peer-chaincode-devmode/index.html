@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Running Chaincode in Development Mode - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Running Chaincode in Development Mode";
+    var mkdocs_page_input_path = "peer-chaincode-devmode.md";
+    var mkdocs_page_url = "/peer-chaincode-devmode/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Running Chaincode in Development Mode</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#using-dev-mode">Using dev mode</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#start-the-orderer">Start the orderer</a></li>
+        
+            <li><a class="toctree-l4" href="#start-the-peer-in-dev-mode">Start the peer in dev mode</a></li>
+        
+            <li><a class="toctree-l4" href="#create-channels-ch1-and-ch2">Create channels ch1 and ch2</a></li>
+        
+            <li><a class="toctree-l4" href="#start-the-chaincode">Start the chaincode</a></li>
+        
+            <li><a class="toctree-l4" href="#use-the-chaincode">Use the chaincode</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developing blockchain applications &raquo;</li>
+        
+      
+    
+    <li>Running Chaincode in Development Mode</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="using-dev-mode">Using dev mode</h1>
+<p>Normally chaincodes are started and maintained by peer. However in "dev"
+mode, chaincode is built and started by the user. This mode is useful
+during chaincode development phase for rapid code/build/run/debug cycle
+turnaround.</p>
+<p>To keep this a realistic "dev" environment, we are going to keep it "out
+of the box" - with one exception: we create two channels to show how the
+single running instance can be accessed from multiple channels.</p>
+<ul>
+<li>Note: Make sure peer is not using TLS when running in dev mode.</li>
+</ul>
+<p>All commands are executed from the <code>fabric</code> folder.</p>
+<h2 id="start-the-orderer">Start the orderer</h2>
+<pre><code>ORDERER_GENERAL_GENESISPROFILE=SampleDevModeSolo orderer
+</code></pre>
+<p>The above starts the orderer in the local environment the orderer
+configuration as defined in <code>sampleconfig/orderer.yaml</code> with the
+genesisprofile directive overridden to use the SampleDevModeSolo profile
+for bootstrapping the network.</p>
+<h2 id="start-the-peer-in-dev-mode">Start the peer in dev mode</h2>
+<pre><code>peer node start --peer-chaincodedev=true
+</code></pre>
+<p>The above command starts the peer using the default <code>sampleconfig/msp</code>
+MSP. The <code>--peer-chaincodedev=true</code> puts it in "dev" mode.</p>
+<h2 id="create-channels-ch1-and-ch2">Create channels ch1 and ch2</h2>
+<p>Generate the transactions for creating the channels using <code>configtxgen</code>
+tool.</p>
+<p>::</p>
+<p>:   configtxgen -channelID ch1 -outputCreateChannelTx ch1.tx -profile
+    SampleSingleMSPChannel configtxgen -channelID ch2
+    -outputCreateChannelTx ch2.tx -profile SampleSingleMSPChannel</p>
+<p>where SampleSingleMSPChannel is a channel profile in
+<code>sampleconfig/configtx.yaml</code></p>
+<pre><code>peer channel create -o 127.0.0.1:7050 -c ch1 -f ch1.tx
+peer channel create -o 127.0.0.1:7050 -c ch2 -f ch2.tx
+</code></pre>
+<p>Above assumes orderer is reachable on <code>127.0.0.1:7050</code>. The orderer now
+is tracking channels ch1 and ch2 for the default configuration.</p>
+<pre><code>peer channel join -b ch1.block
+peer channel join -b ch2.block
+</code></pre>
+<p>The peer has now joined channels cha1 and ch2.</p>
+<h2 id="start-the-chaincode">Start the chaincode</h2>
+<pre><code>cd examples/chaincode/go/chaincode_example02
+go build
+CORE_CHAINCODE_LOGLEVEL=debug CORE_PEER_ADDRESS=127.0.0.1:7052 CORE_CHAINCODE_ID_NAME=mycc:0 ./chaincode_example02
+</code></pre>
+<p>The chaincode is started with peer and chaincode logs indicating
+successful registration with the peer. Note that at this stage the
+chaincode is not associated with any channel. This is done in subsequent
+steps using the <code>instantiate</code> command.</p>
+<h2 id="use-the-chaincode">Use the chaincode</h2>
+<p>Even though you are in <code>--peer-chaincodedev</code> mode, you still have to
+install the chaincode so the life-cycle system chaincode can go through
+its checks normally. This requirement may be removed in future when in
+<code>--peer-chaincodedev</code> mode.</p>
+<pre><code>peer chaincode install -n mycc -v 0 -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02
+</code></pre>
+<p>Once installed, the chaincode is ready to be instantiated.</p>
+<pre><code>peer chaincode instantiate -n mycc -v 0 -c '{"Args":["init","a","100","b","200"]}' -o 127.0.0.1:7050 -C ch1
+
+peer chaincode instantiate -n mycc -v 0 -c '{"Args":["init","a","100","b","200"]}' -o 127.0.0.1:7050 -C ch2
+</code></pre>
+<p>The above instantiates the chaincode with the two channels. With default
+settings it might take a few seconds for the transactions to be
+committed.</p>
+<pre><code>peer chaincode invoke -n mycc -c '{"Args":["invoke","a","b","10"]}' -o 127.0.0.1:7050 -C ch1
+peer chaincode invoke -n mycc -c '{"Args":["invoke","a","b","10"]}' -o 127.0.0.1:7050 -C ch2
+</code></pre>
+<p>The above invoke the chaincode over the two channels.</p>
+<p>Finally, query the chaincode on the two channels.</p>
+<pre><code>peer chaincode query -n mycc -c '{"Args":["query","a"]}' -o 127.0.0.1:7050 -C ch1
+peer chaincode query -n mycc -c '{"Args":["query","a"]}' -o 127.0.0.1:7050 -C ch2
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tbd/" class="btn btn-neutral float-right" title="Network Tasks">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tbd/" class="btn btn-neutral" title="Accessing the transaction log"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../tbd/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tbd/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

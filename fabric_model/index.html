@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Fabric Model - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Fabric Model";
+    var mkdocs_page_input_path = "fabric_model.md";
+    var mkdocs_page_url = "/fabric_model/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Fabric Model</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#hyperledger-fabric-model">Hyperledger Fabric Model</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Reference material &raquo;</li>
+        
+      
+    
+    <li>Fabric Model</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hyperledger-fabric-model">Hyperledger Fabric Model</h1>
+<p>This section outlines the key design features woven into Hyperledger
+Fabric that fulfill its promise of a comprehensive, yet customizable,
+enterprise blockchain solution:</p>
+<ul>
+<li>[Assets]{role="ref"} - Asset definitions enable the exchange of
+    almost anything with monetary value over the network, from whole
+    foods to antique cars to currency futures.</li>
+<li>[Chaincode]{role="ref"} - Chaincode execution is partitioned from
+    transaction ordering, limiting the required levels of trust and
+    verification across node types, and optimizing network scalability
+    and performance.</li>
+<li>[Ledger-Features]{role="ref"} - The immutable, shared ledger encodes
+    the entire transaction history for each channel, and includes
+    SQL-like query capability for efficient auditing and dispute
+    resolution.</li>
+<li>[Privacy-through-Channels]{role="ref"} - Channels enable
+    multi-lateral transactions with the high degrees of privacy and
+    confidentiality required by competing businesses and regulated
+    industries that exchange assets on a common network.</li>
+<li>[Security-Membership-Services]{role="ref"} - Permissioned membership
+    provides a trusted blockchain network, where participants know that
+    all transactions can be detected and traced by authorized regulators
+    and auditors.</li>
+<li>[Consensus]{role="ref"} - a unique approach to consensus enables the
+    flexibility and scalability needed for the enterprise.</li>
+</ul>
+<p>::: {#Assets}
+Assets</p>
+<hr />
+<p>:::</p>
+<p>Assets can range from the tangible (real estate and hardware) to the
+intangible (contracts and intellectual property). Hyperledger Fabric
+provides the ability to modify assets using chaincode transactions.</p>
+<p>Assets are represented in Hyperledger Fabric as a collection of
+key-value pairs, with state changes recorded as transactions on a
+[Channel]{role="ref"} ledger. Assets can be represented in binary and/or
+JSON form.</p>
+<p>You can easily define and use assets in your Hyperledger Fabric
+applications using the <a href="https://github.com/hyperledger/composer">Hyperledger
+Composer</a> tool.</p>
+<p>::: {#Chaincode}
+Chaincode</p>
+<hr />
+<p>:::</p>
+<p>Chaincode is software defining an asset or assets, and the transaction
+instructions for modifying the asset(s). In other words, it\'s the
+business logic. Chaincode enforces the rules for reading or altering key
+value pairs or other state database information. Chaincode functions
+execute against the ledger\'s current state database and are initiated
+through a transaction proposal. Chaincode execution results in a set of
+key value writes (write set) that can be submitted to the network and
+applied to the ledger on all peers.</p>
+<p>::: {#Ledger-Features}
+Ledger Features</p>
+<hr />
+<p>:::</p>
+<p>The ledger is the sequenced, tamper-resistant record of all state
+transitions in the fabric. State transitions are a result of chaincode
+invocations (\'transactions\') submitted by participating parties. Each
+transaction results in a set of asset key-value pairs that are committed
+to the ledger as creates, updates, or deletes.</p>
+<p>The ledger is comprised of a blockchain (\'chain\') to store the
+immutable, sequenced record in blocks, as well as a state database to
+maintain current fabric state. There is one ledger per channel. Each
+peer maintains a copy of the ledger for each channel of which they are a
+member.</p>
+<ul>
+<li>Query and update ledger using key-based lookups, range queries, and
+    composite key queries</li>
+<li>Read-only queries using a rich query language (if using CouchDB as
+    state database)</li>
+<li>Read-only history queries - Query ledger history for a key, enabling
+    data provenance scenarios</li>
+<li>Transactions consist of the versions of keys/values that were read
+    in chaincode (read set) and keys/values that were written in
+    chaincode (write set)</li>
+<li>Transactions contain signatures of every endorsing peer and are
+    submitted to ordering service</li>
+<li>Transactions are ordered into blocks and are \"delivered\" from an
+    ordering service to peers on a channel</li>
+<li>Peers validate transactions against endorsement policies and enforce
+    the policies</li>
+<li>Prior to appending a block, a versioning check is performed to
+    ensure that states for assets that were read have not changed since
+    chaincode execution time</li>
+<li>There is immutability once a transaction is validated and committed</li>
+<li>A channel\'s ledger contains a configuration block defining
+    policies, access control lists, and other pertinent information</li>
+<li>Channel\'s contain [MSP]{role="ref"} instances allowing for crypto
+    materials to be derived from different certificate authorities</li>
+</ul>
+<p>See the [ledger]{role="doc"} topic for a deeper dive on the databases,
+storage structure, and \"query-ability.\"</p>
+<p>::: {#Privacy-through-Channels}
+Privacy through Channels</p>
+<hr />
+<p>:::</p>
+<p>Hyperledger Fabric employs an immutable ledger on a per-channel basis,
+as well as chaincodes that can manipulate and modify the current state
+of assets (i.e. update key value pairs). A ledger exists in the scope of
+a channel - it can be shared across the entire network (assuming every
+participant is operating on one common channel) - or it can be
+privatized to only include a specific set of participants.</p>
+<p>In the latter scenario, these participants would create a separate
+channel and thereby isolate/segregate their transactions and ledger. In
+order to solve scenarios that want to bridge the gap between total
+transparency and privacy, chaincode can be installed only on peers that
+need to access the asset states to perform reads and writes (in other
+words, if a chaincode is not installed on a peer, it will not be able to
+properly interface with the ledger).</p>
+<p>To further obfuscate the data, values within chaincode can be encrypted
+(in part or in total) using common cryptographic algorithms such as AES
+before sending transactions to the ordering service and appending blocks
+to the ledger. Once encrypted data has been written to the ledger, it
+can only be decrypted by a user in possession of the corresponding key
+that was used to generate the cipher text. For further details on
+chaincode encryption, see the [chaincode4ade]{role="doc"} topic.</p>
+<p>::: {#Security-Membership-Services}
+Security &amp; Membership Services</p>
+<hr />
+<p>:::</p>
+<p>Hyperledger Fabric underpins a transactional network where all
+participants have known identities. Public Key Infrastructure is used to
+generate cryptographic certificates which are tied to organizations,
+network components, and end users or client applications. As a result,
+data access control can be manipulated and governed on the broader
+network and on channel levels. This \"permissioned\" notion of
+Hyperledger Fabric, coupled with the existence and capabilities of
+channels, helps address scenarios where privacy and confidentiality are
+paramount concerns.</p>
+<p>See the [msp]{role="doc"} topic to better understand cryptographic
+implementations, and the sign, verify, authenticate approach used in
+Hyperledger Fabric.</p>
+<p>::: {#Consensus}
+Consensus</p>
+<hr />
+<p>:::</p>
+<p>In distributed ledger technology, consensus has recently become
+synonymous with a specific algorithm, within a single function. However,
+consensus encompasses more than simply agreeing upon the order of
+transactions, and this differentiation is highlighted in Hyperledger
+Fabric through its fundamental role in the entire transaction flow, from
+proposal and endorsement, to ordering, validation and commitment. In a
+nutshell, consensus is defined as the full-circle verification of the
+correctness of a set of transactions comprising a block.</p>
+<p>Consensus is ultimately achieved when the order and results of a
+block\'s transactions have met the explicit policy criteria checks.
+These checks and balances take place during the lifecycle of a
+transaction, and include the usage of endorsement policies to dictate
+which specific members must endorse a certain transaction class, as well
+as system chaincodes to ensure that these policies are enforced and
+upheld. Prior to commitment, the peers will employ these system
+chaincodes to make sure that enough endorsements are present, and that
+they were derived from the appropriate entities. Moreover, a versioning
+check will take place during which the current state of the ledger is
+agreed or consented upon, before any blocks containing transactions are
+appended to the ledger. This final check provides protection against
+double spend operations and other threats that might compromise data
+integrity, and allows for functions to be executed against non-static
+variables.</p>
+<p>In addition to the multitude of endorsement, validity and versioning
+checks that take place, there are also ongoing identity verifications
+happening in all directions of the transaction flow. Access control
+lists are implemented on hierarchal layers of the network (ordering
+service down to channels), and payloads are repeatedly signed, verified
+and authenticated as a transaction proposal passes through the different
+architectural components. To conclude, consensus is not merely limited
+to the agreed upon order of a batch of transactions, but rather, it is
+an overarching characterization that is achieved as a byproduct of the
+ongoing verifications that take place during a transaction\'s journey
+from proposal to commitment.</p>
+<p>Check out the [txflow]{role="doc"} diagram for a visual representation
+of consensus.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../channels/" class="btn btn-neutral float-right" title="Channels">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../capabilities/" class="btn btn-neutral" title="Capabilities"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../capabilities/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../channels/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

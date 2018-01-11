@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Contributing - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Contributing";
+    var mkdocs_page_input_path = "CONTRIBUTING.md";
+    var mkdocs_page_url = "/CONTRIBUTING/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ledger/">Ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Contributing</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#contributions-welcome">Contributions Welcome!</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#install-prerequisites">Install prerequisites</a></li>
+        
+            <li><a class="toctree-l3" href="#getting-a-linux-foundation-account">Getting a Linux Foundation account</a></li>
+        
+            <li><a class="toctree-l3" href="#getting-help">Getting help</a></li>
+        
+            <li><a class="toctree-l3" href="#reporting-bugs">Reporting bugs</a></li>
+        
+            <li><a class="toctree-l3" href="#submitting-your-fix">Submitting your fix</a></li>
+        
+            <li><a class="toctree-l3" href="#fixing-issues-and-working-stories">Fixing issues and working stories</a></li>
+        
+            <li><a class="toctree-l3" href="#making-featureenhancement-proposals">Making Feature/Enhancement Proposals</a></li>
+        
+            <li><a class="toctree-l3" href="#setting-up-development-environment">Setting up development environment</a></li>
+        
+            <li><a class="toctree-l3" href="#what-makes-a-good-change-request">What makes a good change request?</a></li>
+        
+            <li><a class="toctree-l3" href="#communication">Communication</a></li>
+        
+            <li><a class="toctree-l3" href="#maintainers">Maintainers</a></li>
+        
+            <li><a class="toctree-l3" href="#legal-stuff">Legal stuff</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Contributing</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="contributions-welcome">Contributions Welcome!</h1>
+<p>We welcome contributions to Hyperledger in many forms, and there\'s
+always plenty to do!</p>
+<p>First things first, please review the Hyperledger <a href="https://wiki.hyperledger.org/community/hyperledger-project-code-of-conduct">Code of
+Conduct</a>
+before participating. It is important that we keep things civil.</p>
+<h2 id="install-prerequisites">Install prerequisites</h2>
+<p>Before we begin, if you haven\'t already done so, you may wish to check
+that you have all the [prerequisites \&lt;prereqs>]{role="doc"} installed
+on the platform(s) on which you\'ll be developing blockchain
+applications and/or operating Hyperledger Fabric.</p>
+<h2 id="getting-a-linux-foundation-account">Getting a Linux Foundation account</h2>
+<p>In order to participate in the development of the Hyperledger Fabric
+project, you will need a [Linux Foundation
+account \&lt;Gerrit/lf-account>]{role="doc"}. You will need to use your LF
+ID to access to all the Hyperledger community development tools,
+including <a href="https://gerrit.hyperledger.org">Gerrit</a>,
+<a href="https://jira.hyperledger.org">Jira</a> and the
+<a href="https://wiki.hyperledger.org/start">Wiki</a> (for editing, only).</p>
+<h2 id="getting-help">Getting help</h2>
+<p>If you are looking for something to work on, or need some expert
+assistance in debugging a problem or working out a fix to an issue, our
+<a href="https://www.hyperledger.org/community">community</a> is always eager to
+help. We hang out on
+<a href="https://chat.hyperledger.org/channel/fabric/">Chat</a>, IRC (#hyperledger
+on freenode.net) and the <a href="http://lists.hyperledger.org/">mailing lists</a>.
+Most of us don\'t bite :grin: and will be glad to help. The only silly
+question is the one you don\'t ask. Questions are in fact a great way to
+help improve the project as they highlight where our documentation could
+be clearer.</p>
+<h2 id="reporting-bugs">Reporting bugs</h2>
+<p>If you are a user and you have found a bug, please submit an issue using
+<a href="https://jira.hyperledger.org/secure/Dashboard.jspa?selectPageId=10104">JIRA</a>.
+Before you create a new JIRA issue, please try to search the existing
+items to be sure no one else has previously reported it. If it has been
+previously reported, then you might add a comment that you also are
+interested in seeing the defect fixed.</p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>If the defect is security-related, please follow the Hyperledger</p>
+<p>:   security bug reporting process \&lt;https://wiki.hyperledger.org/security/bug-handling-process>.
+:::</p>
+<p>If it has not been previously reported, create a new JIRA. Please try to
+provide sufficient information for someone else to reproduce the issue.
+One of the project\'s maintainers should respond to your issue within 24
+hours. If not, please bump the issue with a comment and request that it
+be reviewed. You can also post to the relevant fabric channel in
+<a href="https://chat.hyperledger.org">Hyperledger Rocket Chat</a>. For example, a
+doc bug should be broadcast to <code>#fabric-documentation</code>, a database bug
+to <code>#fabric-ledger</code>, and so on...</p>
+<h2 id="submitting-your-fix">Submitting your fix</h2>
+<p>If you just submitted a JIRA for a bug you\'ve discovered, and would
+like to provide a fix, we would welcome that gladly! Please assign the
+JIRA issue to yourself, then you can submit a change request (CR).</p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>If you need help with submitting your first CR, we have created a</p>
+<p>:   brief [tutorial \&lt;submit_cr>]{role="doc"} for you.
+:::</p>
+<h2 id="fixing-issues-and-working-stories">Fixing issues and working stories</h2>
+<p>Review the <a href="https://jira.hyperledger.org/issues/?filter=10580">issues
+list</a> and find
+something that interests you. You could also check the
+<a href="https://jira.hyperledger.org/issues/?filter=10147">\"help-wanted\"</a>
+list. It is wise to start with something relatively straight forward and
+achievable, and that no one is already assigned. If no one is assigned,
+then assign the issue to yourself. Please be considerate and rescind the
+assignment if you cannot finish in a reasonable time, or add a comment
+saying that you are still actively working the issue if you need a
+little more time.</p>
+<h2 id="making-featureenhancement-proposals">Making Feature/Enhancement Proposals</h2>
+<p>Review
+<a href="https://jira.hyperledger.org/secure/Dashboard.jspa?selectPageId=10104">JIRA</a>.
+to be sure that there isn\'t already an open (or recently closed)
+proposal for the same function. If there isn\'t, to make a proposal we
+recommend that you open a JIRA Epic, Story or Improvement, whichever
+seems to best fit the circumstance and link or inline a \"one pager\" of
+the proposal that states what the feature would do and, if possible, how
+it might be implemented. It would help also to make a case for why the
+feature should be added, such as identifying specific use case(s) for
+which the feature is needed and a case for what the benefit would be
+should the feature be implemented. Once the JIRA issue is created, and
+the \"one pager\" either attached, inlined in the description field, or
+a link to a publicly accessible document is added to the description,
+send an introductory email to the
+<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#121;&#112;&#101;&#114;&#108;&#101;&#100;&#103;&#101;&#114;&#45;&#102;&#97;&#98;&#114;&#105;&#99;&#64;&#108;&#105;&#115;&#116;&#115;&#46;&#104;&#121;&#112;&#101;&#114;&#108;&#101;&#100;&#103;&#101;&#114;&#46;&#111;&#114;&#103;">&#104;&#121;&#112;&#101;&#114;&#108;&#101;&#100;&#103;&#101;&#114;&#45;&#102;&#97;&#98;&#114;&#105;&#99;&#64;&#108;&#105;&#115;&#116;&#115;&#46;&#104;&#121;&#112;&#101;&#114;&#108;&#101;&#100;&#103;&#101;&#114;&#46;&#111;&#114;&#103;</a> mailing list linking the JIRA
+issue, and soliciting feedback.</p>
+<p>Discussion of the proposed feature should be conducted in the JIRA issue
+itself, so that we have a consistent pattern within our community as to
+where to find design discussion.</p>
+<p>Getting the support of three or more of the Hyperledger Fabric
+maintainers for the new feature will greatly enhance the probability
+that the feature\'s related CRs will be merged.</p>
+<h2 id="setting-up-development-environment">Setting up development environment</h2>
+<p>Next, try [building the project \&lt;dev-setup/build>]{role="doc"} in your
+local development environment to ensure that everything is set up
+correctly.</p>
+<h2 id="what-makes-a-good-change-request">What makes a good change request?</h2>
+<ul>
+<li>One change at a time. Not five, not three, not ten. One and only
+    one. Why? Because it limits the blast area of the change. If we have
+    a regression, it is much easier to identify the culprit commit than
+    if we have some composite change that impacts more of the code.</li>
+<li>Include a link to the JIRA story for the change. Why? Because a) we
+    want to track our velocity to better judge what we think we can
+    deliver and when and b) because we can justify the change more
+    effectively. In many cases, there should be some discussion around a
+    proposed change and we want to link back to that from the change
+    itself.</li>
+<li>Include unit and integration tests (or changes to existing tests)
+    with every change. This does not mean just happy path testing,
+    either. It also means negative testing of any defensive code that it
+    correctly catches input errors. When you write code, you are
+    responsible to test it and provide the tests that demonstrate that
+    your change does what it claims. Why? Because without this we have
+    no clue whether our current code base actually works.</li>
+<li>Unit tests should have NO external dependencies. You should be able
+    to run unit tests in place with <code>go test</code> or equivalent for the
+    language. Any test that requires some external dependency (e.g.
+    needs to be scripted to run another component) needs appropriate
+    mocking. Anything else is not unit testing, it is integration
+    testing by definition. Why? Because many open source developers do
+    Test Driven Development. They place a watch on the directory that
+    invokes the tests automagically as the code is changed. This is far
+    more efficient than having to run a whole build between code
+    changes. See <a href="http://artofunittesting.com/definition-of-a-unit-test/">this
+    definition</a>
+    of unit testing for a good set of criteria to keep in mind for
+    writing effective unit tests.</li>
+<li>Minimize the lines of code per CR. Why? Maintainers have day jobs,
+    too. If you send a 1,000 or 2,000 LOC change, how long do you think
+    it takes to review all of that code? Keep your changes to \&lt; 200-300
+    LOC, if possible. If you have a larger change, decompose it into
+    multiple independent changess. If you are adding a bunch of new
+    functions to fulfill the requirements of a new capability, add them
+    separately with their tests, and then write the code that uses them
+    to deliver the capability. Of course, there are always exceptions.
+    If you add a small change and then add 300 LOC of tests, you will be
+    forgiven;-) If you need to make a change that has broad impact or a
+    bunch of generated code (protobufs, etc.). Again, there can be
+    exceptions.</li>
+</ul>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>Large change requests, e.g. those with more than 300 LOC are more likely</p>
+<p>:   than not going to receive a -2, and you\'ll be asked to refactor the
+    change to conform with this guidance.
+:::</p>
+<ul>
+<li>Do not stack change requests (e.g. submit a CR from the same local
+    branch as your previous CR) unless they are related. This will
+    minimize merge conflicts and allow changes to be merged more
+    quickly. If you stack requests your subsequent requests may be held
+    up because of review comments in the preceding requests.</li>
+<li>Write a meaningful commit message. Include a meaningful 50 (or less)
+    character title, followed by a blank line, followed by a more
+    comprehensive description of the change. Each change MUST include
+    the JIRA identifier corresponding to the change (e.g. [FAB-1234]).
+    This can be in the title but should also be in the body of the
+    commit message. See the
+    [complete requirements \&lt;Gerrit/changes>]{role="doc"} for an
+    acceptable change request.</li>
+</ul>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>That Gerrit will automatically create a hyperlink to the JIRA item.</p>
+<p>:   e.g.</p>
+<!-- -->
+
+<pre><code>[FAB-1234] fix foobar() panic
+
+Fix [FAB-1234] added a check to ensure that when foobar(foo string)
+is called, that there is a non-empty string argument.
+</code></pre>
+<p>:::</p>
+<p>Finally, be responsive. Don\'t let a change request fester with review
+comments such that it gets to a point that it requires a rebase. It only
+further delays getting it merged and adds more work for you - to
+remediate the merge conflicts.</p>
+<h2 id="communication">Communication</h2>
+<p>We use <a href="https://chat.hyperledger.org/">RocketChat</a> for communication and
+Google Hangouts™ for screen sharing between developers. Our development
+planning and prioritization is done in
+<a href="https://jira.hyperledger.org">JIRA</a>, and we take longer running
+discussions/decisions to the <a href="http://lists.hyperledger.org/mailman/listinfo/hyperledger-fabric">mailing
+list</a>.</p>
+<h2 id="maintainers">Maintainers</h2>
+<p>The project\'s [maintainers \&lt;MAINTAINERS>]{role="doc"} are responsible
+for reviewing and merging all patches submitted for review and they
+guide the over-all technical direction of the project within the
+guidelines established by the Hyperledger Technical Steering Committee
+(TSC).</p>
+<h3 id="becoming-a-maintainer">Becoming a maintainer</h3>
+<p>This project is managed under an open governance model as described in
+our <a href="https://www.hyperledger.org/about/charter">charter</a>. Projects or
+sub-projects will be lead by a set of maintainers. New sub-projects can
+designate an initial set of maintainers that will be approved by the
+top-level project\'s existing maintainers when the project is first
+approved. The project\'s maintainers will, from time-to-time, consider
+adding or removing a maintainer. An existing maintainer can submit a
+change set to the [MAINTAINERS.rst \&lt;MAINTAINERS>]{role="doc"} file. A
+nominated Contributor may become a Maintainer by a majority approval of
+the proposal by the existing Maintainers. Once approved, the change set
+is then merged and the individual is added to (or alternatively, removed
+from) the maintainers group. Maintainers may be removed by explicit
+resignation, for prolonged inactivity (3 or more months), or for some
+infraction of the <a href="https://wiki.hyperledger.org/community/hyperledger-project-code-of-conduct">code of
+conduct</a>
+or by consistently demonstrating poor judgement. A maintainer removed
+for inactivity should be restored following a sustained resumption of
+contributions and reviews (a month or more) demonstrating a renewed
+commitment to the project.</p>
+<h2 id="legal-stuff">Legal stuff</h2>
+<p><strong>Note:</strong> Each source file must include a license header for the Apache
+Software License 2.0. See the template of the <a href="https://github.com/hyperledger/fabric/blob/master/docs/source/dev-setup/headers.txt">license
+header</a>.</p>
+<p>We have tried to make it as easy as possible to make contributions. This
+applies to how we handle the legal aspects of contribution. We use the
+same approach---the <a href="https://github.com/hyperledger/fabric/blob/master/docs/source/DCO1.1.txt">Developer\'s Certificate of Origin 1.1
+(DCO)</a>---that
+the Linux® Kernel
+<a href="http://elinux.org/Developer_Certificate_Of_Origin">community</a> uses to
+manage code contributions.</p>
+<p>We simply ask that when submitting a patch for review, the developer
+must include a sign-off statement in the commit message.</p>
+<p>Here is an example Signed-off-by line, which indicates that the
+submitter accepts the DCO:</p>
+<pre><code>Signed-off-by: John Doe &lt;john.doe@hisdomain.com&gt;
+</code></pre>
+<p>You can include this automatically when you commit a change to your
+local git repository using <code>git commit -s</code>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../questions/" class="btn btn-neutral" title="General Help"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../questions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

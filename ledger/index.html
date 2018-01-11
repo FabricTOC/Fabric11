@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Ledger - Hyperledger Fabric Documentaion</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Ledger";
+    var mkdocs_page_input_path = "ledger.md";
+    var mkdocs_page_url = "/ledger/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Fabric Documentaion</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockchain/">Key blockchain concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developing blockchain applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../fabric-sdks/">Applications and the Hyperledger Fabric SDKs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode/">Programming Smart contracts and Chaincode</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../txflow/">Transaction Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Querying the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Updating the ledger</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Ledger notifications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Accessing the transaction log</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../peer-chaincode-devmode/">Running Chaincode in Development Mode</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Administering a blockchain network</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tbd/">Network Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Consortium Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Organization Tasks</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Peer Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../endorsement-policies/">Endorsement Policy Tasks</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Orderer Tasks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../msp/">Managing Identity</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Channel Tasks</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtx/">Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxgen/">Generating Channel Configuration</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../configtxlator/">Channel Reconfiguration</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">Certificate Authority Tasks</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials and samples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../getting_started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../build_network/">Build Your First Network</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../write_first_app/">Writing Your First Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4ade/">Chaincode for Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../chaincode4noah/">Chaincode for Operations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tbd/">DRIVENET Tutorial</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference material</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../arch-deep-dive/">Architecture Explained</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../capabilities/">Capabilities</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric_model/">Fabric Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../channels/">Channels</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gossip/">Gossip</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Ledger</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#ledger">Ledger</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#chain">Chain</a></li>
+        
+            <li><a class="toctree-l4" href="#state-database">State Database</a></li>
+        
+            <li><a class="toctree-l4" href="#transaction-flow">Transaction Flow</a></li>
+        
+            <li><a class="toctree-l4" href="#state-database-options">State Database options</a></li>
+        
+            <li><a class="toctree-l4" href="#couchdb-configuration">CouchDB Configuration</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../fabric-FAQ/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../releases/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../questions/">General Help</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CONTRIBUTING/">Contributing</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Fabric Documentaion</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Reference material &raquo;</li>
+        
+      
+    
+    <li>Ledger</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ledger">Ledger</h1>
+<p>The ledger is the sequenced, tamper-resistant record of all state
+transitions. State transitions are a result of chaincode invocations
+(\'transactions\') submitted by participating parties. Each transaction
+results in a set of asset key-value pairs that are committed to the
+ledger as creates, updates, or deletes.</p>
+<p>The ledger is comprised of a blockchain (\'chain\') to store the
+immutable, sequenced record in blocks, as well as a state database to
+maintain current state. There is one ledger per channel. Each peer
+maintains a copy of the ledger for each channel of which they are a
+member.</p>
+<h2 id="chain">Chain</h2>
+<p>The chain is a transaction log, structured as hash-linked blocks, where
+each block contains a sequence of N transactions. The block header
+includes a hash of the block\'s transactions, as well as a hash of the
+prior block\'s header. In this way, all transactions on the ledger are
+sequenced and cryptographically linked together. In other words, it is
+not possible to tamper with the ledger data, without breaking the hash
+links. The hash of the latest block represents every transaction that
+has come before, making it possible to ensure that all peers are in a
+consistent and trusted state.</p>
+<p>The chain is stored on the peer file system (either local or attached
+storage), efficiently supporting the append-only nature of the
+blockchain workload.</p>
+<h2 id="state-database">State Database</h2>
+<p>The ledger\'s current state data represents the latest values for all
+keys ever included in the chain transaction log. Since current state
+represents all latest key values known to the channel, it is sometimes
+referred to as World State.</p>
+<p>Chaincode invocations execute transactions against the current state
+data. To make these chaincode interactions extremely efficient, the
+latest values of all keys are stored in a state database. The state
+database is simply an indexed view into the chain\'s transaction log, it
+can therefore be regenerated from the chain at any time. The state
+database will automatically get recovered (or generated if needed) upon
+peer startup, before transactions are accepted.</p>
+<h2 id="transaction-flow">Transaction Flow</h2>
+<p>At a high level, the transaction flow consists of a transaction proposal
+sent by an application client to specific endorsing peers. The endorsing
+peers verify the client signature, and execute a chaincode function to
+simulate the transaction. The output is the chaincode results, a set of
+key/value versions that were read in the chaincode (read set), and the
+set of keys/values that were written in chaincode (write set). The
+proposal response gets sent back to the client along with an endorsement
+signature.</p>
+<p>The client assembles the endorsements into a transaction payload and
+broadcasts it to an ordering service. The ordering service delivers
+ordered transactions as blocks to all peers on a channel.</p>
+<p>Before committal, peers will validate the transactions. First, they will
+check the endorsement policy to ensure that the correct allotment of the
+specified peers have signed the results, and they will authenticate the
+signatures against the transaction payload.</p>
+<p>Secondly, peers will perform a versioning check against the transaction
+read set, to ensure data integrity and protect against threats such as
+double-spending. Hyperledger Fabric has concurrency control whereby
+transactions execute in parallel (by endorsers) to increase throughput,
+and upon commit (by all peers) each transaction is verified to ensure
+that no other transaction has modified data it has read. In other words,
+it ensures that the data that was read during chaincode execution has
+not changed since execution (endorsement) time, and therefore the
+execution results are still valid and can be committed to the ledger
+state database. If the data that was read has been changed by another
+transaction, then the transaction in the block is marked as invalid and
+is not applied to the ledger state database. The client application is
+alerted, and can handle the error or retry as appropriate.</p>
+<p>See the [txflow]{role="doc"} and [readwrite]{role="doc"} topics for a
+deeper dive on transaction structure, concurrency control, and the state
+DB.</p>
+<h2 id="state-database-options">State Database options</h2>
+<p>State database options include LevelDB and CouchDB. LevelDB is the
+default key/value state database embedded in the peer process. CouchDB
+is an optional alternative external state database. Like the LevelDB
+key/value store, CouchDB can store any binary data that is modeled in
+chaincode (CouchDB attachment functionality is used internally for
+non-JSON binary data). But as a JSON document store, CouchDB
+additionally enables rich query against the chaincode data, when
+chaincode values (e.g. assets) are modeled as JSON data.</p>
+<p>Both LevelDB and CouchDB support core chaincode operations such as
+getting and setting a key (asset), and querying based on keys. Keys can
+be queried by range, and composite keys can be modeled to enable
+equivalence queries against multiple parameters. For example a composite
+key of (owner,asset_id) can be used to query all assets owned by a
+certain entity. These key-based queries can be used for read-only
+queries against the ledger, as well as in transactions that update the
+ledger.</p>
+<p>If you model assets as JSON and use CouchDB, you can also perform
+complex rich queries against the chaincode data values, using the
+CouchDB JSON query language within chaincode. These types of queries are
+excellent for understanding what is on the ledger. Proposal responses
+for these types of queries are typically useful to the client
+application, but are not typically submitted as transactions to the
+ordering service. In fact, there is no guarantee the result set is
+stable between chaincode execution and commit time for rich queries, and
+therefore rich queries are not appropriate for use in update
+transactions, unless your application can guarantee the result set is
+stable between chaincode execution time and commit time, or can handle
+potential changes in subsequent transactions. For example, if you
+perform a rich query for all assets owned by Alice and transfer them to
+Bob, a new asset may be assigned to Alice by another transaction between
+chaincode execution time and commit time, and you would miss this
+\'phantom\' item.</p>
+<p>CouchDB runs as a separate database process alongside the peer,
+therefore there are additional considerations in terms of setup,
+management, and operations. You may consider starting with the default
+embedded LevelDB, and move to CouchDB if you require the additional
+complex rich queries. It is a good practice to model chaincode asset
+data as JSON, so that you have the option to perform complex rich
+queries if needed in the future.</p>
+<h2 id="couchdb-configuration">CouchDB Configuration</h2>
+<p>CouchDB is enabled as the state database by changing the stateDatabase
+configuration option from goleveldb to CouchDB. Additionally, the
+<code>couchDBAddress</code> needs to configured to point to the CouchDB to be used
+by the peer. The username and password properties should be populated
+with an admin username and password if CouchDB is configured with a
+username and password. Additional options are provided in the
+<code>couchDBConfig</code> section and are documented in place. Changes to the
+<em>core.yaml</em> will be effective immediately after restarting the peer.</p>
+<p>You can also pass in docker environment variables to override core.yaml
+values, for example <code>CORE_LEDGER_STATE_STATEDATABASE</code> and
+<code>CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS</code>.</p>
+<p>Below is the <code>stateDatabase</code> section from <em>core.yaml</em>:</p>
+<p><code>{.sourceCode .bash}
+state:
+  # stateDatabase - options are "goleveldb", "CouchDB"
+  # goleveldb - default state database stored in goleveldb.
+  # CouchDB - store state database in CouchDB
+  stateDatabase: goleveldb
+  couchDBConfig:
+     # It is recommended to run CouchDB on the same server as the peer, and
+     # not map the CouchDB container port to a server port in docker-compose.
+     # Otherwise proper security must be provided on the connection between
+     # CouchDB client (on the peer) and server.
+     couchDBAddress: couchdb:5984
+     # This username must have read and write authority on CouchDB
+     username:
+     # The password is recommended to pass as an environment variable
+     # during start up (e.g. LEDGER_COUCHDBCONFIG_PASSWORD).
+     # If it is stored here, the file must be access control protected
+     # to prevent unintended users from discovering the password.
+     password:
+     # Number of retries for CouchDB errors
+     maxRetries: 3
+     # Number of retries for CouchDB errors during peer startup
+     maxRetriesOnStartup: 10
+     # CouchDB request timeout (unit: duration, e.g. 20s)
+     requestTimeout: 35s
+     # Limit on the number of records to return per query
+     queryLimit: 10000</code></p>
+<p>CouchDB hosted in docker containers supplied with Hyperledger Fabric
+have the capability of setting the CouchDB username and password with
+environment variables passed in with the <code>COUCHDB_USER</code> and
+<code>COUCHDB_PASSWORD</code> environment variables using Docker Compose scripting.</p>
+<p>For CouchDB installations outside of the docker images supplied with
+Fabric, the <em>local.ini</em> file must be edited to set the admin username
+and password.</p>
+<p>Docker compose scripts only set the username and password at the
+creation of the container. The <em>local.ini</em> file must be edited if the
+username or password is to be changed after creation of the container.</p>
+<p>::: {.note}
+::: {.admonition-title}
+Note
+:::</p>
+<p>CouchDB peer options are read on each peer startup.
+:::</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../fabric-FAQ/" class="btn btn-neutral float-right" title="FAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../kafka/" class="btn btn-neutral" title="Kafka"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 Linux Foundation All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../kafka/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../fabric-FAQ/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
